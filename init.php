@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: Designr Modules Free
+ * Plugin Name: Designr Page Builder Modules
  * Author: Smartcat
- * Description: Adds functionality to the Designr Theme
+ * Description: Drag & Drop widgets for the Designr Page Builder
  * Version: 1.0.0
  * Author: Smartcat
  * Author URI: https://smartcatdesign.net/
