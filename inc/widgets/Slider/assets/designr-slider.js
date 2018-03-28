@@ -8,7 +8,7 @@ jQuery(document).ready(function ($) {
             pauseOnHover: value.slider_pause_hover,
             pauseOnFocus: false,
             infinite: true,
-            speed: 500,
+            speed: value.slider_trans_speed,
             fade: value.slider_fade,
             autoplay: value.slider_autoplay,
             autoplaySpeed: value.slider_autoplay_speed,

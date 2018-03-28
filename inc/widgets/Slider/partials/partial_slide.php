@@ -1,7 +1,11 @@
 <div class="slide" style="height: <?php echo !empty( $instance['slider_height'] ) ? esc_attr( $instance['slider_height'] ) : 600; ?>px; background-image: url(<?php echo esc_url( $instance['slide_image_' . $slide] ); ?>);">
 
-    <div class="slide-inner primary-gradient">
-
+    <?php if ( empty( $instance['slide_overlay_opacity_' . $slide] ) ) : ?>
+        <div class="slide-inner">
+    <?php else : ?>    
+        <div class="slide-inner" style="background-color: rgba(0,0,0,<?php echo esc_attr( $instance['slide_overlay_opacity_' . $slide] ); ?>);">
+    <?php endif; ?>
+        
         <div class="flex-container-wrap">
             
             <div class="container">
