@@ -73,6 +73,7 @@ function designr_modules_init() {
     * Load Necessary Includes
     */
    require get_plugin_path() . 'inc/functions-general.php';
+   require get_plugin_path() . 'inc/functions-blocks.php';
    require get_plugin_path() . 'inc/functions-acid.php';
    require get_plugin_path() . 'inc/functions-widgets.php';
    require get_plugin_path() . 'inc/functions-enqueue.php';
