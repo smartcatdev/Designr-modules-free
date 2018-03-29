@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: Designr Page Builder Modules
+ * Plugin Name: Designr Widgets
  * Author: Smartcat
- * Description: Drag & Drop widgets for the Designr Page Builder
+ * Description: WordPress Widgets for the Designer Theme
  * Version: 1.0.0
  * Author: Smartcat
  * Author URI: https://smartcatdesign.net/
