@@ -12,7 +12,6 @@ function enqueue_plugin_styles_scripts() {
     
     // Styles
     wp_enqueue_style( 'slick', get_plugin_url() . 'assets/lib/slick/slick.css', null, DESIGNR_MODULES_VERSION );
-    wp_enqueue_style( 'designr-modules', get_plugin_url() . 'assets/css/designr-modules.css', null, DESIGNR_MODULES_VERSION );
     
     // Scripts
     wp_enqueue_script( 'slick', get_plugin_url() . 'assets/lib/slick/slick.min.js', array( 'jquery' ), DESIGNR_MODULES_VERSION );
@@ -33,3 +32,6 @@ function enqueue_admin_plugin_styles_scripts() {
     
 }
 add_action( 'customize_controls_enqueue_scripts', 'designr\enqueue_admin_plugin_styles_scripts' );
+add_action( 'admin_print_styles-post-new.php', 'designr\enqueue_admin_plugin_styles_scripts' );
+add_action( 'admin_print_styles-post.php', 'designr\enqueue_admin_plugin_styles_scripts' );
+add_action( 'admin_print_styles-widgets.php', 'designr\enqueue_admin_plugin_styles_scripts' );

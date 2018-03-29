@@ -23,6 +23,7 @@ class Slider_Widget extends \WP_Widget {
         $widget_id = $args['widget_id'];
         
         add_action( 'wp_footer', array( $this, 'localize_options' ) );
+        wp_enqueue_style( 'designr-module-slider', get_plugin_url() . 'inc/widgets/Slider/assets/designr-slider.css', null, DESIGNR_MODULES_VERSION );
         wp_enqueue_script( 'designr-module-slider', get_plugin_url() . 'inc/widgets/Slider/assets/designr-slider.js', array( 'jquery' ), DESIGNR_MODULES_VERSION );
         
         $slider_instance_settings = array(
@@ -51,7 +52,9 @@ class Slider_Widget extends \WP_Widget {
         
         $defaults = array(
             'slider_visibility'         => true,
+            'slider_height_style'       => 42,
             'slider_height'             => 600,
+            'slider_height_mobile'      => 400,
             'slider_autoplay'           => true,
             'slider_autoplay_speed'     => 6500,
             'slider_arrows'             => true,
@@ -59,7 +62,6 @@ class Slider_Widget extends \WP_Widget {
             'slider_fade'               => false,
             'slider_pause_hover'        => false,
             'slider_trans_speed'        => 500,
-            'slider_overlay_gradient'   => false,
         );
 
         for ( $slide = 1; $slide < 4; $slide++ ) : 
@@ -69,7 +71,6 @@ class Slider_Widget extends \WP_Widget {
             $defaults['slide_caption_' . $slide] = '';
             $defaults['slide_button_label_' . $slide] = '';
             $defaults['slide_button_url_' . $slide] = '';
-            $defaults['slide_overlay_' . $slide] = true;
             $defaults['slide_overlay_opacity_' . $slide] = .35;
         endfor;
         
@@ -83,7 +84,9 @@ class Slider_Widget extends \WP_Widget {
         $actual_slides = array();
         
         $slider_visibility          = !empty( $instance['slider_visibility'] ) ? true : false;
+        $slider_height_style        = !empty( $instance['slider_height_style'] ) ? $instance['slider_height_style'] : 42;
         $slider_height              = !empty( $instance['slider_height'] ) ? $instance['slider_height'] : 600;
+        $slider_height_mobile       = !empty( $instance['slider_height_mobile'] ) ? $instance['slider_height_mobile'] : 400;
         $slider_autoplay            = !empty( $instance['slider_autoplay'] ) ? true : false;
         $slider_autoplay_speed      = !empty( $instance['slider_autoplay_speed'] ) ? $instance['slider_autoplay_speed'] : 6500;
         $slider_arrows              = !empty( $instance['slider_arrows'] ) ? true : false;
@@ -91,7 +94,6 @@ class Slider_Widget extends \WP_Widget {
         $slider_fade                = !empty( $instance['slider_fade'] ) ? true : false;
         $slider_pause_hover         = !empty( $instance['slider_pause_hover'] ) ? true : false;
         $slider_trans_speed         = !empty( $instance['slider_trans_speed'] ) ? $instance['slider_trans_speed'] : 500;
-        $slider_overlay_gradient    = !empty( $instance['slider_overlay_gradient'] ) ? true : false;
         
         for ( $slide = 1; $slide < 4; $slide++ ) : 
             
@@ -102,7 +104,6 @@ class Slider_Widget extends \WP_Widget {
                 'caption'           => !empty( $instance['slide_caption_' . $slide] ) ? $instance['slide_caption_' . $slide] : '',
                 'button_label'      => !empty( $instance['slide_button_label_' . $slide] ) ? $instance['slide_button_label_' . $slide] : '',
                 'button_url'        => !empty( $instance['slide_button_url_' . $slide] ) ? $instance['slide_button_url_' . $slide] : '',
-                'overlay'           => !empty( $instance['slide_overlay_' . $slide] ) ? true : false,
                 'overlay_opacity'   => !empty( $instance['slide_overlay_opacity_' . $slide] ) ? $instance['slide_overlay_opacity_' . $slide] : .35,
             );
             
@@ -133,11 +134,59 @@ class Slider_Widget extends \WP_Widget {
         echo '  </div>';
         echo '</div>';
         
-        // Slider Height (Number)
+        // Slider Aspect Ratio (Radio Toggle)
+        
+        echo '<label class="designr-control-title">';
+        echo '  <span>' . __( 'Slider Aspect Ratio', 'designr' ) . '</span>';
+        echo '</label>';
+        echo '<div class="designr-switch-field">';
+        echo '  <div class="switch-title description customize-control-description">' . __( 'Set the aspect ratio (Width:Height) for the slider container to maintain as the browser width scales', 'designr' ) . '</div>';
+        
+        echo '      <div class="choice-wrap">';
+        echo '          <input name="' . esc_attr( $this->get_field_name( 'slider_height_style' ) ) . '" type="radio" id="1' . esc_attr( $this->get_field_id( 'slider_height_style' ) ) . '" value="' . 100 . '"' . checked( $slider_height_style, 100, false ) . ' />';
+        echo '          <label for="1' . esc_attr( $this->get_field_id( 'slider_height_style' ) ) . '">' . __( '1:1 (Square)', 'designr' ) . '</label>';
+        echo '      </div>';
+        echo '      <div class="clear"></div>';
+        
+        echo '      <div class="choice-wrap">';
+        echo '          <input name="' . esc_attr( $this->get_field_name( 'slider_height_style' ) ) . '" type="radio" id="2' . esc_attr( $this->get_field_id( 'slider_height_style' ) ) . '" value="' . 75 . '"' . checked( $slider_height_style, 75, false ) . ' />';
+        echo '          <label for="2' . esc_attr( $this->get_field_id( 'slider_height_style' ) ) . '">' . __( '4:3 (TV)', 'designr' ) . '</label>';
+        echo '      </div>';
+        echo '      <div class="clear"></div>';
+        
+        echo '      <div class="choice-wrap">';
+        echo '          <input name="' . esc_attr( $this->get_field_name( 'slider_height_style' ) ) . '" type="radio" id="3' . esc_attr( $this->get_field_id( 'slider_height_style' ) ) . '" value="' . 56 . '"' . checked( $slider_height_style, 56, false ) . ' />';
+        echo '          <label for="3' . esc_attr( $this->get_field_id( 'slider_height_style' ) ) . '">' . __( '16:9 (Cinema)', 'designr' ) . '</label>';
+        echo '      </div>';
+        echo '      <div class="clear"></div>';
+        
+        echo '      <div class="choice-wrap">';
+        echo '          <input name="' . esc_attr( $this->get_field_name( 'slider_height_style' ) ) . '" type="radio" id="4' . esc_attr( $this->get_field_id( 'slider_height_style' ) ) . '" value="' . 42 . '"' . checked( $slider_height_style, 42, false ) . ' />';
+        echo '          <label for="4' . esc_attr( $this->get_field_id( 'slider_height_style' ) ) . '">' . __( '21:9 (Widescreen)', 'designr' ) . '</label>';
+        echo '      </div>';
+        echo '      <div class="clear"></div>';
+
+        echo '      <div class="choice-wrap">';
+        echo '          <input name="' . esc_attr( $this->get_field_name( 'slider_height_style' ) ) . '" type="radio" id="5' . esc_attr( $this->get_field_id( 'slider_height_style' ) ) . '" value="' . 'fixed' . '"' . checked( $slider_height_style, 'fixed', false ) . ' />';
+        echo '          <label for="5' . esc_attr( $this->get_field_id( 'slider_height_style' ) ) . '">' . __( 'Fixed Pixel Height', 'designr' ) . '</label>';
+        echo '      </div>';
+        
+        echo '</div>';
+        
+        echo '  <div class="clear"></div>';
+        
+        // Slider Height Desktop (Number)
         
         echo '<p>';
-        echo '	<label for="' . esc_attr( $this->get_field_id( 'slider_height' ) ) . '" class="designr-control-title ' . 'slider_height' . '_label">' . __( 'Slider Height (Pixel Value)', 'designr' ) . '</label>';
+        echo '	<label for="' . esc_attr( $this->get_field_id( 'slider_height' ) ) . '" class="designr-control-title ' . 'slider_height' . '_label">' . __( 'Desktop - Fixed Height (Must be enabled above)', 'designr' ) . '</label>';
         echo '	<input type="number" id="' . esc_attr( $this->get_field_id( 'slider_height' ) ) . '" name="' . esc_attr( $this->get_field_name( 'slider_height' ) ) . '" class="widefat" min="200" value="' . esc_attr( $slider_height ) . '">';
+        echo '</p>';
+
+        // Slider Height Mobile (Number)
+        
+        echo '<p>';
+        echo '	<label for="' . esc_attr( $this->get_field_id( 'slider_height_mobile' ) ) . '" class="designr-control-title ' . 'slider_height_mobile' . '_label">' . __( 'Mobile - Fixed Height (Must be enabled above)', 'designr' ) . '</label>';
+        echo '	<input type="number" id="' . esc_attr( $this->get_field_id( 'slider_height_mobile' ) ) . '" name="' . esc_attr( $this->get_field_name( 'slider_height_mobile' ) ) . '" class="widefat" min="150" value="' . esc_attr( $slider_height_mobile ) . '">';
         echo '</p>';
         
         // Slider Fade (Toggle)
@@ -219,7 +268,7 @@ class Slider_Widget extends \WP_Widget {
         // Slider Arrows Nav (Toggle)
         
         echo '<label class="designr-control-title">';
-        echo '  <span>' . __( 'Show "Arrows" Navigation?', 'designr' ) . '</span>';
+        echo '  <span>' . __( 'Show Navigation?', 'designr' ) . '</span>';
         echo '</label>';
         echo '<div class="toggle-flex">';
         echo '  <div class="flex-inner-small">';
@@ -230,14 +279,14 @@ class Slider_Widget extends \WP_Widget {
         echo '      </label>';
         echo '  </div>';
         echo '  <div class="flex-inner-wide">';
-        echo '      <div class="description customize-control-description">' . __( 'Set whether or not to display the arrow tabs at the sides of the slider', 'designr' ) . '</div>';
+        echo '      <div class="description customize-control-description">' . __( 'Set whether or not to display the arrow tabs at the left and right sides of the slider', 'designr' ) . '</div>';
         echo '  </div>';
         echo '</div>';
         
         // Slider Dots Nav (Toggle)
         
         echo '<label class="designr-control-title">';
-        echo '  <span>' . __( 'Show "Dots" Pagination?', 'designr' ) . '</span>';
+        echo '  <span>' . __( 'Show Tabbed Pagination?', 'designr' ) . '</span>';
         echo '</label>';
         echo '<div class="toggle-flex">';
         echo '  <div class="flex-inner-small">';
@@ -322,7 +371,9 @@ class Slider_Widget extends \WP_Widget {
         $instance = $old_instance;
         
         $instance['slider_visibility']          =  ( !empty( $new_instance['slider_visibility'] ) ) ? true : false;
+        $instance['slider_height_style']        =  ( !empty( $new_instance['slider_height_style'] ) ) ? $new_instance['slider_height_style'] : '';
         $instance['slider_height']              =  ( !empty( $new_instance['slider_height'] ) ) ? intval( $new_instance['slider_height'] ) : '';
+        $instance['slider_height_mobile']       =  ( !empty( $new_instance['slider_height_mobile'] ) ) ? intval( $new_instance['slider_height_mobile'] ) : '';
         $instance['slider_arrows']              =  ( !empty( $new_instance['slider_arrows'] ) ) ? true : false;
         $instance['slider_dots']                =  ( !empty( $new_instance['slider_dots'] ) ) ? true : false;
         $instance['slider_fade']                =  ( !empty( $new_instance['slider_fade'] ) ) ? true : false;
@@ -347,10 +398,10 @@ class Slider_Widget extends \WP_Widget {
  
     function localize_options(){
         
-        //  if( !empty( self::$widget_cal ) ) {
-            wp_localize_script( 'designr-module-slider', 'slider_widget_instances', self::$variables );   
-        //  }
-
+        if( !empty( self::$variables ) ) {
+            wp_localize_script( 'designr-module-slider', 'slider_widget_instances', self::$variables );       
+        }
+    
     }      
     
 }
