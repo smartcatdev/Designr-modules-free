@@ -316,11 +316,12 @@ class Slider_Widget extends \WP_Widget {
                 echo '<div class="slide-detail-inner">';
                 
                     // Image (URL)
-                    echo '<p>';
-                    echo '  <label for="' . esc_attr( $this->get_field_id( 'slide_image_' . $slide ) ) . '" class="designr-control-title ' . 'slide_image_' . $slide . '_label">' . __( 'Image', 'designr' ) . '</label>';
-                    echo '  <input type="url" id="' . esc_attr( $this->get_field_id( 'slide_image_' . $slide ) ) . '" name="' . esc_attr( $this->get_field_name( 'slide_image_' . $slide ) ) . '" class="widefat" value="' . esc_url( $actual_slides[$slide]['image'] ) . '">';
-                    echo '</p>';
-
+                    echo '  <p class="smartcat-uploader">';
+                    echo '      <label for="' . esc_attr( $this->get_field_id( 'slide_image_' . $slide ) ) . '" class="designr-control-title ' . 'slide_image_' . $slide . '_label">' . __( 'Image', 'designr' ) . '</label>';
+                    echo '      <input type="text" id="' . esc_attr( $this->get_field_id( 'slide_image_' . $slide ) ) . '" name="' . esc_attr( $this->get_field_name( 'slide_image_' . $slide ) ) . '" class="widefat" value="' . esc_url( $actual_slides[$slide]['image'] ) . '">';
+                    echo '      <a href="#" class="button secondary smartcat-upload">' . __( 'Upload', 'designr' ) . '</a>';
+                    echo '  </p>';
+                    
                     // Pre-Title (Text)
                     echo '<p>';
                     echo '  <label for="' . esc_attr( $this->get_field_id( 'slide_pre_title_' . $slide ) ) . '" class="designr-control-title ' . 'slide_pre_title' . $slide . '_label">' . __( 'Pre-Title', 'designr' ) . '</label>';
