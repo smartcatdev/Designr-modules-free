@@ -1,8 +1,8 @@
 <?php
 /**
- * Plugin Name: Designr Page Builder Modules
+ * Plugin Name: Designr Widgets
  * Author: Smartcat
- * Description: Drag & Drop widgets for the Designr Page Builder
+ * Description: WordPress Widgets for the Designer Theme
  * Version: 1.0.0
  * Author: Smartcat
  * Author URI: https://smartcatdesign.net/
@@ -49,18 +49,18 @@ if ( function_exists( 'wp_get_theme' ) ) {
     
     $active_theme = wp_get_theme();
     
-    
     $active_theme_name = strtolower( $active_theme->get( 'Name' ) );
     $parent_theme_name = strtolower( $active_theme->get( 'Template' ) );
     
-    
 } else {
+    
     $active_theme_name = strtolower( get_option( 'current_theme') );
     $parent_theme_name = strtolower( get_option( 'current_theme') );
+    
 }
 
 if( $active_theme_name == 'designr' || $parent_theme_name == 'designr' ) {
-    designr_modules_init();
+    add_action( 'after_setup_theme', 'designr\designr_modules_init' );
 }
 
 /**
@@ -73,10 +73,8 @@ function designr_modules_init() {
     * Load Necessary Includes
     */
    require get_plugin_path() . 'inc/functions-general.php';
-   require get_plugin_path() . 'inc/functions-acid.php';
    require get_plugin_path() . 'inc/functions-widgets.php';
    require get_plugin_path() . 'inc/functions-enqueue.php';
    require get_plugin_path() . 'inc/functions-css.php';
     
-} 
-
+}
