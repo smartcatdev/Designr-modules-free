@@ -57,7 +57,7 @@ class Slider_Widget extends \WP_Widget {
             'slider_autoplay_speed'     => '',
         );
 
-        for ( $slide = 1; $slide < 4; $slide++ ) : 
+        for ( $slide = 1; $slide < apply_filters( 'designr_slide_count', 3 ); $slide++ ) : 
             $defaults['slide_image_' . $slide]  =  '';
             $defaults['slide_pre_title_' . $slide]  =  '';
             $defaults['slide_title_' . $slide]  =  '';
@@ -81,7 +81,7 @@ class Slider_Widget extends \WP_Widget {
         $slider_height          = !empty( $instance['slider_height'] ) ? $instance['slider_height'] : '';
         $slider_autoplay_speed  = !empty( $instance['slider_autoplay_speed'] ) ? $instance['slider_autoplay_speed'] : '';
         
-        for ( $slide = 1; $slide < 4; $slide++ ) : 
+        for ( $slide = 1; $slide < apply_filters( 'designr_slide_count', 3 ); $slide++ ) : 
             
             $actual_slides[$slide] = array (
                 'image'             => !empty( $instance['slide_image_' . $slide] ) ? $instance['slide_image_' . $slide] : '',
@@ -175,7 +175,7 @@ class Slider_Widget extends \WP_Widget {
         
         echo '<h2>' . __( 'Slides', 'designr' ) . '</h2>';
         
-        for ( $slide = 1; $slide < 4; $slide++ ) :
+        for ( $slide = 1; $slide < apply_filters( 'designr_slide_count', 3 ); $slide++ ) :
             
             echo '<div class="slide-detail-wrap">';
         
@@ -238,7 +238,7 @@ class Slider_Widget extends \WP_Widget {
         $instance['slider_height']              =  ( !empty( $new_instance['slider_height'] ) ) ? intval( $new_instance['slider_height'] ) : '';
         $instance['slider_autoplay_speed']      =  ( !empty( $new_instance['slider_autoplay_speed'] ) ) ? intval( $new_instance['slider_autoplay_speed'] ) : '';
         
-        for ( $slide = 1; $slide < 4; $slide++ ) : 
+        for ( $slide = 1; $slide < apply_filters( 'designr_slide_count', 3 ); $slide++ ) : 
             $instance['slide_image_' . $slide]          = ( !empty( $new_instance['slide_image_' . $slide] ) ) ? esc_url_raw( $new_instance['slide_image_' . $slide] ) : '';
             $instance['slide_pre_title_' . $slide]      = ( !empty( $new_instance['slide_pre_title_' . $slide] ) ) ? wp_strip_all_tags( $new_instance['slide_pre_title_' . $slide] ) : '';
             $instance['slide_title_' . $slide]          = ( !empty( $new_instance['slide_title_' . $slide] ) ) ? wp_strip_all_tags( $new_instance['slide_title_' . $slide] ) : '';
