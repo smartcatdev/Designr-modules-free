@@ -38,11 +38,7 @@ class Slider_Widget extends \WP_Widget {
         
         self::$variables[$widget_id] = $slider_instance_settings;
         
-        $output_widget = apply_filters( 'designr_output_widget', true, $widget_id );
-        
-        if( $output_widget ) {
-            include 'Slider_View.php';
-        }
+        include 'Slider_View.php';
         
         
     }
