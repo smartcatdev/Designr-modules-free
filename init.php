@@ -84,6 +84,7 @@ function init() {
    require get_plugin_path() . 'inc/functions-css.php';
    require get_plugin_path() . 'inc/functions-import.php';
    require get_plugin_path() . 'inc/functions-tgmpa.php';
+   require get_plugin_path() . 'inc/functions-widget-visibility.php';
     
 }
 
