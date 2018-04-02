@@ -60,14 +60,20 @@ if ( function_exists( 'wp_get_theme' ) ) {
 }
 
 if( $active_theme_name == 'designr' || $parent_theme_name == 'designr' ) {
-    add_action( 'after_setup_theme', 'designr\designr_modules_init' );
+    
+    add_action( 'after_setup_theme', 'designr\init' );
+    
+    if( ! class_exists( 'OCDI_Plugin' ) ) {
+        add_action( 'plugins_loaded', 'designr\load_importer' );
+    }
+    
 }
 
 /**
  * @since 1.0.0
  * @return null
  */
-function designr_modules_init() {
+function init() {
     
    /**
     * Load Necessary Includes
@@ -76,5 +82,15 @@ function designr_modules_init() {
    require get_plugin_path() . 'inc/functions-widgets.php';
    require get_plugin_path() . 'inc/functions-enqueue.php';
    require get_plugin_path() . 'inc/functions-css.php';
+   require get_plugin_path() . 'inc/functions-import.php';
+   require get_plugin_path() . 'inc/functions-tgmpa.php';
     
+}
+
+/**
+ * @since 1.0.0
+ * @return null
+ */
+function load_importer() {
+    include_once get_plugin_path( 'import/one-click-demo-import.php' );
 }

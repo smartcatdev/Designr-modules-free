@@ -32,3 +32,10 @@ Coming soon Widgets:
 == Changelog == 
 
 = 1.0.0 = initial release
+
+== Credits ==
+
+* One Click Demo Import
+    License:        GPLv3 or later
+    Licese URL:     https://www.gnu.org/licenses/gpl-3.0.en.html
+    URL:            https://github.com/proteusthemes/one-click-demo-import
