@@ -63,9 +63,9 @@ function register_required_plugins() {
     $plugins = array (
         
 //        array(
-//            'name'                  => 'Designr Preset Importer',
-//            'slug'                  => 'one-click-demo-import',
-//            'force_activation'      => true,
+//            'name'                  => 'Widget Options',
+//            'slug'                  => 'widget-options',
+//            'force_activation'      => false,
 //            'is_automatic'          => true,
 //            'required'              => true,
 //        ),

@@ -4,7 +4,13 @@ namespace designr;
 
 add_filter( 'pt-ocdi/import_files', 'designr\import_options' );
 
+add_action( 'pt-ocdi/after_import', 'designr\after_import_setup' );
+
 add_filter( 'pt-ocdi/plugin_page_setup', 'designr\import_page_title' );
+
+add_filter( 'pt-ocdi/regenerate_thumbnails_in_content_import', '__return_false' );
+
+add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
 
 function import_options() {
     
@@ -33,6 +39,39 @@ function import_options() {
     
 }
 
+function after_import_setup( $selected_import ) {
+	// Assign menus to their locations.
+//	$main_menu = get_term_by( 'name', 'Main Menu', 'nav_menu' );
+//
+//	set_theme_mod( 'nav_menu_locations', array(
+//			'main-menu' => $main_menu->term_id,
+//		)
+//	);
+//
+//	// Assign front page and posts page (blog page).
+//	$front_page_id = get_page_by_title( 'Home' );
+//	$blog_page_id  = get_page_by_title( 'Blog' );
+//
+//	update_option( 'show_on_front', 'page' );
+//	update_option( 'page_on_front', $front_page_id->ID );
+//	update_option( 'page_for_posts', $blog_page_id->ID );
+    
+//	echo "This will be displayed on all after imports!";
+//
+//	if ( 'Demo Import 1' === $selected_import['import_file_name'] ) {
+//		echo "This will be displayed only on after import if user selects Demo Import 1";
+//
+//		// Set logo in customizer
+//		set_theme_mod( 'logo_img', get_template_directory_uri() . '/assets/images/logo1.png' );
+//	}
+//	elseif ( 'Demo Import 2' === $selected_import['import_file_name'] ) {
+//		echo "This will be displayed only on after import if user selects Demo Import 2";
+//
+//		// Set logo in customizer
+//		set_theme_mod( 'logo_img', get_template_directory_uri() . '/assets/images/logo2.png' );
+//	}
+
+}
 
 function import_page_title( $title ) {
     

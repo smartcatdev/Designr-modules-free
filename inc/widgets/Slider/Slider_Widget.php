@@ -12,7 +12,7 @@ class Slider_Widget extends \WP_Widget {
             'designr_slider',
             __( 'Designr: Slider', 'designr' ),
             array(
-                'description' => __( 'A slider banner.', 'designr' ),
+                'description' => __( 'A re-usable & customizable slider widget.', 'designr' ),
             )
         );
         
