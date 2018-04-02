@@ -1,8 +1,6 @@
 <?php
 
-/**
- * Load each widget class file
- */
+namespace designr;
 
 // Jumbotron
-require_once \designr\get_plugin_path() . 'inc/widgets/Slider/Slider_Widget.php';
+require_once get_plugin_path() . 'inc/widgets/Slider/Slider_Widget.php';

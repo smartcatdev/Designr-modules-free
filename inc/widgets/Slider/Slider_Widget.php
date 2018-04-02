@@ -12,7 +12,7 @@ class Slider_Widget extends \WP_Widget {
             'designr_slider',
             __( 'Designr: Slider', 'designr' ),
             array(
-                'description' => __( 'A slider banner.', 'designr' ),
+                'description' => __( 'A re-usable & customizable slider widget.', 'designr' ),
             )
         );
         
@@ -41,6 +41,7 @@ class Slider_Widget extends \WP_Widget {
         
         include 'Slider_View.php';
         
+        
     }
 
     public function form( $instance ) {
@@ -64,14 +65,13 @@ class Slider_Widget extends \WP_Widget {
             'slider_trans_speed'        => 500,
         );
 
-        for ( $slide = 1; $slide < 4; $slide++ ) : 
-            $defaults['slide_image_' . $slide] = '';
-            $defaults['slide_pre_title_' . $slide] = '';
-            $defaults['slide_title_' . $slide] = '';
-            $defaults['slide_caption_' . $slide] = '';
-            $defaults['slide_button_label_' . $slide] = '';
-            $defaults['slide_button_url_' . $slide] = '';
-            $defaults['slide_overlay_opacity_' . $slide] = .35;
+        for ( $slide = 1; $slide < apply_filters( 'designr_slide_count', 3 ); $slide++ ) : 
+            $defaults['slide_image_' . $slide]  =  '';
+            $defaults['slide_pre_title_' . $slide]  =  '';
+            $defaults['slide_title_' . $slide]  =  '';
+            $defaults['slide_caption_' . $slide]  =  '';
+            $defaults['slide_button_label_' . $slide]  =  '';
+            $defaults['slide_button_url_' . $slide]  =  '';
         endfor;
         
         $instance = wp_parse_args( (array) $instance, $defaults );
@@ -95,7 +95,7 @@ class Slider_Widget extends \WP_Widget {
         $slider_pause_hover         = !empty( $instance['slider_pause_hover'] ) ? true : false;
         $slider_trans_speed         = !empty( $instance['slider_trans_speed'] ) ? $instance['slider_trans_speed'] : 500;
         
-        for ( $slide = 1; $slide < 4; $slide++ ) : 
+        for ( $slide = 1; $slide < apply_filters( 'designr_slide_count', 3 ); $slide++ ) : 
             
             $actual_slides[$slide] = array (
                 'image'             => !empty( $instance['slide_image_' . $slide] ) ? $instance['slide_image_' . $slide] : '',
@@ -307,7 +307,7 @@ class Slider_Widget extends \WP_Widget {
         
         echo '<h2>' . __( 'Slides', 'designr' ) . '</h2>';
         
-        for ( $slide = 1; $slide < 4; $slide++ ) :
+        for ( $slide = 1; $slide < apply_filters( 'designr_slide_count', 3 ); $slide++ ) :
             
             echo '<div class="slide-detail-wrap">';
         
@@ -383,14 +383,14 @@ class Slider_Widget extends \WP_Widget {
         $instance['slider_autoplay_speed']      =  ( !empty( $new_instance['slider_autoplay_speed'] ) ) ? intval( $new_instance['slider_autoplay_speed'] ) : '';
         $instance['slider_trans_speed']         =  ( !empty( $new_instance['slider_trans_speed'] ) ) ? intval( $new_instance['slider_trans_speed'] ) : '';
         
-        for ( $slide = 1; $slide < 4; $slide++ ) : 
-            $instance['slide_image_' . $slide]              = ( !empty( $new_instance['slide_image_' . $slide] ) ) ? esc_url_raw( $new_instance['slide_image_' . $slide] ) : '';
-            $instance['slide_pre_title_' . $slide]          = ( !empty( $new_instance['slide_pre_title_' . $slide] ) ) ? wp_strip_all_tags( $new_instance['slide_pre_title_' . $slide] ) : '';
-            $instance['slide_title_' . $slide]              = ( !empty( $new_instance['slide_title_' . $slide] ) ) ? wp_strip_all_tags( $new_instance['slide_title_' . $slide] ) : '';
-            $instance['slide_caption_' . $slide]            = ( !empty( $new_instance['slide_caption_' . $slide] ) ) ? sanitize_textarea_field( $new_instance['slide_caption_' . $slide] ) : '';
-            $instance['slide_button_label_' . $slide]       = ( !empty( $new_instance['slide_button_label_' . $slide] ) ) ? wp_strip_all_tags( $new_instance['slide_button_label_' . $slide] ) : '';
-            $instance['slide_button_url_' . $slide]         = ( !empty( $new_instance['slide_button_url_' . $slide] ) ) ? wp_strip_all_tags( $new_instance['slide_button_url_' . $slide] ) : '';
-            $instance['slide_overlay_opacity_' . $slide]    = ( !empty( $new_instance['slide_overlay_opacity_' . $slide] ) ) ? wp_strip_all_tags( $new_instance['slide_overlay_opacity_' . $slide] ) : '';
+        
+        for ( $slide = 1; $slide < apply_filters( 'designr_slide_count', 3 ); $slide++ ) : 
+            $instance['slide_image_' . $slide]          = ( !empty( $new_instance['slide_image_' . $slide] ) ) ? esc_url_raw( $new_instance['slide_image_' . $slide] ) : '';
+            $instance['slide_pre_title_' . $slide]      = ( !empty( $new_instance['slide_pre_title_' . $slide] ) ) ? wp_strip_all_tags( $new_instance['slide_pre_title_' . $slide] ) : '';
+            $instance['slide_title_' . $slide]          = ( !empty( $new_instance['slide_title_' . $slide] ) ) ? wp_strip_all_tags( $new_instance['slide_title_' . $slide] ) : '';
+            $instance['slide_caption_' . $slide]        = ( !empty( $new_instance['slide_caption_' . $slide] ) ) ? sanitize_textarea_field( $new_instance['slide_caption_' . $slide] ) : '';
+            $instance['slide_button_label_' . $slide]   = ( !empty( $new_instance['slide_button_label_' . $slide] ) ) ? wp_strip_all_tags( $new_instance['slide_button_label_' . $slide] ) : '';
+            $instance['slide_button_url_' . $slide]     = ( !empty( $new_instance['slide_button_url_' . $slide] ) ) ? wp_strip_all_tags( $new_instance['slide_button_url_' . $slide] ) : '';
         endfor;
         
         return $instance;

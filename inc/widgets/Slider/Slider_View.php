@@ -31,7 +31,7 @@
 
         <?php endif; ?>
 
-            <?php for ( $slide = 1; $slide < 4; $slide++ ) : ?>
+            <?php for ( $slide = 1; $slide < apply_filters( 'designr_slide_count', 3 ); $slide++ ) : ?>
 
                 <?php if ( !empty( $instance['slide_image_' . $slide] ) ) : ?>
 
