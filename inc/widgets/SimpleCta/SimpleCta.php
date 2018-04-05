@@ -3,22 +3,16 @@
 namespace designr;
 
 // 1. Step 1, edit the class name
-class Widgetfactory_Widget extends \WP_Widget {
+class Simple_Cta_Widget extends \WP_Widget {
 
     function __construct() {
         parent::__construct(
-                'widgetfactory_widget', // 2. Edit the widget ID
-                esc_html__( 'WidgetFactory', 'designr' ), // 3. Edit the Widget Title
-                array ( 'description' => esc_html__( 'Widget Description', 'designr' ), ) // 4. Edit the widget description
+                'simple_cta_widget', // 2. Edit the widget ID
+                esc_html__( 'Designr: Simple CTA', 'designr' ), // 3. Edit the Widget Title
+                array ( 'description' => esc_html__( 'A simple call to action', 'designr' ), ) // 4. Edit the widget description
         );
         add_action( 'admin_footer', array ( $this, 'media_fields' ) );
-
-        // media upload
         add_action( 'customize_controls_print_footer_scripts', array ( $this, 'media_fields' ) );
-
-        //color picker
-        add_action( 'admin_enqueue_scripts', array ( $this, 'enqueue_scripts' ) );
-        add_action( 'admin_footer-widgets.php', array ( $this, 'print_scripts' ), 9999 );
     }
 
     /**
@@ -30,127 +24,35 @@ class Widgetfactory_Widget extends \WP_Widget {
      */
     private $widget_fields = array (
         array (
-            'label' => 'Text Field',
-            'id' => 'textfield_61055',
-            'default' => 'Text field default',
+            'label' => 'CTA Title',
+            'id' => 'cta_title',
+            'default' => 'This is the CTA title',
             'type' => 'text',
         ),
         array (
-            'label' => 'Text Area',
-            'id' => 'textarea_76714',
-            'default' => 'Text area default',
-            'type' => 'textarea',
+            'label' => 'CTA Button Text',
+            'id' => 'cta_btn_text',
+            'default' => 'Click here',
+            'type' => 'text',
         ),
-        array (
-            'label' => 'Checkbox',
-            'id' => 'checkbox_75243',
-            'default' => '1',
-            'type' => 'checkbox',
-        ),
-        array (
-            'label' => 'Image upload',
-            'id' => 'imageupload_82814',
-            'default'   => '',
-            'type' => 'media',
-        ),
-        array (
-            'label' => 'Email',
-            'id' => 'email_39459',
-            'default' => 'admin@smartcat.ca',
-            'type' => 'email',
-        ),
-        array (
-            'label' => 'Email',
-            'id' => 'email_39412',
-            'default' => 'admin@smartcat.ca',
-            'type' => 'email',
-        ),
-        array (
-            'label' => 'Email',
-            'id' => 'email_59412',
-            'default' => 'admin@smartcat.ca',
-            'type' => 'email',
-        ),
+
         array (
             'label' => 'URL',
-            'id' => 'url_61666',
+            'id' => 'cta_btn_url',
             'default' => 'https://smartcatdesign.net',
             'type' => 'url',
         ),
-        array (
-            'label' => 'Password',
-            'id' => 'password_33742',
-            'default' => 'password',
-            'type' => 'password',
-        ),
-        array (
-            'label' => 'Number',
-            'id' => 'number_87178',
-            'default' => '9',
-            'type' => 'number',
-        ),
-        array (
-            'label' => 'Telephone',
-            'id' => 'telephone_31629',
-            'default' => '8881239898',
-            'type' => 'tel',
-        ),
-        array (
-            'label' => 'Date',
-            'id' => 'date_35159',
-            'default' => '01-01-2018',
-            'type' => 'date',
-        ),
-        array (
-            'label' => 'Color',
-            'id' => 'color1',
-            'default'   => 'cc0000',
-            'type' => 'colorpicker',
-        ),
+
     );
-
-    public function enqueue_scripts( $hook_suffix ) {
-
-        wp_enqueue_script( 'wp-color-picker' );
-        wp_enqueue_style( 'wp-color-picker' );
-        wp_enqueue_script( 'underscore' );
-    }
-
-    public function print_scripts() {
-        ?>
-        <script>
-            (function ($) {
-                function initColorPicker(widget) {
-                    widget.find('.color-picker').wpColorPicker({
-                        change: _.throttle(function () { // For Customizer
-                            $(this).trigger('change');
-                        }, 3000)
-                    });
-                }
-
-                function onFormUpdate(event, widget) {
-                    initColorPicker(widget);
-                }
-
-                $(document).on('widget-added widget-updated', onFormUpdate);
-
-                $(document).ready(function () {
-                    $('#widgets-right .widget:has(.color-picker)').each(function () {
-                        initColorPicker($(this));
-                    });
-                });
-            }(jQuery));
-        </script>
-        <?php
-    }
 
     /**
      * 6. HTML code your frontend output here
      * or include a partial where the frontend output is
      */
     public function widget( $args, $instance ) {
+        
+        include 'simple_cta_view.php';
 
-        include 'widget_factory_view.php';
     }
 
     /**
@@ -195,10 +97,7 @@ class Widgetfactory_Widget extends \WP_Widget {
         $output = '';
         foreach ( $this->widget_fields as $widget_field ) {
             $widget_value = !empty( $instance[ $widget_field[ 'id' ] ] ) ? $instance[ $widget_field[ 'id' ] ] : esc_html__( $widget_field[ 'default' ], 'designr' );
-            
             switch ( $widget_field[ 'type' ] ) {
-                
-                
                 case 'media':
                     $output .= '<p>';
                     $output .= '<label for="' . esc_attr( $this->get_field_id( $widget_field[ 'id' ] ) ) . '">' . esc_attr( $widget_field[ 'label' ], 'designr' ) . ':</label> ';
@@ -218,18 +117,11 @@ class Widgetfactory_Widget extends \WP_Widget {
                     $output .= '<textarea class="widefat" id="' . esc_attr( $this->get_field_id( $widget_field[ 'id' ] ) ) . '" name="' . esc_attr( $this->get_field_name( $widget_field[ 'id' ] ) ) . '" rows="6" cols="6" value="' . esc_attr( $widget_value ) . '">' . $widget_value . '</textarea>';
                     $output .= '</p>';
                     break;
-                case 'colorpicker': 
-                    $output .= '<p>';
-                    $output .= '<label for="' . esc_attr( $this->get_field_id( $widget_field[ 'id' ] ) ) . '">' . esc_attr( $widget_field[ 'label' ], 'designr' ) . ':</label> ';
-                    $output .= '<input class="widefat color-picker" id="' . esc_attr( $this->get_field_id( $widget_field[ 'id' ] ) ) . '" name="' . esc_attr( $this->get_field_name( $widget_field[ 'id' ] ) ) . '" type="' . $widget_field[ 'type' ] . '" value="' . esc_attr( $widget_value ) . '">';
-                    $output .= '</p>';
-                    break;
                 default:
                     $output .= '<p>';
                     $output .= '<label for="' . esc_attr( $this->get_field_id( $widget_field[ 'id' ] ) ) . '">' . esc_attr( $widget_field[ 'label' ], 'designr' ) . ':</label> ';
                     $output .= '<input class="widefat" id="' . esc_attr( $this->get_field_id( $widget_field[ 'id' ] ) ) . '" name="' . esc_attr( $this->get_field_name( $widget_field[ 'id' ] ) ) . '" type="' . $widget_field[ 'type' ] . '" value="' . esc_attr( $widget_value ) . '">';
                     $output .= '</p>';
-                    break;
             }
         }
         echo $output;
@@ -239,18 +131,6 @@ class Widgetfactory_Widget extends \WP_Widget {
      * this will handle form output
      */
     public function form( $instance ) {
-
-        // Delete from here if you do not want a Widget Title
-
-        $title = !empty( $instance[ 'title' ] ) ? $instance[ 'title' ] : esc_html__( '', 'designr' );
-        ?>
-        <p>
-            <label for="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>"><?php esc_attr_e( 'Title:', 'designr' ); ?></label>
-            <input class="widefat" id="<?php echo esc_attr( $this->get_field_id( 'title' ) ); ?>" name="<?php echo esc_attr( $this->get_field_name( 'title' ) ); ?>" type="text" value="<?php echo esc_attr( $title ); ?>">
-        </p>
-        <?php
-        // End delete for title removal
-
         $this->field_generator( $instance );
     }
 
@@ -275,8 +155,8 @@ class Widgetfactory_Widget extends \WP_Widget {
 }
 
 // 7. Edit function name and widget name here
-function register_widgetfactory_widget() {
-    register_widget( 'designr\Widgetfactory_Widget' );
+function register_simple_cta_widget() {
+    register_widget( 'designr\Simple_Cta_Widget' );
 }
 
-add_action( 'widgets_init', 'designr\register_widgetfactory_widget' );
+add_action( 'widgets_init', 'designr\register_simple_cta_widget' );
