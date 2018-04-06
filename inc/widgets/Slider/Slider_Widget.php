@@ -72,6 +72,7 @@ class Slider_Widget extends \WP_Widget {
             $defaults['slide_caption_' . $slide]  =  '';
             $defaults['slide_button_label_' . $slide]  =  '';
             $defaults['slide_button_url_' . $slide]  =  '';
+            $defaults['slide_overlay_opacity_' . $slide]  =  '';
         endfor;
         
         $instance = wp_parse_args( (array) $instance, $defaults );
@@ -316,10 +317,10 @@ class Slider_Widget extends \WP_Widget {
                 echo '<div class="slide-detail-inner">';
                 
                     // Image (URL)
-                    echo '  <p class="smartcat-uploader">';
+                    echo '  <p class="designr-uploader">';
                     echo '      <label for="' . esc_attr( $this->get_field_id( 'slide_image_' . $slide ) ) . '" class="designr-control-title ' . 'slide_image_' . $slide . '_label">' . __( 'Image', 'designr' ) . '</label>';
                     echo '      <input type="text" id="' . esc_attr( $this->get_field_id( 'slide_image_' . $slide ) ) . '" name="' . esc_attr( $this->get_field_name( 'slide_image_' . $slide ) ) . '" class="widefat" value="' . esc_url( $actual_slides[$slide]['image'] ) . '">';
-                    echo '      <a href="#" class="button secondary smartcat-upload">' . __( 'Upload', 'designr' ) . '</a>';
+                    echo '      <a href="#" class="button secondary designr-upload">' . __( 'Upload', 'designr' ) . '</a>';
                     echo '  </p>';
                     
                     // Pre-Title (Text)
@@ -354,7 +355,7 @@ class Slider_Widget extends \WP_Widget {
                     
                     // Overlay Opacity (Decimal)
                     echo '<p>';
-                    echo '	<label for="' . esc_attr( $this->get_field_id( 'slide_overlay_opacity_' . $slide ) ) . '" class="designr-control-title ' . 'slider_overlay_opacity' . '_label">' . __( 'Dark Tint Amount', 'designr' ) . '</label>';
+                    echo '	<label for="' . esc_attr( $this->get_field_id( 'slide_overlay_opacity_' . $slide ) ) . '" class="designr-control-title ' . 'slide_overlay_opacity' . '_label">' . __( 'Dark Tint Amount', 'designr' ) . '</label>';
                     echo '	<input type="range" min="0.0" max="1.0" step=".05" id="' . esc_attr( $this->get_field_id( 'slide_overlay_opacity_' . $slide ) ) . '" name="' . esc_attr( $this->get_field_name( 'slide_overlay_opacity_' . $slide ) ) . '" class="widefat" value="' . esc_attr( $actual_slides[$slide]['overlay_opacity'] ) . '">';
                     echo '</p>';
             
@@ -385,12 +386,13 @@ class Slider_Widget extends \WP_Widget {
         
         
         for ( $slide = 1; $slide < apply_filters( 'designr_slide_count', 3 ); $slide++ ) : 
-            $instance['slide_image_' . $slide]          = ( !empty( $new_instance['slide_image_' . $slide] ) ) ? esc_url_raw( $new_instance['slide_image_' . $slide] ) : '';
-            $instance['slide_pre_title_' . $slide]      = ( !empty( $new_instance['slide_pre_title_' . $slide] ) ) ? wp_strip_all_tags( $new_instance['slide_pre_title_' . $slide] ) : '';
-            $instance['slide_title_' . $slide]          = ( !empty( $new_instance['slide_title_' . $slide] ) ) ? wp_strip_all_tags( $new_instance['slide_title_' . $slide] ) : '';
-            $instance['slide_caption_' . $slide]        = ( !empty( $new_instance['slide_caption_' . $slide] ) ) ? sanitize_textarea_field( $new_instance['slide_caption_' . $slide] ) : '';
-            $instance['slide_button_label_' . $slide]   = ( !empty( $new_instance['slide_button_label_' . $slide] ) ) ? wp_strip_all_tags( $new_instance['slide_button_label_' . $slide] ) : '';
-            $instance['slide_button_url_' . $slide]     = ( !empty( $new_instance['slide_button_url_' . $slide] ) ) ? wp_strip_all_tags( $new_instance['slide_button_url_' . $slide] ) : '';
+            $instance['slide_image_' . $slide]              = ( !empty( $new_instance['slide_image_' . $slide] ) ) ? esc_url_raw( $new_instance['slide_image_' . $slide] ) : '';
+            $instance['slide_pre_title_' . $slide]          = ( !empty( $new_instance['slide_pre_title_' . $slide] ) ) ? wp_strip_all_tags( $new_instance['slide_pre_title_' . $slide] ) : '';
+            $instance['slide_title_' . $slide]              = ( !empty( $new_instance['slide_title_' . $slide] ) ) ? wp_strip_all_tags( $new_instance['slide_title_' . $slide] ) : '';
+            $instance['slide_caption_' . $slide]            = ( !empty( $new_instance['slide_caption_' . $slide] ) ) ? sanitize_textarea_field( $new_instance['slide_caption_' . $slide] ) : '';
+            $instance['slide_button_label_' . $slide]       = ( !empty( $new_instance['slide_button_label_' . $slide] ) ) ? wp_strip_all_tags( $new_instance['slide_button_label_' . $slide] ) : '';
+            $instance['slide_button_url_' . $slide]         = ( !empty( $new_instance['slide_button_url_' . $slide] ) ) ? wp_strip_all_tags( $new_instance['slide_button_url_' . $slide] ) : '';
+            $instance['slide_overlay_opacity_' . $slide]    = ( !empty( $new_instance['slide_overlay_opacity_' . $slide] ) ) ? wp_strip_all_tags( $new_instance['slide_overlay_opacity_' . $slide] ) : '';
         endfor;
         
         return $instance;

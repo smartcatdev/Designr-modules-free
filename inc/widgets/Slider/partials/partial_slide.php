@@ -15,7 +15,7 @@
     <div class="slide" style="height: 42vw; background-image: url(<?php echo esc_url( $instance['slide_image_' . $slide] ); ?>);">
 
 <?php endif; ?>
-
+        
     <?php if ( empty( $instance['slide_overlay_opacity_' . $slide] ) ) : ?>
         <div class="slide-inner">
     <?php else : ?>    
