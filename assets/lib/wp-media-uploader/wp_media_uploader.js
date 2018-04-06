@@ -9,29 +9,29 @@
         
         var settings = $.extend({
             
-            target : '.smartcat-uploader', // The class wrapping the textbox
+            target : '.designr-uploader', // The class wrapping the textbox
             uploaderTitle : 'Select or upload image', // The title of the media upload popup
             uploaderButton : 'Set image', // the text of the button in the media upload popup
             multiple : false, // Allow the user to select multiple images
             buttonText : 'Upload image', // The text of the upload button
-            buttonClass : '.smartcat-upload', // the class of the upload button
+            buttonClass : '.designr-upload', // the class of the upload button
             previewSize : '150px', // The preview image size
             modal : false, // is the upload button within a bootstrap modal ?
             buttonStyle : { // style the button
-                color : '#fff',
-                background : '#3bafda',
-                fontSize : '16px',                
-                padding : '10px 15px',                
+//                color : '#ff0000',
+//                background : '#3bafda',
+//                fontSize : '16px',                
+//                padding : '10px 15px',                
             },
             
         }, options );
         
-        console.log( settings.target );
+//        console.log( settings.target );
         
-        $( settings.target ).append( '<a href="#" class="' + settings.buttonClass.replace('.','') + '">' + settings.buttonText + '</a>' );
+//        $( settings.target ).append( '<a href="#" class="' + settings.buttonClass.replace('.','') + '">' + settings.buttonText + '</a>' );
         $( settings.target ).append('<div><br><img src="#" style="display: none; width: ' + settings.previewSize + '"/></div>')
         
-        $( settings.buttonClass ).css( settings.buttonStyle );
+//        $( settings.buttonClass ).css( settings.buttonStyle );
         
         $('body').on('click', settings.buttonClass, function(e) {
             
