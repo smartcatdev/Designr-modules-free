@@ -23,59 +23,59 @@ class Heading extends \AcidWidget{
         */
        $fields = array (
            
-           array(
+           'heading_content'    => array(
                'label'  => 'Content',
                'id'     => '',
                'default'=> '',
                'type'   => 'section',
            ),
            
-           array (
+           'title'  => array (
                'label' => 'Title',
-               'id' => 'heading_title',
+               'id' => 'title',
                'default' => '',
                'type' => 'text',
            ),
-           array (
+           'subtitle'   => array (
                'label' => 'Sub-title',
-               'id' => 'heading_subtitle',
+               'id' => 'subtitle',
                'default' => '',
                'type' => 'textarea',
            ),
            
-           array(
+           'heading_appearance' => array(
                'label'  => 'Appearance',
                'id'     => '',
                'default'=> '',
                'type'   => 'section',
            ),           
-           array (
+           'bg_color'   => array (
                'label' => 'Background color',
-               'id' => 'heading_bg_color',
+               'id' => 'bg_color',
                'default' => '#ffffff',
                'type' => 'colorpicker',
            ),
-           array(
+           'text_align' => array(
                'label'  => 'Text align',
-               'id'     => 'heading_text_align',
-               'default'=> 'centered',
+               'id'     => 'text_align',
+               'default'=> 'center',
                'type'   => 'select',
                'options'=> array(
                    'left'       => 'Left',
                    'right'      => 'Right',
-                   'centered'   => 'Centered',
+                   'center'   => 'Centered',
                )
            ),
-           array (
+           'text_color' => array (
                'label' => 'Text color',
-               'id' => 'heading_text_color',
+               'id' => 'text_color',
                'default' => '#333333',
                'type' => 'colorpicker',
            ),
-           array(
+           'padding'    => array(
                'label'  => 'Vertical Padding',
-               'id'     => 'heading_padding',
-               'default'=> '30',
+               'id'     => 'padding',
+               'default'=> '90',
                'type'   => 'number'
            ),
 

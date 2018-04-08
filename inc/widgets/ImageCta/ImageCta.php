@@ -23,55 +23,55 @@ class ImageCta extends \AcidWidget{
         */
        $fields = array (
            
-           array(
+           'cta-content'    => array(
                'label'  => 'Content',
                'id'     => '',
                'default'=> '',
                'type'   => 'section',
            ),
            
-           array(
+           'cta_image'  => array(
                'label'  => 'Image',
                'id'     => 'cta_image',
                'default'=> '',
                'type'   => 'media'
            ),
            
-           array (
+           'cta_title'  => array (
                'label' => 'Title',
                'id' => 'cta_title',
                'default' => '',
                'type' => 'text',
            ),
-           array (
+           'cta_details'    => array (
                'label' => 'Details',
                'id' => 'cta_details',
                'default' => '',
                'type' => 'textarea',
            ),
            
-           array (
+           'cta_btn_text'   => array (
                'label' => 'Button Text',
                'id' => 'cta_btn_text',
                'default' => '',
                'type' => 'text',
            ),
            
-           array (
+           'cta_btn_url'    => array (
                'label' => 'Button URL',
                'id' => 'cta_btn_url',
                'default' => '',
                'type' => 'url',
            ),
            
-           array(
+           'cta-appearance' => array(
                'label'  => 'Appearance',
                'id'     => '',
                'default'=> '',
                'type'   => 'section',
            ),
            
-           array(
+           'cta_image_location' => array(
                'label'  => 'Image Location',
                'id'     => 'cta_image_location',
                'default'=> '',
@@ -83,7 +83,7 @@ class ImageCta extends \AcidWidget{
                )
            ),
 
-           array(
+           'cta_text_align' => array(
                'label'  => 'Text align',
                'id'     => 'cta_text_align',
                'default'=> '',
@@ -95,26 +95,26 @@ class ImageCta extends \AcidWidget{
                )
            ),
            
-           array(
+           'cta_image_rounded'  => array(
                'label'  => 'Rounded image?',
                'id'     => 'cta_image_rounded',
                'default'=> '',
                'type'   => 'checkbox'
            ),
       
-           array (
+           'cta_bg_color'   => array (
                'label' => 'Background color',
                'id' => 'cta_bg_color',
                'default' => '#ffffff',
                'type' => 'colorpicker',
            ),
-           array (
+           'cta_text_color' => array (
                'label' => 'Text color',
                'id' => 'cta_text_color',
                'default' => '#333333',
                'type' => 'colorpicker',
            ),
-           array(
+           'cta_padding'    => array(
                'label'  => 'Vertical Padding',
                'id'     => 'cta_padding',
                'default'=> '30',

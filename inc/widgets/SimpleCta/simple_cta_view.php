@@ -32,11 +32,17 @@ $this->css['#'. $args['widget_id'] . ' p'] = array(
     
     <div class="container">
         
-        <?php if( 'float' == $values['cta_layout'] ) :
-            render_template( 'SimpleCta/partials/partial_float.php', $values );
-        else :
-            render_template( 'SimpleCta/partials/partial_stacked.php', $values );
-        endif; ?>
+        <div class="row">
+            <?php 
+            if( 'float' == $values['cta_layout'] ) :
+                render_template( 'SimpleCta/partials/partial_float.php', $values );
+            else :
+                render_template( 'SimpleCta/partials/partial_stacked.php', $values );
+            endif;
+            ?>    
+        </div>
+        
+        
  
         
     </div>
