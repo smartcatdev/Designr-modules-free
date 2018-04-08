@@ -20,7 +20,7 @@ $this->css['#'. $args['widget_id'] . ' h2'] = array(
     'color'   => $values['cta_text_color']
 );
 
-$this->css['#'. $args['widget_id'] . ' p'] = array(
+$this->css['#'. $args['widget_id'] . ' h6'] = array(
     'color'   => $values['cta_text_color']
 );
 

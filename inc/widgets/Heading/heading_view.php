@@ -11,7 +11,7 @@ $this->css['#'. $args['widget_id'] . ' h2'] = array(
     'color'   => $values['text_color']
 );
 
-$this->css['#'. $args['widget_id'] . ' p'] = array(
+$this->css['#'. $args['widget_id'] . ' h6'] = array(
     'color'   => $values['text_color']
 );
 
@@ -32,7 +32,7 @@ $this->css['#'. $args['widget_id'] . ' p'] = array(
                 <?php endif; ?>
                 
                 <?php if( $values['subtitle'] ) : ?>
-                    <h6><?php attr( $values['subtitle'] ); ?></h6>
+                    <h6><?php html( $values['subtitle'] ); ?></h6>
                 <?php endif; ?>
                 
             </div>
