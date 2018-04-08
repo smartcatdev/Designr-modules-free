@@ -30,36 +30,36 @@ class ImageCta extends \AcidWidget{
                'type'   => 'section',
            ),
            
-           'cta_image'  => array(
+           'image'  => array(
                'label'  => 'Image',
-               'id'     => 'cta_image',
+               'id'     => 'image',
                'default'=> '',
                'type'   => 'media'
            ),
            
-           'cta_title'  => array (
+           'title'  => array (
                'label' => 'Title',
-               'id' => 'cta_title',
+               'id' => 'title',
                'default' => '',
                'type' => 'text',
            ),
-           'cta_details'    => array (
+           'details'    => array (
                'label' => 'Details',
-               'id' => 'cta_details',
+               'id' => 'details',
                'default' => '',
                'type' => 'textarea',
            ),
            
-           'cta_btn_text'   => array (
+           'btn_text'   => array (
                'label' => 'Button Text',
-               'id' => 'cta_btn_text',
+               'id' => 'btn_text',
                'default' => '',
                'type' => 'text',
            ),
            
-           'cta_btn_url'    => array (
+           'btn_url'    => array (
                'label' => 'Button URL',
-               'id' => 'cta_btn_url',
+               'id' => 'btn_url',
                'default' => '',
                'type' => 'url',
            ),
@@ -71,9 +71,9 @@ class ImageCta extends \AcidWidget{
                'type'   => 'section',
            ),
            
-           'cta_image_location' => array(
+           'image_location' => array(
                'label'  => 'Image Location',
-               'id'     => 'cta_image_location',
+               'id'     => 'image_location',
                'default'=> '',
                'type'   => 'select',
                'options'=> array(
@@ -83,40 +83,46 @@ class ImageCta extends \AcidWidget{
                )
            ),
 
-           'cta_text_align' => array(
+           'text_align' => array(
                'label'  => 'Text align',
-               'id'     => 'cta_text_align',
+               'id'     => 'text_align',
                'default'=> '',
                'type'   => 'select',
                'options'=> array(
                    'left'       => 'Left',
                    'right'      => 'Right',
-                   'centered'   => 'Centered',
+                   'center'   => 'Centered',
                )
            ),
            
-           'cta_image_rounded'  => array(
-               'label'  => 'Rounded image?',
-               'id'     => 'cta_image_rounded',
+           'image_rounded'  => array(
+               'label'  => 'Rounded image? (must be square 1:1 image)',
+               'id'     => 'image_rounded',
                'default'=> '',
                'type'   => 'checkbox'
            ),
-      
-           'cta_bg_color'   => array (
+           'btn_style'  => array(
+               'label'  => 'Button style',
+               'id'     => 'cta_btn_style',
+               'default'=> 'primary',
+               'type'   => 'select',
+               'options'=> button_options()
+           ),
+           'bg_color'   => array (
                'label' => 'Background color',
-               'id' => 'cta_bg_color',
+               'id' => 'bg_color',
                'default' => '#ffffff',
                'type' => 'colorpicker',
            ),
-           'cta_text_color' => array (
+           'text_color' => array (
                'label' => 'Text color',
-               'id' => 'cta_text_color',
+               'id' => 'text_color',
                'default' => '#333333',
                'type' => 'colorpicker',
            ),
-           'cta_padding'    => array(
+           'padding'    => array(
                'label'  => 'Vertical Padding',
-               'id'     => 'cta_padding',
+               'id'     => 'padding',
                'default'=> '30',
                'type'   => 'number'
            ),

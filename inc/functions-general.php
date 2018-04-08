@@ -10,6 +10,10 @@ function url( $url ) {
     echo esc_url( $url );
 }
 
+function html( $html ) {
+    echo html_entity_decode( $html );
+}
+
 function button( $text, $url, $class = 'button' ) { 
     
     if( $text ) : ?> 
@@ -51,14 +55,13 @@ function render_template( $file, $args, $once = false ) {
         
         extract( $args );
         
+        
         if( $once ) {
             include_once $file;
         }else{
             include $file;
         }
         
-    }else{
-        echo $file;
     }
     
 }
