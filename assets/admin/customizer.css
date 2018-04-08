@@ -220,8 +220,13 @@ label.designr-control-title {
     content: "\f169";
     color: #2195f3;
 }
+#available-widgets [class*=designr_image_cta] .widget-title:before{
+    content: "\f128";
+    color: #2195f3;
+}
 
 #available-widgets [class*=designr_simple_cta],
+#available-widgets [class*=designr_image_cta],
 #available-widgets [class*=designr_slider]{
     background: #f3f3f5;
     border-left: 4px solid #f3f3f5;

@@ -2,15 +2,15 @@
 
 namespace designr;
 
-class SimpleCta extends \AcidWidget{
+class ImageCta extends \AcidWidget{
     
     function __construct() {
         
         $args = array(
-            'id'            => 'designr_simple_cta', // 1. Edit the widget ID
-            'title'         => 'Designr: Simple CTA', // 2. Edit the Widget Title
-            'description'   => 'Creates a simple horizontal call to action with title, subtitle and button', // 3. Edit the widget description
-            'output_file'   => get_plugin_path( 'inc/widgets/SimpleCta/simple_cta_view.php' ), // 4. Set the location of the frontend widget display
+            'id'            => 'designr_image_cta', // 1. Edit the widget ID
+            'title'         => 'Designr: Image CTA', // 2. Edit the Widget Title
+            'description'   => 'Output a single image, with some text in various ways', // 3. Edit the widget description
+            'output_file'   => get_plugin_path( 'inc/widgets/ImageCta/image_cta_view.php' ), // 4. Set the location of the frontend widget display
             'widget_title'  => false, // 5. Set to True if you want the built in Widget Title to be used
         );
         
@@ -22,83 +22,102 @@ class SimpleCta extends \AcidWidget{
         * This list is a sample of all possible options
         */
        $fields = array (
-           'cta-content'   => array(
+           
+           array(
                'label'  => 'Content',
                'id'     => '',
                'default'=> '',
                'type'   => 'section',
            ),
-           'cta_title' => array (
+           
+           array(
+               'label'  => 'Image',
+               'id'     => 'cta_image',
+               'default'=> '',
+               'type'   => 'media'
+           ),
+           
+           array (
                'label' => 'Title',
                'id' => 'cta_title',
                'default' => '',
                'type' => 'text',
            ),
-           'cta_subtitle'   => array (
-               'label' => 'Sub-title',
-               'id' => 'cta_subtitle',
+           array (
+               'label' => 'Details',
+               'id' => 'cta_details',
                'default' => '',
                'type' => 'textarea',
            ),
-           'cta_btn_text'   => array (
+           
+           array (
                'label' => 'Button Text',
                'id' => 'cta_btn_text',
                'default' => '',
                'type' => 'text',
            ),
-           'cta_btn_url'    => array (
+           
+           array (
                'label' => 'Button URL',
                'id' => 'cta_btn_url',
                'default' => '',
                'type' => 'url',
            ),
-           'cta-appearance'   => array(
+           
+           array(
                'label'  => 'Appearance',
                'id'     => '',
                'default'=> '',
                'type'   => 'section',
            ),
-           'cta_layout' => array(
-               'label'  => 'Layout',
-               'id'     => 'cta_layout',
-               'default'=> 'float',
+           
+           array(
+               'label'  => 'Image Location',
+               'id'     => 'cta_image_location',
+               'default'=> '',
                'type'   => 'select',
                'options'=> array(
-                   'float'      => 'Float',
-                   'stacked'    => 'Stack',
+                   'left'       => 'Left',
+                   'right'      => 'Right',
+                   'stacked'    => 'Stacked',
                )
            ),
-           'cta_text_align' => array(
+
+           array(
                'label'  => 'Text align',
                'id'     => 'cta_text_align',
-               'default'=> 'center',
+               'default'=> '',
                'type'   => 'select',
-               'options'=> alignment_options()
+               'options'=> array(
+                   'left'       => 'Left',
+                   'right'      => 'Right',
+                   'centered'   => 'Centered',
+               )
            ),
-    
-           'cta_btn_style'  => array(
-               'label'  => 'Button style',
-               'id'     => 'cta_btn_style',
-               'default'=> 'primary',
-               'type'   => 'select',
-               'options'=> button_options()
+           
+           array(
+               'label'  => 'Rounded image?',
+               'id'     => 'cta_image_rounded',
+               'default'=> '',
+               'type'   => 'checkbox'
            ),
-           'cta_bg_color'   => array (
+      
+           array (
                'label' => 'Background color',
                'id' => 'cta_bg_color',
                'default' => '#ffffff',
                'type' => 'colorpicker',
            ),
-           'cta_text_color' => array (
+           array (
                'label' => 'Text color',
                'id' => 'cta_text_color',
                'default' => '#333333',
                'type' => 'colorpicker',
            ),
-           'cta_padding'    => array(
+           array(
                'label'  => 'Vertical Padding',
                'id'     => 'cta_padding',
-               'default'=> '60',
+               'default'=> '30',
                'type'   => 'number'
            ),
            
@@ -111,8 +130,8 @@ class SimpleCta extends \AcidWidget{
     
 }
 
-function register_simple_cta() {
-    register_widget( 'designr\SimpleCta' );
+function register_image_cta() {
+    register_widget( 'designr\ImageCta' );
 }
 
-add_action( 'widgets_init', 'designr\register_simple_cta' );
+add_action( 'widgets_init', 'designr\register_image_cta' );
