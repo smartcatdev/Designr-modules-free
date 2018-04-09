@@ -18,9 +18,9 @@ function import_options() {
         array (
             'import_file_name' => 'Demo Import 1',
             'categories' => array ( 'Free' ),
-            'import_file_url' => 'http://www.your_domain.com/ocdi/demo-content.xml',
-            'import_widget_file_url' => 'http://www.your_domain.com/ocdi/widgets.json',
-            'import_customizer_file_url' => 'http://www.your_domain.com/ocdi/customizer.dat',
+            'import_file_url' => get_plugin_url( 'presets/preset1/content.xml' ),
+            'import_widget_file_url' => get_plugin_url( 'presets/preset1/widgets' ),
+            'import_customizer_file_url' => get_plugin_url( 'presets/preset1/customizer' ),
             'import_preview_image_url' => 'https://smartcatdesign.net/wp-content/uploads/edd/Lebanon.jpg',
             'import_notice' => __( 'After you import this demo, you will have to setup the slider separately.', 'your-textdomain' ),
             'preview_url' => 'http://www.your_domain.com/my-demo-1',
