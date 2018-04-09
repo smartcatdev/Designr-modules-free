@@ -91,7 +91,7 @@ class Image_CTA extends \AcidWidget{
                'options'=> array(
                    'left'       => 'Left',
                    'right'      => 'Right',
-                   'center'   => 'Centered',
+                   'center'     => 'Centered',
                )
            ),
            

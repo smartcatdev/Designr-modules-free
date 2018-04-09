@@ -35,9 +35,9 @@ $this->css['#'. $args['widget_id'] . ' h6'] = array(
         <div class="row">
             <?php 
             if( 'float' == $values['cta_layout'] ) :
-                render_template( 'SimpleCta/partials/partial_float.php', $values );
+                render_template( 'Simple_CTA/partials/partial_float.php', $values );
             else :
-                render_template( 'SimpleCta/partials/partial_stacked.php', $values );
+                render_template( 'Simple_CTA/partials/partial_stacked.php', $values );
             endif;
             ?>    
         </div>
