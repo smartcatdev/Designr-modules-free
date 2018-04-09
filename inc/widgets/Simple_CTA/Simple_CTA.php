@@ -105,7 +105,7 @@ class Simple_CTA extends \AcidWidget{
        );
         
         parent::__construct( $args, $fields, array(
-            'designr-simple-cta' => get_plugin_url( 'inc/widgets/Simple_CTA/assets/designr-simple-cta.css' )
+            'designr-simple-cta' => get_plugin_url( 'inc/widgets/Simple_CTA/assets/simple-cta.css' )
         ) );
         
     }

@@ -130,7 +130,7 @@ class Image_CTA extends \AcidWidget{
        );
         
         parent::__construct( $args, $fields, array(
-            'designr-image-cta' => get_plugin_url( 'inc/widgets/Image_CTA/assets/designr-image-cta.css' )
+            'designr-image-cta' => get_plugin_url( 'inc/widgets/Image_CTA/assets/image-cta.css' )
         ) );
         
     }

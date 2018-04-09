@@ -150,7 +150,9 @@ class Video_CTA extends \AcidWidget{
            
         );
         
-        parent::__construct( $args, $fields, null );
+        parent::__construct( $args, $fields, array(
+            'designr-video-cta' => get_plugin_url( 'inc/widgets/Video_CTA/assets/video-cta.css' )
+        ) );
         
     }
     

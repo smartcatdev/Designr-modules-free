@@ -55,11 +55,12 @@ if( 'stacked' == $values['video_location'] ) {
 
 ?>
 
-<div class="designr-module" id="<?php echo esc_attr( $args['widget_id' ] ); ?>">
+<div class="designr-module video-cta" id="<?php echo esc_attr( $args['widget_id' ] ); ?>">
     
     <div class="container">
         
         <div class="row">
+            
             <?php 
             if( 'left' == $values['video_location'] ) :
                 render_template( 'Video_CTA/partials/partial_left.php', $values );
@@ -69,6 +70,7 @@ if( 'stacked' == $values['video_location'] ) {
                 render_template( 'Video_CTA/partials/partial_stacked.php', $values );
             endif;
             ?>    
+            
         </div>
     </div>
     

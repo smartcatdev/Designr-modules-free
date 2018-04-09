@@ -83,7 +83,7 @@ class Heading extends \AcidWidget{
         );
        
         parent::__construct( $args, $fields, array(
-            'designr-heading' => get_plugin_url( 'inc/widgets/Heading/assets/designr-heading.css' )
+            'designr-heading' => get_plugin_url( 'inc/widgets/Heading/assets/heading.css' )
         ) );
         
     }
