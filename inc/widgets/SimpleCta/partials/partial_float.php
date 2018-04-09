@@ -2,10 +2,6 @@
 namespace designr;
 ?>
 
-<style type="text/css" scoped>
-    
-</style>
-
 <div class="col-sm-6">
     <h2><?php attr( $cta_title ); ?></h2>
     <h6><?php html( $cta_subtitle ); ?></h6>

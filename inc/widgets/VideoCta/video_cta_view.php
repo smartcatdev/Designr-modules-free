@@ -54,52 +54,6 @@ if( 'stacked' == $values['video_location'] ) {
 }
 
 ?>
-<script>
-
-//var tag = document.createElement('script');
-//
-//tag.src = "https://www.youtube.com/iframe_api";
-//var firstScriptTag = document.getElementsByTagName('script')[0];
-//firstScriptTag.parentNode.insertBefore( tag, firstScriptTag );
-//
-//var player;
-//function onYouTubeIframeAPIReady() {
-//    
-//    player = new YT.Player( document.querySelector( '#<?php echo esc_attr( $args['widget_id' ] ); ?> .player' ), {
-//        height: '<?php echo $values['height'] ?>px',
-//        width: '100%',
-//        videoId: '<?php echo $values['video'] ?>',
-//        playerVars : {
-//            autoplay: <?php echo intval( $values['autoplay'] ) ?>,
-//            controls: <?php echo intval( $values['controls'] ) ?>,
-//            cc_load_policy: 0,
-//            iv_load_policy: 3,
-//            loop: <?php echo intval( $values['loop'] ) ?>,
-//            rel: 0,
-//            showinfo: 0,
-//            start: 0
-//        },
-//        events: {
-//            'onReady': onPlayerReady,
-//            'onStateChange': onPlayerStateChange,
-//        }
-//    });
-//}
-//
-//
-//function onPlayerReady(event) {
-////        event.target.playVideo();
-//}
-//
-//var done = false;
-//function onPlayerStateChange(event) {
-//
-//}
-//function stopVideo() {
-//    player.stopVideo();
-//}
-//</script>
-
 
 <div class="designr-module" id="<?php echo esc_attr( $args['widget_id' ] ); ?>">
     

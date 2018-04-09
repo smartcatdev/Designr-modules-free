@@ -42,9 +42,6 @@ $this->css['#'. $args['widget_id'] . ' h6'] = array(
             ?>    
         </div>
         
-        
- 
-        
     </div>
     
 </div>

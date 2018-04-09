@@ -3,11 +3,10 @@ namespace designr;
 ?>
 <div class="col-sm-6">
     <div class="video-cta-wrapper">
-        
         <iframe src="https://www.youtube.com/embed/<?php attr( $video ) ?>?autoplay=<?php attr( $autoplay ) ?>&showinfo=0&controls=0&loop=<?php attr( $loop ) ?>"
                 width="100%"
-                height="<?php attr( $height ) ?>" allow="autoplay; encrypted-media"></iframe>
-<!--        bebp60YDt60-->
+                height="<?php attr( $height ) ?>" allow="autoplay; encrypted-media">
+        </iframe>
     </div>
     
 </div>
