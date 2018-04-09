@@ -154,7 +154,6 @@ class Video_CTA extends \AcidWidget{
         
     }
     
-    
 }
 
 function register_video_cta() {

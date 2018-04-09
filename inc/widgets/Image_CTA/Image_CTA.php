@@ -23,60 +23,60 @@ class Image_CTA extends \AcidWidget{
         */
        $fields = array (
            
-           'cta-content'    => array(
-               'label'  => 'Content',
-               'id'     => '',
-               'default'=> '',
-               'type'   => 'section',
+           'cta-content' => array(
+               'label'      => 'Content',
+               'id'         => '',
+               'default'    => '',
+               'type'       => 'section',
            ),
            
-           'image'  => array(
-               'label'  => 'Image',
-               'id'     => 'image',
-               'default'=> '',
-               'type'   => 'media'
+           'image' => array(
+               'label'      => 'Image',
+               'id'         => 'image',
+               'default'    => '',
+               'type'       => 'media'
            ),
            
-           'title'  => array (
-               'label' => 'Title',
-               'id' => 'title',
-               'default' => '',
-               'type' => 'text',
+           'title' => array (
+               'label'      => 'Title',
+               'id'         => 'title',
+               'default'    => '',
+               'type'       => 'text',
            ),
-           'details'    => array (
-               'label' => 'Details',
-               'id' => 'details',
-               'default' => '',
-               'type' => 'textarea',
-           ),
-           
-           'btn_text'   => array (
-               'label' => 'Button Text',
-               'id' => 'btn_text',
-               'default' => '',
-               'type' => 'text',
+           'details' => array (
+               'label'      => 'Details',
+               'id'         => 'details',
+               'default'    => '',
+               'type'       => 'textarea',
            ),
            
-           'btn_url'    => array (
-               'label' => 'Button URL',
-               'id' => 'btn_url',
-               'default' => '',
-               'type' => 'url',
+           'btn_text' => array (
+               'label'      => 'Button Text',
+               'id'         => 'btn_text',
+               'default'    => '',
+               'type'       => 'text',
+           ),
+           
+           'btn_url' => array (
+               'label'      => 'Button URL',
+               'id'         => 'btn_url',
+               'default'    => '',
+               'type'       => 'url',
            ),
            
            'cta-appearance' => array(
-               'label'  => 'Appearance',
-               'id'     => '',
-               'default'=> '',
-               'type'   => 'section',
+               'label'      => 'Appearance',
+               'id'         => '',
+               'default'    => '',
+               'type'       => 'section',
            ),
            
            'image_location' => array(
-               'label'  => 'Image Location',
-               'id'     => 'image_location',
-               'default'=> '',
-               'type'   => 'select',
-               'options'=> array(
+               'label'      => 'Image Location',
+               'id'         => 'image_location',
+               'default'    => '',
+               'type'       => 'select',
+               'options'    => array(
                    'left'       => 'Left',
                    'right'      => 'Right',
                    'stacked'    => 'Stacked',
@@ -84,52 +84,54 @@ class Image_CTA extends \AcidWidget{
            ),
 
            'text_align' => array(
-               'label'  => 'Text align',
-               'id'     => 'text_align',
-               'default'=> '',
-               'type'   => 'select',
-               'options'=> array(
+               'label'      => 'Text align',
+               'id'         => 'text_align',
+               'default'    => '',
+               'type'       => 'select',
+               'options'    => array(
                    'left'       => 'Left',
                    'right'      => 'Right',
                    'center'     => 'Centered',
                )
            ),
            
-           'image_rounded'  => array(
-               'label'  => 'Rounded image? (must be square 1:1 image)',
-               'id'     => 'image_rounded',
-               'default'=> '',
-               'type'   => 'checkbox'
+           'image_rounded' => array(
+               'label'      => 'Rounded image? (must be square 1:1 image)',
+               'id'         => 'image_rounded',
+               'default'    => '',
+               'type'       => 'checkbox'
            ),
-           'btn_style'  => array(
-               'label'  => 'Button style',
-               'id'     => 'cta_btn_style',
-               'default'=> 'primary',
-               'type'   => 'select',
-               'options'=> button_options()
+           'btn_style' => array(
+               'label'      => 'Button style',
+               'id'         => 'cta_btn_style',
+               'default'    => 'primary',
+               'type'       => 'select',
+               'options'    => button_options()
            ),
-           'bg_color'   => array (
-               'label' => 'Background color',
-               'id' => 'bg_color',
-               'default' => '#ffffff',
-               'type' => 'colorpicker',
+           'bg_color' => array (
+               'label'      => 'Background color',
+               'id'         => 'bg_color',
+               'default'    => '#ffffff',
+               'type'       => 'colorpicker',
            ),
            'text_color' => array (
-               'label' => 'Text color',
-               'id' => 'text_color',
-               'default' => '#333333',
-               'type' => 'colorpicker',
+               'label'      => 'Text color',
+               'id'         => 'text_color',
+               'default'    => '#333333',
+               'type'       => 'colorpicker',
            ),
-           'padding'    => array(
-               'label'  => 'Vertical Padding',
-               'id'     => 'padding',
-               'default'=> '0',
-               'type'   => 'number'
+           'padding' => array(
+               'label'      => 'Vertical Padding',
+               'id'         => 'padding',
+               'default'    => '0',
+               'type'       => 'number'
            ),
            
        );
         
-        parent::__construct( $args, $fields );
+        parent::__construct( $args, $fields, array(
+            'designr-image-cta' => get_plugin_url( 'inc/widgets/Image_CTA/assets/designr-image-cta.css' )
+        ) );
         
     }
     

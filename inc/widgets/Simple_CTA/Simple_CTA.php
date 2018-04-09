@@ -22,7 +22,7 @@ class Simple_CTA extends \AcidWidget{
         * This list is a sample of all possible options
         */
        $fields = array (
-           'cta-content'    => array(
+           'cta-content' => array(
                'label'      => 'Content',
                'id'         => '',
                'default'    => '',
@@ -34,77 +34,79 @@ class Simple_CTA extends \AcidWidget{
                'default'    => '',
                'type'       => 'text',
            ),
-           'cta_subtitle'   => array (
+           'cta_subtitle' => array (
                'label'      => 'Subtitle',
                'id'         => 'cta_subtitle',
                'default'    => '',
                'type'       => 'textarea',
            ),
-           'cta_btn_text'   => array (
+           'cta_btn_text' => array (
                'label'      => 'Button Text',
                'id'         => 'cta_btn_text',
                'default'    => '',
                'type'       => 'text',
            ),
-           'cta_btn_url'    => array (
-               'label' => 'Button URL',
-               'id' => 'cta_btn_url',
-               'default' => '',
-               'type' => 'url',
+           'cta_btn_url' => array (
+               'label'      => 'Button URL',
+               'id'         => 'cta_btn_url',
+               'default'    => '',
+               'type'       => 'url',
            ),
-           'cta-appearance'   => array(
-               'label'  => 'Appearance',
-               'id'     => '',
-               'default'=> '',
-               'type'   => 'section',
+           'cta-appearance' => array(
+               'label'      => 'Appearance',
+               'id'         => '',
+               'default'    => '',
+               'type'       => 'section',
            ),
            'cta_layout' => array(
-               'label'  => 'Layout',
-               'id'     => 'cta_layout',
-               'default'=> 'float',
-               'type'   => 'select',
-               'options'=> array(
+               'label'      => 'Layout',
+               'id'         => 'cta_layout',
+               'default'    => 'float',
+               'type'       => 'select',
+               'options'    => array(
                    'float'      => 'Float',
                    'stacked'    => 'Stack',
                )
            ),
            'cta_text_align' => array(
-               'label'  => 'Text align',
-               'id'     => 'cta_text_align',
-               'default'=> 'center',
-               'type'   => 'select',
-               'options'=> alignment_options()
+               'label'      => 'Text align',
+               'id'         => 'cta_text_align',
+               'default'    => 'center',
+               'type'       => 'select',
+               'options'    => alignment_options()
            ),
     
-           'cta_btn_style'  => array(
-               'label'  => 'Button style',
-               'id'     => 'cta_btn_style',
-               'default'=> 'primary',
-               'type'   => 'select',
-               'options'=> button_options()
+           'cta_btn_style' => array(
+               'label'      => 'Button style',
+               'id'         => 'cta_btn_style',
+               'default'    => 'primary',
+               'type'       => 'select',
+               'options'    => button_options()
            ),
-           'cta_bg_color'   => array (
-               'label' => 'Background color',
-               'id' => 'cta_bg_color',
-               'default' => '#ffffff',
-               'type' => 'colorpicker',
+           'cta_bg_color' => array (
+               'label'      => 'Background color',
+               'id'         => 'cta_bg_color',
+               'default'    => '#ffffff',
+               'type'       => 'colorpicker',
            ),
            'cta_text_color' => array (
-               'label' => 'Text color',
-               'id' => 'cta_text_color',
-               'default' => '#333333',
-               'type' => 'colorpicker',
+               'label'      => 'Text color',
+               'id'         => 'cta_text_color',
+               'default'    => '#333333',
+               'type'       => 'colorpicker',
            ),
-           'cta_padding'    => array(
-               'label'  => 'Vertical Padding',
-               'id'     => 'cta_padding',
-               'default'=> '60',
-               'type'   => 'number'
+           'cta_padding' => array(
+               'label'      => 'Vertical Padding',
+               'id'         => 'cta_padding',
+               'default'    => '60',
+               'type'       => 'number'
            ),
            
        );
         
-        parent::__construct( $args, $fields );
+        parent::__construct( $args, $fields, array(
+            'designr-simple-cta' => get_plugin_url( 'inc/widgets/Simple_CTA/assets/designr-simple-cta.css' )
+        ) );
         
     }
     

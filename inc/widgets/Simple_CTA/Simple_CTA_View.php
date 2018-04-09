@@ -24,11 +24,9 @@ $this->css['#'. $args['widget_id'] . ' h6'] = array(
     'color'   => $values['cta_text_color']
 );
 
-
 ?>
 
-
-<div class="designr-module" id="<?php echo esc_attr( $args['widget_id' ] ); ?>">
+<div class="designr-module simple-cta" id="<?php echo esc_attr( $args['widget_id' ] ); ?>">
     
     <div class="container">
         

@@ -62,11 +62,11 @@ if( 'stacked' == $values['video_location'] ) {
         <div class="row">
             <?php 
             if( 'left' == $values['video_location'] ) :
-                render_template( 'VideoCta/partials/partial_left.php', $values );
+                render_template( 'Video_CTA/partials/partial_left.php', $values );
             elseif( 'right' == $values['video_location'] ) :
-                render_template( 'VideoCta/partials/partial_right.php', $values );
+                render_template( 'Video_CTA/partials/partial_right.php', $values );
             else:
-                render_template( 'VideoCta/partials/partial_stacked.php', $values );
+                render_template( 'Video_CTA/partials/partial_stacked.php', $values );
             endif;
             ?>    
         </div>

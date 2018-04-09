@@ -34,7 +34,7 @@ if( 'stacked' == $values['image_location'] ) {
     $this->css['#'. $args['widget_id'] . ' img.image-cta-img']['text-align'] = 'center';
     $this->css['#'. $args['widget_id'] . ' img.image-cta-img']['max-width'] = '50%';
     $this->css['#'. $args['widget_id'] . ' img.image-cta-img']['display'] = 'block';
-    $this->css['#'. $args['widget_id'] . ' img.image-cta-img']['margin'] = '0 auto';
+    $this->css['#'. $args['widget_id'] . ' img.image-cta-img']['margin'] = '0 auto 30px';
 }
 
 ?>
