@@ -123,7 +123,7 @@ class Image_CTA extends \AcidWidget{
            'padding'    => array(
                'label'  => 'Vertical Padding',
                'id'     => 'padding',
-               'default'=> '30',
+               'default'=> '0',
                'type'   => 'number'
            ),
            
