@@ -2,8 +2,19 @@
 
 namespace designr;
 
-// Widget Factory
-require_once get_plugin_path() . 'inc/widgets/Widget_Factory/Widget_Factory.php';
 
 // Jumbotron
 require_once get_plugin_path() . 'inc/widgets/Slider/Slider_Widget.php';
+
+// Simple CTA
+require_once get_plugin_path() . 'inc/widgets/SimpleCta/SimpleCta.php';
+
+// Image CTA
+require_once get_plugin_path() . 'inc/widgets/ImageCta/ImageCta.php';
+
+// Video CTA
+require_once get_plugin_path() . 'inc/widgets/VideoCta/VideoCta.php';
+
+// Heading
+require_once get_plugin_path() . 'inc/widgets/Heading/Heading.php';
+
