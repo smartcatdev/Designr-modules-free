@@ -2,7 +2,7 @@
 
 namespace designr;
 
-class VideoCta extends \AcidWidget{
+class Video_CTA extends \AcidWidget{
     
     function __construct() {
         
@@ -10,7 +10,7 @@ class VideoCta extends \AcidWidget{
             'id'            => 'designr_video_cta', // 1. Edit the widget ID
             'title'         => 'Designr: Video CTA', // 2. Edit the Widget Title
             'description'   => 'Output a single video, with some text in various ways', // 3. Edit the widget description
-            'output_file'   => get_plugin_path( 'inc/widgets/VideoCta/video_cta_view.php' ), // 4. Set the location of the frontend widget display
+            'output_file'   => get_plugin_path( 'inc/widgets/Video_CTA/Video_CTA_View.php' ), // 4. Set the location of the frontend widget display
             'widget_title'  => false, // 5. Set to True if you want the built in Widget Title to be used
         );
         
@@ -158,7 +158,7 @@ class VideoCta extends \AcidWidget{
 }
 
 function register_video_cta() {
-    register_widget( 'designr\VideoCta' );
+    register_widget( 'designr\Video_CTA' );
 }
 
 add_action( 'widgets_init', 'designr\register_video_cta' );

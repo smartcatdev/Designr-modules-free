@@ -2,7 +2,7 @@
 
 namespace designr;
 
-class SimpleCta extends \AcidWidget{
+class Simple_CTA extends \AcidWidget{
     
     function __construct() {
         
@@ -10,7 +10,7 @@ class SimpleCta extends \AcidWidget{
             'id'            => 'designr_simple_cta', // 1. Edit the widget ID
             'title'         => 'Designr: Simple CTA', // 2. Edit the Widget Title
             'description'   => 'Creates a simple horizontal call to action with title, subtitle and button', // 3. Edit the widget description
-            'output_file'   => get_plugin_path( 'inc/widgets/SimpleCta/simple_cta_view.php' ), // 4. Set the location of the frontend widget display
+            'output_file'   => get_plugin_path( 'inc/widgets/Simple_CTA/Simple_CTA_View.php' ), // 4. Set the location of the frontend widget display
             'widget_title'  => false, // 5. Set to True if you want the built in Widget Title to be used
         );
         
@@ -22,29 +22,29 @@ class SimpleCta extends \AcidWidget{
         * This list is a sample of all possible options
         */
        $fields = array (
-           'cta-content'   => array(
-               'label'  => 'Content',
-               'id'     => '',
-               'default'=> '',
-               'type'   => 'section',
+           'cta-content'    => array(
+               'label'      => 'Content',
+               'id'         => '',
+               'default'    => '',
+               'type'       => 'section',
            ),
            'cta_title' => array (
-               'label' => 'Title',
-               'id' => 'cta_title',
-               'default' => '',
-               'type' => 'text',
+               'label'      => 'Title',
+               'id'         => 'cta_title',
+               'default'    => '',
+               'type'       => 'text',
            ),
            'cta_subtitle'   => array (
-               'label' => 'Sub-title',
-               'id' => 'cta_subtitle',
-               'default' => '',
-               'type' => 'textarea',
+               'label'      => 'Subtitle',
+               'id'         => 'cta_subtitle',
+               'default'    => '',
+               'type'       => 'textarea',
            ),
            'cta_btn_text'   => array (
-               'label' => 'Button Text',
-               'id' => 'cta_btn_text',
-               'default' => '',
-               'type' => 'text',
+               'label'      => 'Button Text',
+               'id'         => 'cta_btn_text',
+               'default'    => '',
+               'type'       => 'text',
            ),
            'cta_btn_url'    => array (
                'label' => 'Button URL',
@@ -112,7 +112,7 @@ class SimpleCta extends \AcidWidget{
 }
 
 function register_simple_cta() {
-    register_widget( 'designr\SimpleCta' );
+    register_widget( 'designr\Simple_CTA' );
 }
 
 add_action( 'widgets_init', 'designr\register_simple_cta' );

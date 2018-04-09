@@ -51,7 +51,7 @@
                             <?php endif; ?>
 
                             <?php if ( !empty( $instance['slide_button_label_' . $slide] ) && !empty( $instance['slide_button_url_' . $slide] ) ) : ?>
-                                <a class="button hollow wow fadeIn" href="<?php echo esc_url( $instance['slide_button_url_' . $slide] ); ?>">
+                                <a class="button wow fadeIn" href="<?php echo esc_url( $instance['slide_button_url_' . $slide] ); ?>">
                                     <?php echo esc_html( $instance['slide_button_label_' . $slide] ); ?>
                                 </a>
                             <?php endif; ?>

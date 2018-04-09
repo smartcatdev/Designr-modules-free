@@ -65,9 +65,9 @@ ul.slick-dots li:hover button {
     width: 100%;
     background-position: 50%;
     background-size: cover;
-    transition: all 0.1s ease-in-out;
+/*    transition: all 0.1s ease-in-out;
     -moz-transition: all 0.1s ease-in-out;
-    -webkit-transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;*/
 }
 
 .designr-module .slider .slide > .slide-inner {
