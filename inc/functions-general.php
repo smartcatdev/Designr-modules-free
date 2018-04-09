@@ -43,9 +43,6 @@ function button_options() {
     );
 }
 
-function widgets() {
-    
-}
 
 function render_template( $file, $args, $once = false ) {
     

@@ -35,7 +35,7 @@ if( 'stacked' == $values['image_location'] ) {
 ?>
 
 
-<div class="designr-module" id="<?php echo esc_attr( $args['widget_id' ] ); ?>">
+<div class="designr-module" id="<?php echo attr( $args['widget_id' ] ); ?>">
     
     <div class="container">
         
