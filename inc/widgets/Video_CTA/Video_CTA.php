@@ -2,15 +2,15 @@
 
 namespace designr;
 
-class ImageCta extends \AcidWidget{
+class Video_CTA extends \AcidWidget{
     
     function __construct() {
         
         $args = array(
-            'id'            => 'designr_image_cta', // 1. Edit the widget ID
-            'title'         => 'Designr: Image CTA', // 2. Edit the Widget Title
-            'description'   => 'Output a single image, with some text in various ways', // 3. Edit the widget description
-            'output_file'   => get_plugin_path( 'inc/widgets/ImageCta/image_cta_view.php' ), // 4. Set the location of the frontend widget display
+            'id'            => 'designr_video_cta', // 1. Edit the widget ID
+            'title'         => 'Designr: Video CTA', // 2. Edit the Widget Title
+            'description'   => 'Output a single video, with some text in various ways', // 3. Edit the widget description
+            'output_file'   => get_plugin_path( 'inc/widgets/Video_CTA/Video_CTA_View.php' ), // 4. Set the location of the frontend widget display
             'widget_title'  => false, // 5. Set to True if you want the built in Widget Title to be used
         );
         
@@ -30,11 +30,11 @@ class ImageCta extends \AcidWidget{
                'type'   => 'section',
            ),
            
-           'image'  => array(
-               'label'  => 'Image',
-               'id'     => 'image',
-               'default'=> '',
-               'type'   => 'media'
+           'video'  => array(
+               'label'  => 'Youtube Video ID',
+               'id'     => 'video',
+               'default'=> 'nDiaRSklhMo',
+               'type'   => 'text'
            ),
            
            'title'  => array (
@@ -71,10 +71,38 @@ class ImageCta extends \AcidWidget{
                'type'   => 'section',
            ),
            
-           'image_location' => array(
-               'label'  => 'Image Location',
-               'id'     => 'image_location',
-               'default'=> '',
+           'autoplay'       => array(
+               'label'      => 'Autoplay?',
+               'id'         => 'autoplay',
+               'default'    => 1,
+               'type'       => 'checkbox'
+           ),
+           
+           'loop'       => array(
+               'label'      => 'Loop?',
+               'id'         => 'loop',
+               'default'    => 1,
+               'type'       => 'checkbox'
+           ),
+           
+           'controls'       => array(
+               'label'      => 'Show controls?',
+               'id'         => 'controls',
+               'default'    => 0,
+               'type'       => 'checkbox'
+           ),
+           
+           'height'         => array(
+               'label'      => 'Video height',
+               'id'         => 'height',
+               'default'    => 350,
+               'type'       => 'number'
+           ),
+           
+           'video_location' => array(
+               'label'  => 'Video Location',
+               'id'     => 'video_location',
+               'default'=> 'left',
                'type'   => 'select',
                'options'=> array(
                    'left'       => 'Left',
@@ -82,24 +110,17 @@ class ImageCta extends \AcidWidget{
                    'stacked'    => 'Stacked',
                )
            ),
-
+           
            'text_align' => array(
                'label'  => 'Text align',
                'id'     => 'text_align',
-               'default'=> '',
+               'default'=> 'right',
                'type'   => 'select',
                'options'=> array(
                    'left'       => 'Left',
                    'right'      => 'Right',
                    'center'   => 'Centered',
                )
-           ),
-           
-           'image_rounded'  => array(
-               'label'  => 'Rounded image? (must be square 1:1 image)',
-               'id'     => 'image_rounded',
-               'default'=> '',
-               'type'   => 'checkbox'
            ),
            'btn_style'  => array(
                'label'  => 'Button style',
@@ -123,21 +144,22 @@ class ImageCta extends \AcidWidget{
            'padding'    => array(
                'label'  => 'Vertical Padding',
                'id'     => 'padding',
-               'default'=> '0',
+               'default'=> '60',
                'type'   => 'number'
            ),
            
-       );
+        );
         
-        parent::__construct( $args, $fields );
+        parent::__construct( $args, $fields, array(
+            'designr-video-cta' => get_plugin_url( 'inc/widgets/Video_CTA/assets/video-cta.css' )
+        ) );
         
     }
     
-    
 }
 
-function register_image_cta() {
-    register_widget( 'designr\ImageCta' );
+function register_video_cta() {
+    register_widget( 'designr\Video_CTA' );
 }
 
-add_action( 'widgets_init', 'designr\register_image_cta' );
+add_action( 'widgets_init', 'designr\register_video_cta' );

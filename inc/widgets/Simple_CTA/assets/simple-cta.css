@@ -1,0 +1,35 @@
+.designr-module.simple-cta .flxbx > div {
+    align-self: center;
+}
+
+.designr-module.simple-cta .flxbx > div:first-child {
+    flex-grow: 1;
+}
+
+.designr-module.simple-cta h2 {
+    margin: 0;
+}
+
+.designr-module.simple-cta h6 {
+    margin: 15px 0 30px 0;
+}
+
+.designr-module.simple-cta .float-simple h6 {
+    margin-bottom: 0;
+}
+
+.designr-module.simple-cta .float-simple .flxbx > div:last-child {
+    padding-left: 30px;
+}
+
+@media (max-width:767px) {
+    
+    .designr-module.simple-cta h2 {
+        font-size: 2em;
+    }
+
+    .designr-module.simple-cta h6 {
+        font-size: .75em;
+    }
+    
+}

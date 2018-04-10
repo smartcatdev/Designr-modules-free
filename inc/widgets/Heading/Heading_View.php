@@ -8,18 +8,22 @@ $this->css['#' . $args['widget_id'] ] = array(
 );
 
 $this->css['#'. $args['widget_id'] . ' h2'] = array(
-    'color'   => $values['text_color']
+    'color'             => $values['text_color'],
+    'margin-top'        => '0px',
+    'margin-bottom'     => '0px'
 );
 
 $this->css['#'. $args['widget_id'] . ' h6'] = array(
-    'color'   => $values['text_color']
+    'color'             => $values['text_color'],
+    'margin-top'        => '15px',
+    'margin-bottom'     => '0px'
 );
 
 
 ?>
 
 
-<div class="designr-module" id="<?php echo esc_attr( $args['widget_id' ] ); ?>">
+<div class="designr-module heading" id="<?php echo esc_attr( $args['widget_id' ] ); ?>">
     
     <div class="container">
         

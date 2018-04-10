@@ -24,20 +24,18 @@ $this->css['#'. $args['widget_id'] . ' h6'] = array(
     'color'   => $values['cta_text_color']
 );
 
-
 ?>
 
-
-<div class="designr-module" id="<?php echo esc_attr( $args['widget_id' ] ); ?>">
+<div class="designr-module simple-cta" id="<?php echo esc_attr( $args['widget_id' ] ); ?>">
     
     <div class="container">
         
         <div class="row">
             <?php 
             if( 'float' == $values['cta_layout'] ) :
-                render_template( 'SimpleCta/partials/partial_float.php', $values );
+                render_template( 'Simple_CTA/partials/partial_float.php', $values );
             else :
-                render_template( 'SimpleCta/partials/partial_stacked.php', $values );
+                render_template( 'Simple_CTA/partials/partial_stacked.php', $values );
             endif;
             ?>    
         </div>
