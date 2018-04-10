@@ -108,6 +108,13 @@ class Image_CTA extends \AcidWidget{
                'type'       => 'select',
                'options'    => button_options()
            ),
+           'btn_size'   => array(
+               'label'  => 'Button size',
+               'id'     => 'btn_size',
+               'default'=> 'medium',
+               'type'   => 'select',
+               'options'=> button_sizes()
+           ),
            'bg_color' => array (
                'label'      => 'Background color',
                'id'         => 'bg_color',
