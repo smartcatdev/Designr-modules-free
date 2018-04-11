@@ -124,10 +124,17 @@ class Video_CTA extends \AcidWidget{
            ),
            'btn_style'  => array(
                'label'  => 'Button style',
-               'id'     => 'cta_btn_style',
+               'id'     => 'btn_style',
                'default'=> 'primary',
                'type'   => 'select',
                'options'=> button_options()
+           ),
+           'btn_size'   => array(
+               'label'  => 'Button size',
+               'id'     => 'btn_size',
+               'default'=> 'medium',
+               'type'   => 'select',
+               'options'=> button_sizes()
            ),
            'bg_color'   => array (
                'label' => 'Background color',

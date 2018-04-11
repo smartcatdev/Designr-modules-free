@@ -83,6 +83,13 @@ class Simple_CTA extends \AcidWidget{
                'type'       => 'select',
                'options'    => button_options()
            ),
+           'btn_size'   => array(
+               'label'  => 'Button size',
+               'id'     => 'btn_size',
+               'default'=> 'medium',
+               'type'   => 'select',
+               'options'=> button_sizes()
+           ),
            'cta_bg_color' => array (
                'label'      => 'Background color',
                'id'         => 'cta_bg_color',

@@ -14,11 +14,11 @@ function html( $html ) {
     echo html_entity_decode( $html );
 }
 
-function button( $text, $url, $class = 'button' ) { 
+function button( $text, $url, $class = 'primary', $size = 'medium' ) { 
     
     if( $text ) : ?> 
         
-        <a href="<?php url( $url ) ?>" class="button <?php attr( $class ) ?>">
+        <a href="<?php url( $url ) ?>" class="button <?php attr( $class ) ?> <?php attr( $size ) ?>">
             <?php attr( $text ); ?>
         </a>
 
@@ -43,6 +43,13 @@ function button_options() {
     );
 }
 
+function button_sizes() {
+    return array(
+        'small'       => 'Small',
+        'medium'     => 'Medium',
+        'large'        => 'Large'
+    );
+}
 
 function render_template( $file, $args, $once = false ) {
     
