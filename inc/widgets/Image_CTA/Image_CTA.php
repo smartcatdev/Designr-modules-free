@@ -103,7 +103,7 @@ class Image_CTA extends \AcidWidget{
            ),
            'btn_style' => array(
                'label'      => 'Button style',
-               'id'         => 'cta_btn_style',
+               'id'         => 'btn_style',
                'default'    => 'primary',
                'type'       => 'select',
                'options'    => button_options()
