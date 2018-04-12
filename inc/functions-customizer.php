@@ -247,7 +247,7 @@ $data = array (
             'sections'      => array (
 
                 // Section : Custom Header Settings ----------------------------
-                'section_custom_header' => array (
+                'section_custom_header_general' => array (
 
                     'title' => __( 'General Settings', 'designr' ),
                     'options' => array (
