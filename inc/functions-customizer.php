@@ -147,6 +147,16 @@ $data = array (
                     'title' => __( 'Advanced Settings', 'designr' ),
                     'options' => array (
                         
+                        DESIGNR_OPTIONS::NAVBAR_BRANDING_WHAT_TO_SHOW => array (
+                            'type'          => 'radio-toggle',
+                            'label'         => __( 'Navbar Branding', 'designr' ),
+                            'description'   => __( 'Set whether the Navbar shows Site Title & Tagline or the custom Logo (if one is set).', 'designr' ),
+                            'default'       => DESIGNR_DEFAULTS::NAVBAR_BRANDING_WHAT_TO_SHOW,
+                            'choices'   => array (
+                                'title_tagline'     => __( 'Title & Tagline', 'designr' ),
+                                'logo'              => __( 'Logo', 'designr' ),
+                            )
+                        ),
                         DESIGNR_OPTIONS::NAVBAR_ALWAYS_SHOW_LOGO => array (
                             'type'          => 'toggle',
                             'label'         => __( 'Logo - Always Visible?', 'designr' ),
