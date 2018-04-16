@@ -1,6 +1,6 @@
 <?php
 
-namespace designr;
+namespace buildr;
 
 function attr( $attr ) {
     echo esc_attr( $attr );

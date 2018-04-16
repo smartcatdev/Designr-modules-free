@@ -1,12 +1,12 @@
 <?php
 
-namespace designr;
+namespace buildr;
 
-add_filter( 'pt-ocdi/import_files', 'designr\import_options' );
+add_filter( 'pt-ocdi/import_files', 'buildr\import_options' );
 
-add_action( 'pt-ocdi/after_import', 'designr\after_import_setup' );
+add_action( 'pt-ocdi/after_import', 'buildr\after_import_setup' );
 
-add_filter( 'pt-ocdi/plugin_page_setup', 'designr\import_page_title' );
+add_filter( 'pt-ocdi/plugin_page_setup', 'buildr\import_page_title' );
 
 add_filter( 'pt-ocdi/regenerate_thumbnails_in_content_import', '__return_false' );
 
@@ -14,7 +14,7 @@ add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
 
 function import_options() {
     
-    return apply_filters( 'designr_presets', array (
+    return apply_filters( 'buildr_presets', array (
         array (
             'import_file_name' => 'Demo Import 1',
             'categories' => array ( 'Free' ),
@@ -75,7 +75,7 @@ function after_import_setup( $selected_import ) {
 
 function import_page_title( $title ) {
     
-    $title['menu_title'] = esc_html__( 'Theme Presets' , 'designr' );
+    $title['menu_title'] = esc_html__( 'Theme Presets' , 'buildr' );
     
     return $title;
 }

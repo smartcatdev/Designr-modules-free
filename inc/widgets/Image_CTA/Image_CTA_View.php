@@ -1,5 +1,5 @@
 <?php 
-namespace designr;
+namespace buildr;
 
 
 $this->css['#' . $args['widget_id'] ] = array(
@@ -39,7 +39,7 @@ if( 'stacked' == $values['image_location'] ) {
 
 ?>
 
-<div class="designr-module image-cta" id="<?php echo attr( $args['widget_id' ] ); ?>">
+<div class="buildr-module image-cta" id="<?php echo attr( $args['widget_id' ] ); ?>">
     
     <div class="container">
         

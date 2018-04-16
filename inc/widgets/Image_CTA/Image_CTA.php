@@ -1,13 +1,13 @@
 <?php
 
-namespace designr;
+namespace buildr;
 
 class Image_CTA extends \AcidWidget{
     
     function __construct() {
         
         $args = array(
-            'id'            => 'designr_image_cta', // 1. Edit the widget ID
+            'id'            => 'buildr_image_cta', // 1. Edit the widget ID
             'title'         => 'Designr: Image CTA', // 2. Edit the Widget Title
             'description'   => 'Output a single image, with some text in various ways', // 3. Edit the widget description
             'output_file'   => get_plugin_path( 'inc/widgets/Image_CTA/Image_CTA_View.php' ), // 4. Set the location of the frontend widget display
@@ -137,7 +137,7 @@ class Image_CTA extends \AcidWidget{
        );
         
         parent::__construct( $args, $fields, array(
-            'designr-image-cta' => get_plugin_url( 'inc/widgets/Image_CTA/assets/image-cta.css' )
+            'buildr-image-cta' => get_plugin_url( 'inc/widgets/Image_CTA/assets/image-cta.css' )
         ) );
         
     }
@@ -146,7 +146,7 @@ class Image_CTA extends \AcidWidget{
 }
 
 function register_image_cta() {
-    register_widget( 'designr\Image_CTA' );
+    register_widget( 'buildr\Image_CTA' );
 }
 
-add_action( 'widgets_init', 'designr\register_image_cta' );
+add_action( 'widgets_init', 'buildr\register_image_cta' );

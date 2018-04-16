@@ -1,13 +1,13 @@
 <?php
 
-namespace designr;
+namespace buildr;
 
 class Shortcode extends \AcidWidget{
     
     function __construct() {
         
         $args = array(
-            'id'            => 'designr_shortcode', // 1. Edit the widget ID
+            'id'            => 'buildr_shortcode', // 1. Edit the widget ID
             'title'         => 'Designr: Shortcode', // 2. Edit the Widget Title
             'description'   => 'Allows you to enter a shortcode and output the result on your site', // 3. Edit the widget description
             'output_file'   => get_plugin_path( 'inc/widgets/Shortcode/Shortcode_View.php' ), // 4. Set the location of the frontend widget display
@@ -69,7 +69,7 @@ class Shortcode extends \AcidWidget{
 }
 
 function register_shortcode() {
-    register_widget( 'designr\Shortcode' );
+    register_widget( 'buildr\Shortcode' );
 }
 
-add_action( 'widgets_init', 'designr\register_shortcode' );
+add_action( 'widgets_init', 'buildr\register_shortcode' );
