@@ -1,58 +1,58 @@
-.designr-module.video-cta .flxbx > div {
+.buildr-module.video-cta .flxbx > div {
     width: 50%;
     align-self: center;
 }
 
-.designr-module.video-cta .flxbx.left-align-video > div:first-child {
+.buildr-module.video-cta .flxbx.left-align-video > div:first-child {
     padding: 30px;
 }
 
-.designr-module.video-cta .flxbx.left-align-text > div:last-child {
+.buildr-module.video-cta .flxbx.left-align-text > div:last-child {
     text-align: left;
 }
 
-.designr-module.video-cta .flxbx.right-align-video > div:last-child {
+.buildr-module.video-cta .flxbx.right-align-video > div:last-child {
     padding: 30px;
 }
 
-.designr-module.video-cta .flxbx.left-align-text > div:first-child {
+.buildr-module.video-cta .flxbx.left-align-text > div:first-child {
     text-align: left;
 }
 
-.designr-module.video-cta h3 {
+.buildr-module.video-cta h3 {
     margin: 0;
 }
 
-.designr-module.video-cta p {
+.buildr-module.video-cta p {
     margin: 15px 0 30px 0;
 }
 
-.designr-module.video-cta .video-cta-wrapper.stacked {
+.buildr-module.video-cta .video-cta-wrapper.stacked {
     margin-top: 30px;
 }
 
 @media (max-width:991px) {
-    .designr-module.video-cta .flxbx {
+    .buildr-module.video-cta .flxbx {
         display: block;
     }
-    .designr-module.video-cta .flxbx > div {
+    .buildr-module.video-cta .flxbx > div {
         width: 100%;
         padding: 0 !important;
     }
-    .designr-module.video-cta .flxbx.left-align-video > div:last-child {
+    .buildr-module.video-cta .flxbx.left-align-video > div:last-child {
         padding-top: 30px !important;
     }
-    .designr-module.video-cta .flxbx.right-align-video > div:first-child {
+    .buildr-module.video-cta .flxbx.right-align-video > div:first-child {
         padding-bottom: 30px !important;
     }
-    .designr-module.video-cta .flxbx .video-cta-wrapper {
+    .buildr-module.video-cta .flxbx .video-cta-wrapper {
         margin: 0 auto;
         display: block;
     }
 }
 
 @media (max-width:767px) {
-    .designr-module.video-cta h3 {
+    .buildr-module.video-cta h3 {
         font-size: 1.5em;
     }
 }

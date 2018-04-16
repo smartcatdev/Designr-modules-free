@@ -1,13 +1,13 @@
-=== Designr Widgets ===
+=== Buildr Features ===
 Contributors: smartcat
 Tags: page,builder,siteorigin,widgets,bundle
 Requires at least: 4.9.0
-Tested up to: 4.9.4
+Tested up to: 4.9.5
 Stable tag: 1.0.0
 Requires PHP: 5.4
 License: GPLv2 or later
 
-Advanced Widgets for Designr theme. Fully compatible with SiteOrigin Page Builder
+Advanced Widgets for Buildr theme.
 
 == Description ==
 This plugin adds advanced, pre-designed widgets to your site that you can use in your theme. 

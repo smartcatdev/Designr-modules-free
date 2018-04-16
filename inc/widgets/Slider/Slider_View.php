@@ -1,6 +1,6 @@
 <?php if ( !empty( $instance['slider_visibility'] ) && $instance['slider_visibility'] ) : ?>
 
-    <div class="designr-module">
+    <div class="buildr-module">
 
         <?php if ( !empty( $instance['slider_height_style'] ) ) : ?>
 
@@ -9,8 +9,8 @@
                 <style type="text/css" scoped>
 
                     @media (max-width:991px) {
-                        .designr-module .slider.instance-<?php echo esc_attr( $widget_id ); ?>,
-                        .designr-module .slider.instance-<?php echo esc_attr( $widget_id ); ?> .slide {
+                        .buildr-module .slider.instance-<?php echo esc_attr( $widget_id ); ?>,
+                        .buildr-module .slider.instance-<?php echo esc_attr( $widget_id ); ?> .slide {
                             height: <?php echo !empty( $instance['slider_height_mobile'] ) ? esc_attr( $instance['slider_height_mobile'] ) : 400; ?>px !important;
                         }
                     }
@@ -31,7 +31,7 @@
 
         <?php endif; ?>
 
-            <?php for ( $slide = 1; $slide < apply_filters( 'designr_slide_count', 3 ); $slide++ ) : ?>
+            <?php for ( $slide = 1; $slide < apply_filters( 'buildr_slide_count', 3 ); $slide++ ) : ?>
 
                 <?php if ( !empty( $instance['slide_image_' . $slide] ) ) : ?>
 

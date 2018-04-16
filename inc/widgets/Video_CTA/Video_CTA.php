@@ -1,14 +1,14 @@
 <?php
 
-namespace designr;
+namespace buildr;
 
 class Video_CTA extends \AcidWidget{
     
     function __construct() {
         
         $args = array(
-            'id'            => 'designr_video_cta', // 1. Edit the widget ID
-            'title'         => 'Designr: Video CTA', // 2. Edit the Widget Title
+            'id'            => 'buildr_video_cta', // 1. Edit the widget ID
+            'title'         => 'Buildr: Video CTA', // 2. Edit the Widget Title
             'description'   => 'Output a single video, with some text in various ways', // 3. Edit the widget description
             'output_file'   => get_plugin_path( 'inc/widgets/Video_CTA/Video_CTA_View.php' ), // 4. Set the location of the frontend widget display
             'widget_title'  => false, // 5. Set to True if you want the built in Widget Title to be used
@@ -124,10 +124,17 @@ class Video_CTA extends \AcidWidget{
            ),
            'btn_style'  => array(
                'label'  => 'Button style',
-               'id'     => 'cta_btn_style',
+               'id'     => 'btn_style',
                'default'=> 'primary',
                'type'   => 'select',
                'options'=> button_options()
+           ),
+           'btn_size'   => array(
+               'label'  => 'Button size',
+               'id'     => 'btn_size',
+               'default'=> 'medium',
+               'type'   => 'select',
+               'options'=> button_sizes()
            ),
            'bg_color'   => array (
                'label' => 'Background color',
@@ -151,7 +158,7 @@ class Video_CTA extends \AcidWidget{
         );
         
         parent::__construct( $args, $fields, array(
-            'designr-video-cta' => get_plugin_url( 'inc/widgets/Video_CTA/assets/video-cta.css' )
+            'buildr-video-cta' => get_plugin_url( 'inc/widgets/Video_CTA/assets/video-cta.css' )
         ) );
         
     }
@@ -159,7 +166,7 @@ class Video_CTA extends \AcidWidget{
 }
 
 function register_video_cta() {
-    register_widget( 'designr\Video_CTA' );
+    register_widget( 'buildr\Video_CTA' );
 }
 
-add_action( 'widgets_init', 'designr\register_video_cta' );
+add_action( 'widgets_init', 'buildr\register_video_cta' );

@@ -1,14 +1,14 @@
 <?php
 
-namespace designr;
+namespace buildr;
 
 class Heading extends \AcidWidget{
     
     function __construct() {
         
         $args = array(
-            'id'            => 'designr_heading', // 1. Edit the widget ID
-            'title'         => 'Designr: Heading', // 2. Edit the Widget Title
+            'id'            => 'buildr_heading', // 1. Edit the widget ID
+            'title'         => 'Buildr: Heading', // 2. Edit the Widget Title
             'description'   => 'A widget to add a heading', // 3. Edit the widget description
             'output_file'   => get_plugin_path( 'inc/widgets/Heading/Heading_View.php' ), // 4. Set the location of the frontend widget display
             'widget_title'  => false, // 5. Set to True if you want the built in Widget Title to be used
@@ -83,7 +83,7 @@ class Heading extends \AcidWidget{
         );
        
         parent::__construct( $args, $fields, array(
-            'designr-heading' => get_plugin_url( 'inc/widgets/Heading/assets/heading.css' )
+            'buildr-heading' => get_plugin_url( 'inc/widgets/Heading/assets/heading.css' )
         ) );
         
     }
@@ -92,7 +92,7 @@ class Heading extends \AcidWidget{
 }
 
 function register_heading_widget() {
-    register_widget( 'designr\Heading' );
+    register_widget( 'buildr\Heading' );
 }
 
-add_action( 'widgets_init', 'designr\register_heading_widget' );
+add_action( 'widgets_init', 'buildr\register_heading_widget' );

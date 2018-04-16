@@ -1,5 +1,5 @@
 <?php 
-namespace designr;
+namespace buildr;
 
 $this->css['#' . $args['widget_id'] ] = array(
     'background-color'  => $values['bg_color'],
@@ -23,7 +23,7 @@ $this->css['#'. $args['widget_id'] . ' h6'] = array(
 ?>
 
 
-<div class="designr-module heading" id="<?php echo esc_attr( $args['widget_id' ] ); ?>">
+<div class="buildr-module heading" id="<?php echo esc_attr( $args['widget_id' ] ); ?>">
     
     <div class="container">
         

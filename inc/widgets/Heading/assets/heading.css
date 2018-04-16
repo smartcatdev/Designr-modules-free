@@ -1,10 +1,10 @@
 @media (max-width:767px) {
 
-    .designr-module.heading h2 {
+    .buildr-module.heading h2 {
         font-size: 2em;
     }
 
-    .designr-module.heading h6 {
+    .buildr-module.heading h6 {
         font-size: .75em;
     }
     

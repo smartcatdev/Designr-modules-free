@@ -1,14 +1,14 @@
 <?php
 
-namespace designr;
+namespace buildr;
 
 class Simple_CTA extends \AcidWidget{
     
     function __construct() {
         
         $args = array(
-            'id'            => 'designr_simple_cta', // 1. Edit the widget ID
-            'title'         => 'Designr: Simple CTA', // 2. Edit the Widget Title
+            'id'            => 'buildr_simple_cta', // 1. Edit the widget ID
+            'title'         => 'Buildr: Simple CTA', // 2. Edit the Widget Title
             'description'   => 'Creates a simple horizontal call to action with title, subtitle and button', // 3. Edit the widget description
             'output_file'   => get_plugin_path( 'inc/widgets/Simple_CTA/Simple_CTA_View.php' ), // 4. Set the location of the frontend widget display
             'widget_title'  => false, // 5. Set to True if you want the built in Widget Title to be used
@@ -83,6 +83,13 @@ class Simple_CTA extends \AcidWidget{
                'type'       => 'select',
                'options'    => button_options()
            ),
+           'btn_size'   => array(
+               'label'  => 'Button size',
+               'id'     => 'btn_size',
+               'default'=> 'medium',
+               'type'   => 'select',
+               'options'=> button_sizes()
+           ),
            'cta_bg_color' => array (
                'label'      => 'Background color',
                'id'         => 'cta_bg_color',
@@ -105,7 +112,7 @@ class Simple_CTA extends \AcidWidget{
        );
         
         parent::__construct( $args, $fields, array(
-            'designr-simple-cta' => get_plugin_url( 'inc/widgets/Simple_CTA/assets/simple-cta.css' )
+            'buildr-simple-cta' => get_plugin_url( 'inc/widgets/Simple_CTA/assets/simple-cta.css' )
         ) );
         
     }
@@ -114,7 +121,7 @@ class Simple_CTA extends \AcidWidget{
 }
 
 function register_simple_cta() {
-    register_widget( 'designr\Simple_CTA' );
+    register_widget( 'buildr\Simple_CTA' );
 }
 
-add_action( 'widgets_init', 'designr\register_simple_cta' );
+add_action( 'widgets_init', 'buildr\register_simple_cta' );

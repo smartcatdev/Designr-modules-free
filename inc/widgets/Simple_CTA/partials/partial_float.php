@@ -1,5 +1,5 @@
 <?php 
-namespace designr;
+namespace buildr;
 ?>
 
 <div class="col-sm-12">
@@ -17,7 +17,7 @@ namespace designr;
 
             <div>
 
-                <?php button( $cta_btn_text, $cta_btn_url, $cta_btn_style ); ?>
+                <?php button( $cta_btn_text, $cta_btn_url, $cta_btn_style, $btn_size ); ?>
 
             </div>
 
