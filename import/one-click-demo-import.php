@@ -1,16 +1,14 @@
 <?php
 
-/*
-Plugin Name: One Click Demo Import
-Plugin URI: https://wordpress.org/plugins/one-click-demo-import/
-Description: Import your content, widgets and theme settings with one click. Theme authors! Enable simple demo import for your theme demo data.
-Version: 2.5.0
-Author: ProteusThemes
-Author URI: http://www.proteusthemes.com
-License: GPL3
-License URI: http://www.gnu.org/licenses/gpl.html
-Text Domain: pt-ocdi
-*/
+/**
+ * 
+ * One Click Demo Import by Proteus Themes
+ * https://github.com/proteusthemes/one-click-demo-import
+ * 
+ * License: GPL V3
+ * 
+ * 
+ */
 
 // Block direct access to the main plugin file.
 defined( 'ABSPATH' ) or die( 'No script kiddies please!' );
