@@ -1,5 +1,5 @@
 <?php 
-namespace designr;
+namespace buildr;
 /**
  * 
  * $args['widget_id'] provides the ID of the widget instance, useful for uniquely identifying the widget
@@ -17,7 +17,7 @@ $this->css['#' . $args['widget_id'] ] = array(
 
 ?>
 
-<div class="designr-module shortcode" id="<?php echo esc_attr( $args['widget_id' ] ); ?>">
+<div class="buildr-module shortcode" id="<?php echo esc_attr( $args['widget_id' ] ); ?>">
     
     <?php if ( !empty( $values['container_wrap'] ) && $values['container_wrap'] ) : ?>
     

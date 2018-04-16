@@ -2,7 +2,7 @@ jQuery(document).ready(function ($) {
 
     $.each( slider_widget_instances, function( index, value ) {
 
-        $('.designr-module .slider.instance-' + value.slider_id ).slick({
+        $('.buildr-module .slider.instance-' + value.slider_id ).slick({
             dots: value.slider_dots,
             arrows: value.slider_arrows,
             pauseOnHover: value.slider_pause_hover,

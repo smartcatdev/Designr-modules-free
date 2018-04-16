@@ -1,6 +1,6 @@
 <?php
 
-namespace designr;
+namespace buildr;
 
 /**
  * Enqueue scripts and styles.
@@ -15,4 +15,4 @@ function wp_head_styles() { ?>
     
 <?php
 }
-add_action( 'wp_head', '\designr\wp_head_styles' );
+add_action( 'wp_head', '\buildr\wp_head_styles' );
