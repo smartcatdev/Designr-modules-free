@@ -1,8 +1,8 @@
-=== Buildr Widgets ===
+=== Buildr Features ===
 Contributors: smartcat
 Tags: page,builder,siteorigin,widgets,bundle
 Requires at least: 4.9.0
-Tested up to: 4.9.4
+Tested up to: 4.9.5
 Stable tag: 1.0.0
 Requires PHP: 5.4
 License: GPLv2 or later
