@@ -8,7 +8,7 @@ class Simple_CTA extends \AcidWidget{
         
         $args = array(
             'id'            => 'buildr_simple_cta', // 1. Edit the widget ID
-            'title'         => 'Designr: Simple CTA', // 2. Edit the Widget Title
+            'title'         => 'Buildr: Simple CTA', // 2. Edit the Widget Title
             'description'   => 'Creates a simple horizontal call to action with title, subtitle and button', // 3. Edit the widget description
             'output_file'   => get_plugin_path( 'inc/widgets/Simple_CTA/Simple_CTA_View.php' ), // 4. Set the location of the frontend widget display
             'widget_title'  => false, // 5. Set to True if you want the built in Widget Title to be used

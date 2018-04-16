@@ -10,7 +10,7 @@ class Slider_Widget extends \WP_Widget {
 
         parent::__construct(
             'buildr_slider',
-            __( 'Designr: Slider', 'buildr' ),
+            __( 'Buildr: Slider', 'buildr' ),
             array(
                 'description' => __( 'A re-usable & customizable slider widget.', 'buildr' ),
             )
@@ -23,8 +23,8 @@ class Slider_Widget extends \WP_Widget {
         $widget_id = $args['widget_id'];
         
         add_action( 'wp_footer', array( $this, 'localize_options' ) );
-        wp_enqueue_style( 'buildr-module-slider', get_plugin_url() . 'inc/widgets/Slider/assets/buildr-slider.css', null, DESIGNR_MODULES_VERSION );
-        wp_enqueue_script( 'buildr-module-slider', get_plugin_url() . 'inc/widgets/Slider/assets/buildr-slider.js', array( 'jquery' ), DESIGNR_MODULES_VERSION );
+        wp_enqueue_style( 'buildr-module-slider', get_plugin_url() . 'inc/widgets/Slider/assets/buildr-slider.css', null, BUILDR_MODULES_VERSION );
+        wp_enqueue_script( 'buildr-module-slider', get_plugin_url() . 'inc/widgets/Slider/assets/buildr-slider.js', array( 'jquery' ), BUILDR_MODULES_VERSION );
         
         $slider_instance_settings = array(
             'slider_id'                 => $widget_id,

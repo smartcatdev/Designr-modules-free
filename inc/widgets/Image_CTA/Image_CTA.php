@@ -8,7 +8,7 @@ class Image_CTA extends \AcidWidget{
         
         $args = array(
             'id'            => 'buildr_image_cta', // 1. Edit the widget ID
-            'title'         => 'Designr: Image CTA', // 2. Edit the Widget Title
+            'title'         => 'Buildr: Image CTA', // 2. Edit the Widget Title
             'description'   => 'Output a single image, with some text in various ways', // 3. Edit the widget description
             'output_file'   => get_plugin_path( 'inc/widgets/Image_CTA/Image_CTA_View.php' ), // 4. Set the location of the frontend widget display
             'widget_title'  => false, // 5. Set to True if you want the built in Widget Title to be used

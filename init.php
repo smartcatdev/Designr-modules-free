@@ -1,6 +1,6 @@
 <?php
 /**
- * Plugin Name: Designr Widgets
+ * Plugin Name: Buildr Widgets
  * Author: Smartcat
  * Description: WordPress Widgets for the Designer Theme
  * Version: 1.0.0
@@ -25,7 +25,7 @@ if( !defined( 'ABSPATH' ) ) {
 /**
  * Constant Declarations
  */
-const DESIGNR_MODULES_VERSION = '1.0.0';
+const BUILDR_MODULES_VERSION = '1.0.0';
 
 /**
  * @since 1.0.0

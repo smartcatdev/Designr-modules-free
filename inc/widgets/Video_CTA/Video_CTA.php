@@ -8,7 +8,7 @@ class Video_CTA extends \AcidWidget{
         
         $args = array(
             'id'            => 'buildr_video_cta', // 1. Edit the widget ID
-            'title'         => 'Designr: Video CTA', // 2. Edit the Widget Title
+            'title'         => 'Buildr: Video CTA', // 2. Edit the Widget Title
             'description'   => 'Output a single video, with some text in various ways', // 3. Edit the widget description
             'output_file'   => get_plugin_path( 'inc/widgets/Video_CTA/Video_CTA_View.php' ), // 4. Set the location of the frontend widget display
             'widget_title'  => false, // 5. Set to True if you want the built in Widget Title to be used

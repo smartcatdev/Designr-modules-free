@@ -8,7 +8,7 @@ class SimpleCta extends \AcidWidget{
         
         $args = array(
             'id'            => 'buildr_simple_cta', // 1. Edit the widget ID
-            'title'         => 'Designr: Simple CTA', // 2. Edit the Widget Title
+            'title'         => 'Buildr: Simple CTA', // 2. Edit the Widget Title
             'description'   => 'Creates a simple horizontal call to action with title, subtitle and button', // 3. Edit the widget description
             'output_file'   => get_plugin_path( 'inc/widgets/SimpleCta/simple_cta_view.php' ) // 4. Set the location of the frontend widget display
         );
