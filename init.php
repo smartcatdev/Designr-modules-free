@@ -2,7 +2,7 @@
 /**
  * Plugin Name: Buildr Features
  * Author: Smartcat
- * Description: WordPress Widgets for Buildr Theme
+ * Description: Advanced Widgets for Buildr theme.
  * Version: 1.0.0
  * Author: Smartcat
  * Author URI: https://smartcatdesign.net/
