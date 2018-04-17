@@ -1167,6 +1167,23 @@ $data = array (
                     ),
 
                 ),
+                
+                // Section : Smooth Scrolling ----------------------------------
+                'section_scroll' => array (
+
+                    'title'         => __( 'Smooth Scrolling', 'buildr' ),
+                    'description'   => __( 'Customize whether the Smooth Scrolling feature is enabled on your site', 'buildr' ),
+                    'options' => array (
+                        
+                        BUILDR_OPTIONS::EASE_SCROLL_TOGGLE => array(
+                            'type'          => 'toggle',
+                            'label'         => __( 'Enable Smooth Scrolling?', 'buildr' ),
+                            'default'       => BUILDR_DEFAULTS::EASE_SCROLL_TOGGLE,
+                        ),
+
+                    ),
+
+                ),
 
             ), // End of Appearance Sections
 
