@@ -1106,14 +1106,14 @@ $data = array (
                         // Primary Font
                         BUILDR_OPTIONS::FONT_PRIMARY => array(
                             'type'      => 'select',
-                            'label'     => __( 'Primary Font (Headings & Titles)', 'buildr' ),
+                            'label'     => __( 'Primary Font - For Headings & Titles', 'buildr' ),
                             'default'   => BUILDR_DEFAULTS::FONT_PRIMARY,
                             'choices'   => buildr_fonts(),
                         ),
                         BUILDR_OPTIONS::FONT_HEADINGS_LETTER_GAP => array(
                             'type'          => 'select',
-                            'label'         => __( 'Letter Spacing for all Headings', 'buildr' ),
-                            'description'   => __( 'Set the scaling "em" value. Can be positive or negative. 0 for normal spacing.', 'buildr' ),
+                            'label'         => __( 'Letter Spacing for Headings & Titles', 'buildr' ),
+                            'description'   => __( 'Set to 0 for normal spacing, negative for smaller gap between letters, positive for increased separation.', 'buildr' ),
                             'default'       => BUILDR_DEFAULTS::FONT_HEADINGS_LETTER_GAP,
                             'choices'   => array (
                                 '-.1'       => __( '-.100em (Narrowest)', 'buildr' ),
@@ -1127,40 +1127,17 @@ $data = array (
                                 '.100'      => __( '.100em (Widest)', 'buildr' ),
                             )
                         ),
-                        BUILDR_OPTIONS::FONT_HEADINGS_LINE_HEIGHT => array(
-                            'type'          => 'select',
-                            'label'         => __( 'Line Height for all Headings', 'buildr' ),
-                            'description'   => __( 'Set the scaling "em" value. Can be positive or negative. 1 for normal spacing.', 'buildr' ),
-                            'default'       => BUILDR_DEFAULTS::FONT_HEADINGS_LINE_HEIGHT,
-                            'choices'   => array (
-                                '.80'       => __( '.80em (Shortest)', 'buildr' ),
-                                '1'         => __( '1em (Default)', 'buildr' ),
-                                '1.125'     => __( '1.125em', 'buildr' ),
-                                '1.25'      => __( '1.25em', 'buildr' ),
-                                '1.5'       => __( '1.5em (Tallest)', 'buildr' ),
-                            )
-                        ),
-                        BUILDR_OPTIONS::FONT_H1_FONT_SIZE => array(
-                            'type'      => 'number',
-                            'label'     => __( 'Font Size - h1', 'buildr' ),
-                            'default'   => BUILDR_DEFAULTS::FONT_H1_FONT_SIZE,
-                        ),
-                        BUILDR_OPTIONS::FONT_H1_FONT_SIZE_MBL => array(
-                            'type'      => 'number',
-                            'label'     => __( 'Font Size - h1 (Mobile)', 'buildr' ),
-                            'default'   => BUILDR_DEFAULTS::FONT_H1_FONT_SIZE_MBL,
-                        ),
 
                         // Secondary Font
                         BUILDR_OPTIONS::FONT_SECONDARY => array(
                             'type'      => 'select',
-                            'label'     => __( 'Secondary Font (Body & Paragraph)', 'buildr' ),
+                            'label'     => __( 'Secondary Font - For Content', 'buildr' ),
                             'default'   => BUILDR_DEFAULTS::FONT_SECONDARY,
                             'choices'   => buildr_fonts(),
                         ),
                         BUILDR_OPTIONS::FONT_BODY_SIZE => array(
                             'type'      => 'number',
-                            'label'     => __( 'Font Size - Body & Paragraph', 'buildr' ),
+                            'label'     => __( 'Secondary Font - Text Size (px)', 'buildr' ),
                             'default'   => BUILDR_DEFAULTS::FONT_BODY_SIZE,
                         ),
 
