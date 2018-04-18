@@ -323,7 +323,7 @@ $data = array (
                             'description'   => __( 'https://www.transparenttextures.com', 'buildr' ),
                             'default'       => BUILDR_DEFAULTS::CUSTOM_HEADER_TEXTURE_IMG,
                         ),
-                        BUILDR_OPTIONS::CUSTOM_HEADER_TEXTURE_OPAC => array (   // TODO: Change to Overlay Decimal
+                        BUILDR_OPTIONS::CUSTOM_HEADER_TEXTURE_OPAC => array (
                             'type'          => 'decimal',
                             'label'         => __( 'Perspective Layers - Pattern (Opacity)', 'buildr' ),
                             'description'   => __( '0.0 for transparent, up to 1.0 for solid/opaque', 'buildr' ),
@@ -553,7 +553,7 @@ $data = array (
                             'label'         => __( 'Color Overlay - Color', 'buildr' ),
                             'default'       => BUILDR_DEFAULTS::CUSTOM_HEADER_COLOR_LAYER_COLOR,
                         ),
-                        BUILDR_OPTIONS::CUSTOM_HEADER_COLOR_LAYER_OPACITY => array ( // TODO: Change to Overlay Decimal
+                        BUILDR_OPTIONS::CUSTOM_HEADER_COLOR_LAYER_OPACITY => array ( 
                             'type'          => 'decimal',
                             'label'         => __( 'Color Overlay - Color (Opacity)', 'buildr' ),
                             'description'   => __( '0.0 for transparent, up to 1.0 for solid/opaque', 'buildr' ),
@@ -571,7 +571,7 @@ $data = array (
                                 'radial'    => __( 'Radial', 'buildr' ),
                             )
                         ),
-                        BUILDR_OPTIONS::GRADIENT_OVERALL_OPACITY => array ( // TODO: Change to Overlay Decimal
+                        BUILDR_OPTIONS::GRADIENT_OVERALL_OPACITY => array ( 
                             'type'          => 'decimal',
                             'label'         => __( 'Gradient - Layer Opacity', 'buildr' ),
                             'description'   => __( 'This option can be used to set transparency for the entire gradient. Set 0.0 for transparent, up to 1.0 for solid/opaque', 'buildr' ),
@@ -594,7 +594,7 @@ $data = array (
                             'label'         => __( 'Gradient Overlay - Start Color', 'buildr' ),
                             'default'       => BUILDR_DEFAULTS::GRADIENT_START_COLOR,
                         ),
-                        BUILDR_OPTIONS::GRADIENT_START_COLOR_OPACITY => array ( // TODO: Change to Overlay Decimal
+                        BUILDR_OPTIONS::GRADIENT_START_COLOR_OPACITY => array ( 
                             'type'          => 'decimal',
                             'label'         => __( 'Gradient Overlay - Start Color (Opacity)', 'buildr' ),
                             'description'   => __( '0.0 for transparent, up to 1.0 for solid/opaque', 'buildr' ),
@@ -605,7 +605,7 @@ $data = array (
                             'label'         => __( 'Gradient Overlay - End Color', 'buildr' ),
                             'default'       => BUILDR_DEFAULTS::GRADIENT_END_COLOR,
                         ),
-                        BUILDR_OPTIONS::GRADIENT_END_COLOR_OPACITY => array ( // TODO: Change to Overlay Decimal
+                        BUILDR_OPTIONS::GRADIENT_END_COLOR_OPACITY => array ( 
                             'type'          => 'decimal',
                             'label'         => __( 'Gradient Overlay - End Color (Opacity)', 'buildr' ),
                             'description'   => __( '0.0 for transparent, up to 1.0 for solid/opaque', 'buildr' ),
