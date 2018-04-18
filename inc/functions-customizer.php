@@ -95,20 +95,20 @@ function buildr_customize_partial_blogdescription() {
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
  */
 function buildr_customize_preview_js() {
-    wp_enqueue_style( 'buildr-customizer-preview-style', get_template_directory_uri() . '/assets/admin/css/customizer-preview.css', BUILDR_VERSION, null );
-    wp_enqueue_script( 'buildr-customizer-preview-script', get_template_directory_uri() . '/assets/admin/js/customizer-preview.js', array ( 'jquery', 'customize-preview' ), BUILDR_VERSION, true );
+    wp_enqueue_style( 'buildr-customizer-preview-style', buildr\get_plugin_url( '/assets/admin/customizer-preview.css' ), BUILDR_VERSION, null );
+    wp_enqueue_script( 'buildr-customizer-preview-script', buildr\get_plugin_url( '/assets/admin/customizer-preview.js' ), array ( 'jquery', 'customize-preview' ), BUILDR_VERSION, true );
 }
 add_action( 'customize_preview_init', 'buildr_customize_preview_js' );
 
 
 function buildr_customize_controls_js() {
-    wp_enqueue_script( 'buildr-customizer-control', get_template_directory_uri() . '/assets/admin/js/customizer-control.js', array ( 'jquery', 'customize-controls' ), BUILDR_VERSION, true );
-    wp_enqueue_style( 'buildr-customizer-style', get_template_directory_uri() . '/assets/admin/css/customizer.css', BUILDR_VERSION, null );
+    wp_enqueue_script( 'buildr-customizer-control', buildr\get_plugin_url( '/assets/admin/customizer-control.js' ), array ( 'jquery', 'customize-controls' ), BUILDR_VERSION, true );
+    wp_enqueue_style( 'buildr-customizer-style', buildr\get_plugin_url( '/assets/admin/customizer-alt.css' ), BUILDR_VERSION, null );
 }
 add_action( 'customize_controls_enqueue_scripts', 'buildr_customize_controls_js' );
 
 
-$acid = acid_instance( get_template_directory_uri() . '/inc/lib/' );
+$acid = acid_instance( buildr\get_plugin_url( '/inc/lib/' ) );
 
 $data = array (
     
