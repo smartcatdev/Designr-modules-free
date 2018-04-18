@@ -524,6 +524,11 @@ $data = array (
                             'description'   => __( 'Amount of space in px between each link in the menu', 'buildr' ),
                             'default'       => BUILDR_DEFAULTS::CUSTOM_HEADER_MENU_LINKS_GAP
                         ),
+                        BUILDR_OPTIONS::CUSTOM_HEADER_MENU_BUTTONS => array (
+                            'type'          => 'toggle',
+                            'label'         => __( 'Style all Custom Header menu items as Buttons?', 'buildr' ),
+                            'default'       => BUILDR_DEFAULTS::CUSTOM_HEADER_MENU_BUTTONS
+                        ),
                        
                     )
 
