@@ -38,32 +38,82 @@ function import_options() {
     ));
     
 }
+function get_page_url( $title ) {
+    
+    $page = get_page_by_title( $title );
+    
+    return get_the_permalink( $page->ID );
+    
+}
+
 
 function after_import_setup( $selected_import ) {
-	// Assign menus to their locations.
-//	$main_menu = get_term_by( 'name', 'Main Menu', 'nav_menu' );
-//
-//	set_theme_mod( 'nav_menu_locations', array(
-//			'main-menu' => $main_menu->term_id,
-//		)
-//	);
-//
+    
+    
+    $menu_name = __( 'Buildr Demo Nav', 'buildr' );
+    $menu_exists = wp_get_nav_menu_object( $menu_name );
+
+    // If it doesn't exist, let's create it.
+    if( !$menu_exists){
+
+        $menu_id = wp_create_nav_menu($menu_name);
+
+            // Set up default menu items
+        wp_update_nav_menu_item( $menu_id, 0, array(
+            'menu-item-title' =>  __( 'Home', 'buildr' ),
+            'menu-item-classes' => 'home',
+            'menu-item-url' => get_page_url( 'Home' ), 
+            'menu-item-status' => 'publish'
+        ));
+
+        wp_update_nav_menu_item( $menu_id, 0, array(
+            'menu-item-title' =>  __('Blog', 'buildr' ),
+            'menu-item-url' => get_page_url( 'Blog' ), 
+            'menu-item-status' => 'publish'
+        ));
+
+        wp_update_nav_menu_item( $menu_id, 0, array(
+            'menu-item-title' =>  __('Default Page', 'buildr' ),
+            'menu-item-url' => get_page_url( 'Default Page' ), 
+            'menu-item-status' => 'publish'
+        ));
+        
+        wp_update_nav_menu_item( $menu_id, 0, array(
+            'menu-item-title' =>  __('Buildr Pro'),
+            'menu-item-url' => 'https://smartcatdesign.net', 
+            'menu-item-status' => 'publish'
+        ));
+
+    }
+
+    
+    // Assign menus to their locations.
+    $main_menu = get_term_by( 'name', $menu_name, 'nav_menu' );
+    
+    set_theme_mod( 'nav_menu_locations', array(
+        'banner-primary'            => $main_menu->term_id,
+        'slim-primary'              => $main_menu->term_id,
+        'split-primary-left'        => $main_menu->term_id,
+//        'split-primary-right'       => $main_menu->term_id,
+        'mobile-menu'               => $main_menu->term_id,
+        'custom-header'             => $main_menu->term_id,
+    ));
+
 //	// Assign front page and posts page (blog page).
-//	$front_page_id = get_page_by_title( 'Home' );
-//	$blog_page_id  = get_page_by_title( 'Blog' );
+	$front_page_id = get_page_by_title( 'Home' );
+	$blog_page_id  = get_page_by_title( 'Blog' );
 //
-//	update_option( 'show_on_front', 'page' );
-//	update_option( 'page_on_front', $front_page_id->ID );
-//	update_option( 'page_for_posts', $blog_page_id->ID );
+	update_option( 'show_on_front', 'page' );
+	update_option( 'page_on_front', $front_page_id->ID );
+	update_option( 'page_for_posts', $blog_page_id->ID );
     
 //	echo "This will be displayed on all after imports!";
 //
-//	if ( 'Demo Import 1' === $selected_import['import_file_name'] ) {
-//		echo "This will be displayed only on after import if user selects Demo Import 1";
-//
-//		// Set logo in customizer
-//		set_theme_mod( 'logo_img', get_template_directory_uri() . '/assets/images/logo1.png' );
-//	}
+	if ( 'Demo Import 1' === $selected_import['import_file_name'] ) {
+            
+            // Set logo in customizer
+//            set_theme_mod( 'logo_img', get_template_directory_uri() . '/assets/images/logo1.png' );
+	}
 //	elseif ( 'Demo Import 2' === $selected_import['import_file_name'] ) {
 //		echo "This will be displayed only on after import if user selects Demo Import 2";
 //
