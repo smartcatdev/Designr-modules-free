@@ -62,13 +62,13 @@ function register_required_plugins() {
      */
     $plugins = array (
         
-//        array(
-//            'name'                  => 'One Click Demo Import',
-//            'slug'                  => 'one-click-demo-import',
-//            'force_activation'      => false,
-//            'is_automatic'          => true,
-//            'required'              => true,
-//        ),
+        array(
+            'name'                  => 'One Click Demo Import',
+            'slug'                  => 'one-click-demo-import',
+            'force_activation'      => false,
+            'is_automatic'          => true,
+            'required'              => false,
+        ),
 
     );
 
