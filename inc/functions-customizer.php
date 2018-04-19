@@ -323,7 +323,7 @@ $data = array (
                             'description'   => __( 'https://www.transparenttextures.com', 'buildr' ),
                             'default'       => BUILDR_DEFAULTS::CUSTOM_HEADER_TEXTURE_IMG,
                         ),
-                        BUILDR_OPTIONS::CUSTOM_HEADER_TEXTURE_OPAC => array (   // TODO: Change to Overlay Decimal
+                        BUILDR_OPTIONS::CUSTOM_HEADER_TEXTURE_OPAC => array (
                             'type'          => 'decimal',
                             'label'         => __( 'Perspective Layers - Pattern (Opacity)', 'buildr' ),
                             'description'   => __( '0.0 for transparent, up to 1.0 for solid/opaque', 'buildr' ),
@@ -524,6 +524,11 @@ $data = array (
                             'description'   => __( 'Amount of space in px between each link in the menu', 'buildr' ),
                             'default'       => BUILDR_DEFAULTS::CUSTOM_HEADER_MENU_LINKS_GAP
                         ),
+                        BUILDR_OPTIONS::CUSTOM_HEADER_MENU_BUTTONS => array (
+                            'type'          => 'toggle',
+                            'label'         => __( 'Style all Custom Header menu items as Buttons?', 'buildr' ),
+                            'default'       => BUILDR_DEFAULTS::CUSTOM_HEADER_MENU_BUTTONS
+                        ),
                        
                     )
 
@@ -553,7 +558,7 @@ $data = array (
                             'label'         => __( 'Color Overlay - Color', 'buildr' ),
                             'default'       => BUILDR_DEFAULTS::CUSTOM_HEADER_COLOR_LAYER_COLOR,
                         ),
-                        BUILDR_OPTIONS::CUSTOM_HEADER_COLOR_LAYER_OPACITY => array ( // TODO: Change to Overlay Decimal
+                        BUILDR_OPTIONS::CUSTOM_HEADER_COLOR_LAYER_OPACITY => array ( 
                             'type'          => 'decimal',
                             'label'         => __( 'Color Overlay - Color (Opacity)', 'buildr' ),
                             'description'   => __( '0.0 for transparent, up to 1.0 for solid/opaque', 'buildr' ),
@@ -571,7 +576,7 @@ $data = array (
                                 'radial'    => __( 'Radial', 'buildr' ),
                             )
                         ),
-                        BUILDR_OPTIONS::GRADIENT_OVERALL_OPACITY => array ( // TODO: Change to Overlay Decimal
+                        BUILDR_OPTIONS::GRADIENT_OVERALL_OPACITY => array ( 
                             'type'          => 'decimal',
                             'label'         => __( 'Gradient - Layer Opacity', 'buildr' ),
                             'description'   => __( 'This option can be used to set transparency for the entire gradient. Set 0.0 for transparent, up to 1.0 for solid/opaque', 'buildr' ),
@@ -594,7 +599,7 @@ $data = array (
                             'label'         => __( 'Gradient Overlay - Start Color', 'buildr' ),
                             'default'       => BUILDR_DEFAULTS::GRADIENT_START_COLOR,
                         ),
-                        BUILDR_OPTIONS::GRADIENT_START_COLOR_OPACITY => array ( // TODO: Change to Overlay Decimal
+                        BUILDR_OPTIONS::GRADIENT_START_COLOR_OPACITY => array ( 
                             'type'          => 'decimal',
                             'label'         => __( 'Gradient Overlay - Start Color (Opacity)', 'buildr' ),
                             'description'   => __( '0.0 for transparent, up to 1.0 for solid/opaque', 'buildr' ),
@@ -605,7 +610,7 @@ $data = array (
                             'label'         => __( 'Gradient Overlay - End Color', 'buildr' ),
                             'default'       => BUILDR_DEFAULTS::GRADIENT_END_COLOR,
                         ),
-                        BUILDR_OPTIONS::GRADIENT_END_COLOR_OPACITY => array ( // TODO: Change to Overlay Decimal
+                        BUILDR_OPTIONS::GRADIENT_END_COLOR_OPACITY => array ( 
                             'type'          => 'decimal',
                             'label'         => __( 'Gradient Overlay - End Color (Opacity)', 'buildr' ),
                             'description'   => __( '0.0 for transparent, up to 1.0 for solid/opaque', 'buildr' ),
@@ -1106,14 +1111,14 @@ $data = array (
                         // Primary Font
                         BUILDR_OPTIONS::FONT_PRIMARY => array(
                             'type'      => 'select',
-                            'label'     => __( 'Primary Font (Headings & Titles)', 'buildr' ),
+                            'label'     => __( 'Primary Font - For Headings & Titles', 'buildr' ),
                             'default'   => BUILDR_DEFAULTS::FONT_PRIMARY,
                             'choices'   => buildr_fonts(),
                         ),
                         BUILDR_OPTIONS::FONT_HEADINGS_LETTER_GAP => array(
                             'type'          => 'select',
-                            'label'         => __( 'Letter Spacing for all Headings', 'buildr' ),
-                            'description'   => __( 'Set the scaling "em" value. Can be positive or negative. 0 for normal spacing.', 'buildr' ),
+                            'label'         => __( 'Letter Spacing for Headings & Titles', 'buildr' ),
+                            'description'   => __( 'Set to 0 for normal spacing, negative for smaller gap between letters, positive for increased separation.', 'buildr' ),
                             'default'       => BUILDR_DEFAULTS::FONT_HEADINGS_LETTER_GAP,
                             'choices'   => array (
                                 '-.1'       => __( '-.100em (Narrowest)', 'buildr' ),
@@ -1127,41 +1132,35 @@ $data = array (
                                 '.100'      => __( '.100em (Widest)', 'buildr' ),
                             )
                         ),
-                        BUILDR_OPTIONS::FONT_HEADINGS_LINE_HEIGHT => array(
-                            'type'          => 'select',
-                            'label'         => __( 'Line Height for all Headings', 'buildr' ),
-                            'description'   => __( 'Set the scaling "em" value. Can be positive or negative. 1 for normal spacing.', 'buildr' ),
-                            'default'       => BUILDR_DEFAULTS::FONT_HEADINGS_LINE_HEIGHT,
-                            'choices'   => array (
-                                '.80'       => __( '.80em (Shortest)', 'buildr' ),
-                                '1'         => __( '1em (Default)', 'buildr' ),
-                                '1.125'     => __( '1.125em', 'buildr' ),
-                                '1.25'      => __( '1.25em', 'buildr' ),
-                                '1.5'       => __( '1.5em (Tallest)', 'buildr' ),
-                            )
-                        ),
-                        BUILDR_OPTIONS::FONT_H1_FONT_SIZE => array(
-                            'type'      => 'number',
-                            'label'     => __( 'Font Size - h1', 'buildr' ),
-                            'default'   => BUILDR_DEFAULTS::FONT_H1_FONT_SIZE,
-                        ),
-                        BUILDR_OPTIONS::FONT_H1_FONT_SIZE_MBL => array(
-                            'type'      => 'number',
-                            'label'     => __( 'Font Size - h1 (Mobile)', 'buildr' ),
-                            'default'   => BUILDR_DEFAULTS::FONT_H1_FONT_SIZE_MBL,
-                        ),
 
                         // Secondary Font
                         BUILDR_OPTIONS::FONT_SECONDARY => array(
                             'type'      => 'select',
-                            'label'     => __( 'Secondary Font (Body & Paragraph)', 'buildr' ),
+                            'label'     => __( 'Secondary Font - For Content', 'buildr' ),
                             'default'   => BUILDR_DEFAULTS::FONT_SECONDARY,
                             'choices'   => buildr_fonts(),
                         ),
                         BUILDR_OPTIONS::FONT_BODY_SIZE => array(
                             'type'      => 'number',
-                            'label'     => __( 'Font Size - Body & Paragraph', 'buildr' ),
+                            'label'     => __( 'Secondary Font - Text Size (px)', 'buildr' ),
                             'default'   => BUILDR_DEFAULTS::FONT_BODY_SIZE,
+                        ),
+
+                    ),
+
+                ),
+                
+                // Section : Smooth Scrolling ----------------------------------
+                'section_scroll' => array (
+
+                    'title'         => __( 'Smooth Scrolling', 'buildr' ),
+                    'description'   => __( 'Customize whether the Smooth Scrolling feature is enabled on your site', 'buildr' ),
+                    'options' => array (
+                        
+                        BUILDR_OPTIONS::EASE_SCROLL_TOGGLE => array(
+                            'type'          => 'toggle',
+                            'label'         => __( 'Enable Smooth Scrolling?', 'buildr' ),
+                            'default'       => BUILDR_DEFAULTS::EASE_SCROLL_TOGGLE,
                         ),
 
                     ),
