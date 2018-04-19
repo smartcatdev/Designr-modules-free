@@ -1,6 +1,6 @@
 === Buildr Features ===
 Contributors: smartcat
-Tags: page,builder,siteorigin,widgets,bundle
+Tags: page,builder,buildr,widgets
 Requires at least: 4.9.0
 Tested up to: 4.9.5
 Stable tag: 1.0.0

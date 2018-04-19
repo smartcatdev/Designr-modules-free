@@ -63,8 +63,8 @@ function register_required_plugins() {
     $plugins = array (
         
 //        array(
-//            'name'                  => 'Widget Options',
-//            'slug'                  => 'widget-options',
+//            'name'                  => 'One Click Demo Import',
+//            'slug'                  => 'one-click-demo-import',
 //            'force_activation'      => false,
 //            'is_automatic'          => true,
 //            'required'              => true,
