@@ -22,19 +22,19 @@ function import_options() {
             'import_widget_file_url' => get_plugin_url( 'presets/preset1/widgets.wie' ),
             'import_customizer_file_url' => get_plugin_url( 'presets/preset1/customizer.dat' ),
             'import_preview_image_url' => get_plugin_url( 'presets/preset1/screenshot.jpg' ),
-            'import_notice' => __( 'After you import this demo, you will have to setup the slider separately.', 'your-textdomain' ),
+            'import_notice' => __( 'After you import this demo, you will have to setup the slider separately.', 'buildr' ),
             'preview_url' => 'http://www.your_domain.com/my-demo-1',
         ),
-        array (
-            'import_file_name' => 'Demo Import 2',
-            'categories' => array ( 'Free' ),
-            'import_file_url' => 'http://www.your_domain.com/ocdi/demo-content2.xml',
-            'import_widget_file_url' => 'http://www.your_domain.com/ocdi/widgets2.json',
-            'import_customizer_file_url' => 'http://www.your_domain.com/ocdi/customizer2.dat',
-            'import_preview_image_url' => 'https://smartcatdesign.net/wp-content/uploads/edd/Lebanon.jpg',
-            'import_notice' => __( 'You need to have the Pro version to install this', 'your-textdomain' ),
-            'preview_url' => 'http://www.your_domain.com/my-demo-2',
-        ),
+//        array (
+//            'import_file_name' => 'Demo Import 2',
+//            'categories' => array ( 'Free' ),
+//            'import_file_url' => 'http://www.your_domain.com/ocdi/demo-content2.xml',
+//            'import_widget_file_url' => 'http://www.your_domain.com/ocdi/widgets2.json',
+//            'import_customizer_file_url' => 'http://www.your_domain.com/ocdi/customizer2.dat',
+//            'import_preview_image_url' => 'https://smartcatdesign.net/wp-content/uploads/edd/Lebanon.jpg',
+//            'import_notice' => __( 'You need to have the Pro version to install this', 'buildr' ),
+//            'preview_url' => 'http://www.your_domain.com/my-demo-2',
+//        ),
     ));
     
 }
@@ -50,13 +50,13 @@ function get_page_url( $title ) {
 function after_import_setup( $selected_import ) {
     
     
-    $menu_name = __( 'Buildr Demo Nav', 'buildr' );
-    $menu_exists = wp_get_nav_menu_object( $menu_name );
+    $menu1 = __( 'Buildr Demo Nav', 'buildr' );
+    $menu_exists = wp_get_nav_menu_object( $menu1 );
 
     // If it doesn't exist, let's create it.
     if( !$menu_exists){
 
-        $menu_id = wp_create_nav_menu($menu_name);
+        $menu_id = wp_create_nav_menu($menu1);
 
             // Set up default menu items
         wp_update_nav_menu_item( $menu_id, 0, array(
@@ -71,10 +71,32 @@ function after_import_setup( $selected_import ) {
             'menu-item-url' => get_page_url( 'Blog' ), 
             'menu-item-status' => 'publish'
         ));
+        
+        wp_update_nav_menu_item( $menu_id, 0, array(
+            'menu-item-title' =>  __('Buildr Pro'),
+            'menu-item-url' => 'https://smartcatdesign.net', 
+            'menu-item-status' => 'publish'
+        ));
 
+    }
+    
+    $menu2 = __( 'Buildr Demo Nav 2', 'buildr' );
+    $menu_exists = wp_get_nav_menu_object( $menu2 );
+
+    // If it doesn't exist, let's create it.
+    if( !$menu_exists){
+
+        $menu_id = wp_create_nav_menu($menu2);
+        
         wp_update_nav_menu_item( $menu_id, 0, array(
             'menu-item-title' =>  __('Default Page', 'buildr' ),
             'menu-item-url' => get_page_url( 'Default Page' ), 
+            'menu-item-status' => 'publish'
+        ));
+        
+        wp_update_nav_menu_item( $menu_id, 0, array(
+            'menu-item-title' =>  __('Buildr Widgets', 'buildr' ),
+            'menu-item-url' => get_page_url( 'Buildr Widgets' ), 
             'menu-item-status' => 'publish'
         ));
         
@@ -88,15 +110,16 @@ function after_import_setup( $selected_import ) {
 
     
     // Assign menus to their locations.
-    $main_menu = get_term_by( 'name', $menu_name, 'nav_menu' );
+    $main_menu = get_term_by( 'name', $menu1, 'nav_menu' );
+    $secondary_menu = get_term_by( 'name', $menu2, 'nav_menu' );
     
     set_theme_mod( 'nav_menu_locations', array(
         'banner-primary'            => $main_menu->term_id,
         'slim-primary'              => $main_menu->term_id,
         'split-primary-left'        => $main_menu->term_id,
-//        'split-primary-right'       => $main_menu->term_id,
+        'split-primary-right'       => $secondary_menu->term_id,
         'mobile-menu'               => $main_menu->term_id,
-        'custom-header'             => $main_menu->term_id,
+        'custom-header'             => $secondary_menu->term_id,
     ));
 
 //	// Assign front page and posts page (blog page).
