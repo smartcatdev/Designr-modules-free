@@ -62,6 +62,14 @@ function register_required_plugins() {
      */
     $plugins = array (
         
+        
+        array(
+            'name'                  => 'Team Showcase',
+            'slug'                  => 'our-team-enhanced',
+            'force_activation'      => false,
+            'is_automatic'          => true,
+            'required'              => false,
+        ),
         array(
             'name'                  => 'One Click Demo Import',
             'slug'                  => 'one-click-demo-import',
