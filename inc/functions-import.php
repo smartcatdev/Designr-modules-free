@@ -2,7 +2,7 @@
 
 namespace buildr;
 
-add_filter( 'pt-ocdi/import_files', 'buildr\import_options' );
+add_filter( 'pt-ocdi/import_files', 'buildr\import_files' );
 
 add_action( 'pt-ocdi/after_import', 'buildr\after_import_setup' );
 
@@ -12,7 +12,7 @@ add_filter( 'pt-ocdi/regenerate_thumbnails_in_content_import', '__return_false' 
 
 add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
 
-function import_options() {
+function import_files() {
     
     return apply_filters( 'buildr_presets', array (
         array (
@@ -25,21 +25,12 @@ function import_options() {
             'import_notice' => __( 'After you import this demo, you will have to setup the slider separately.', 'buildr' ),
             'preview_url' => 'http://www.your_domain.com/my-demo-1',
         ),
-//        array (
-//            'import_file_name' => 'Demo Import 2',
-//            'categories' => array ( 'Free' ),
-//            'import_file_url' => 'http://www.your_domain.com/ocdi/demo-content2.xml',
-//            'import_widget_file_url' => 'http://www.your_domain.com/ocdi/widgets2.json',
-//            'import_customizer_file_url' => 'http://www.your_domain.com/ocdi/customizer2.dat',
-//            'import_preview_image_url' => 'https://smartcatdesign.net/wp-content/uploads/edd/Lebanon.jpg',
-//            'import_notice' => __( 'You need to have the Pro version to install this', 'buildr' ),
-//            'preview_url' => 'http://www.your_domain.com/my-demo-2',
-//        ),
+
     ));
     
 }
 function get_page_url( $title ) {
-    
+
     $page = get_page_by_title( $title );
     
     return get_the_permalink( $page->ID );
