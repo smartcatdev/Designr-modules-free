@@ -43,8 +43,8 @@ class Shortcode extends \AcidWidget{
            'container_wrap' => array (
                'label'      => 'Wrap Shortcode Output in a Container?',
                'id'         => 'container_wrap',
-               'default'    => 1,
-               'type'       => 'checkbox',
+               'default'    => 'on',
+               'type'       => 'toggle',
            ),
            'bg_color' => array (
                'label'      => 'Background Color',

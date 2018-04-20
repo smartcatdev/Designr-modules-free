@@ -74,22 +74,22 @@ class Video_CTA extends \AcidWidget{
            'autoplay'       => array(
                'label'      => 'Autoplay?',
                'id'         => 'autoplay',
-               'default'    => 1,
-               'type'       => 'checkbox'
+               'default'    => 'on',
+               'type'       => 'toggle'
            ),
            
            'loop'       => array(
                'label'      => 'Loop?',
                'id'         => 'loop',
-               'default'    => 1,
-               'type'       => 'checkbox'
+               'default'    => 'on',
+               'type'       => 'toggle'
            ),
            
            'controls'       => array(
                'label'      => 'Show controls?',
                'id'         => 'controls',
-               'default'    => 0,
-               'type'       => 'checkbox'
+               'default'    => 'off',
+               'type'       => 'toggle'
            ),
            
            'height'         => array(

@@ -98,8 +98,8 @@ class Image_CTA extends \AcidWidget{
            'image_rounded' => array(
                'label'      => 'Rounded image? (must be square 1:1 image)',
                'id'         => 'image_rounded',
-               'default'    => '',
-               'type'       => 'checkbox'
+               'default'    => 'off',
+               'type'       => 'toggle'
            ),
            'btn_style' => array(
                'label'      => 'Button style',
