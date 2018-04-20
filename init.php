@@ -3,7 +3,7 @@
  * Plugin Name: Buildr Features
  * Author: Smartcat
  * Description: Advanced Widgets for Buildr theme.
- * Version: 1.0.0
+ * Version: 1.0.1
  * Author: Smartcat
  * Author URI: https://smartcatdesign.net/
  * License: GPL V2
@@ -60,12 +60,9 @@ if ( function_exists( 'wp_get_theme' ) ) {
 }
 
 if( $active_theme_name == 'buildr' || $parent_theme_name == 'buildr' ) {
-    
-    add_action( 'after_setup_theme', 'buildr\init' );
-    
-    if( ! class_exists( 'OCDI_Plugin' ) ) {
-        add_action( 'plugins_loaded', 'buildr\load_importer' );
-    }
+   
+    add_action( 'after_setup_theme', 'buildr\after_setup_theme' );
+    add_action( 'plugins_loaded', 'buildr\plugins_loaded' );
     
 }
 
@@ -73,26 +70,25 @@ if( $active_theme_name == 'buildr' || $parent_theme_name == 'buildr' ) {
  * @since 1.0.0
  * @return null
  */
-function init() {
+function after_setup_theme() {
     
    /**
     * Load Necessary Includes
     */
-    
     require get_plugin_path() . 'inc/functions-general.php';
     require get_plugin_path() . 'inc/functions-customizer.php';
     require get_plugin_path() . 'inc/functions-widgets.php';
     require get_plugin_path() . 'inc/functions-enqueue.php';
     require get_plugin_path() . 'inc/functions-css.php';
-    require get_plugin_path() . 'inc/functions-import.php';
     require get_plugin_path() . 'inc/functions-tgmpa.php';
+    
+    do_action( 'buildr_after_setup_theme' );
     
 }
 
-/**
- * @since 1.0.0
- * @return null
- */
-function load_importer() {
-    include_once get_plugin_path( 'import/one-click-demo-import.php' );
+function plugins_loaded() {
+    
+    require get_plugin_path() . 'inc/functions-import.php';    
+    do_action( 'buildr_plugins_loaded' );
+    
 }
