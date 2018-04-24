@@ -17,15 +17,14 @@ function html( $html ) {
     echo html_entity_decode( $html );
 }
 
-function button( $text, $url, $class = 'primary', $size = 'medium' ) { 
+function button( $text, $url, $class = 'primary', $size = 'medium', $target = 'same' ) { 
     
     if( $text ) : ?> 
         
-        <a href="<?php url( $url ) ?>" class="button <?php attr( $class ) ?> <?php attr( $size ) ?>">
+        <a href="<?php url( $url ) ?>" class="button <?php attr( $class ) ?> <?php attr( $size ) ?>" <?php echo $target == 'new' ? 'target="_BLANK"' : ''; ?>>
             <?php attr( $text ); ?>
         </a>
 
-        
     <?php endif;
     
 }
@@ -51,6 +50,13 @@ function button_sizes() {
         'small'       => 'Small',
         'medium'     => 'Medium',
         'large'        => 'Large'
+    );
+}
+
+function button_targets() {
+    return array(
+        'same'      => 'Open in Same Tab',
+        'new'       => 'Open in New',
     );
 }
 
