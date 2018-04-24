@@ -74,13 +74,9 @@ class Image_CTA extends \AcidWidget{
            'image_location' => array(
                'label'      => 'Image Location',
                'id'         => 'image_location',
-               'default'    => '',
+               'default'    => 'left',
                'type'       => 'select',
-               'options'    => array(
-                   'left'       => 'Left',
-                   'right'      => 'Right',
-                   'stacked'    => 'Stacked',
-               )
+               'options'    => alignment_options()
            ),
 
            'text_align' => array(
