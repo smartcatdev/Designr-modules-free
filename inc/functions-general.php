@@ -50,6 +50,13 @@ function button_sizes() {
     );
 }
 
+function button_targets() {
+    return array(
+        'same'      => 'Open in Same Tab',
+        'new'       => 'Open in New',
+    );
+}
+
 function render_template( $file, $args, $once = false ) {
     
     $file = get_plugin_path( 'inc/widgets/' . $file );
