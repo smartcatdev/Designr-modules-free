@@ -25,6 +25,16 @@ function import_files() {
             'import_notice' => __( 'After you import this demo, you will have to setup the slider separately.', 'buildr' ),
             'preview_url' => 'http://www.your_domain.com/my-demo-1',
         ),
+        array (
+            'import_file_name' => 'Demo Import 2',
+            'categories' => array ( 'Free' ),
+            'import_file_url' => get_plugin_url( 'presets/preset1/content.xml' ),
+            'import_widget_file_url' => get_plugin_url( 'presets/preset1/widgets.wie' ),
+            'import_customizer_file_url' => get_plugin_url( 'presets/preset1/customizer.dat' ),
+            'import_preview_image_url' => get_plugin_url( 'presets/preset2/screenshot.jpg' ),
+            'import_notice' => __( 'After you import this demo, you will have to setup the slider separately.', 'buildr' ),
+            'preview_url' => 'http://www.your_domain.com/my-demo-1',
+        ),
 
     ));
     
