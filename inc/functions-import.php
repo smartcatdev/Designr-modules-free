@@ -105,8 +105,7 @@ function after_import_setup( $selected_import ) {
     $secondary_menu = get_term_by( 'name', $menu2, 'nav_menu' );
     
     set_theme_mod( 'nav_menu_locations', array(
-        'banner-primary'            => $main_menu->term_id,
-        'slim-primary'              => $main_menu->term_id,
+        'primary-menu'              => $main_menu->term_id,
         'split-primary-left'        => $main_menu->term_id,
         'split-primary-right'       => $secondary_menu->term_id,
         'mobile-menu'               => $main_menu->term_id,
