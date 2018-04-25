@@ -87,7 +87,7 @@ function toolbar_link( $wp_admin_bar ) {
     
     $post = get_queried_object();
     
-    if( ! $post->ID ) {
+    if( ! isset( $post->ID ) ) {
         return;
     }
     
