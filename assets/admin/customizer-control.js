@@ -90,7 +90,7 @@
         });
         
         // Custom Logo
-        customize( 'custom_logo', function ( value ) {
+        customize( 'buildr_custom_header_height_percent', function ( value ) {
             
             // Initial Load
             toggle( value.get() ); 
@@ -102,17 +102,15 @@
             
             function toggle( value ) {
                 
-//                if ( value || $('#custom-logo-wrap').hasClass('has-logo') ) {
-//                    $('li#customize-control-style_a_always_show_logo').removeClass('buildr-hidden');
-//                    $('li#customize-control-style_a_logo_space').removeClass('buildr-hidden');
-//                    $('li#customize-control-style_a_mobile_logo_height').removeClass('buildr-hidden');
-//                    $('li#customize-control-navbar_banner_logo_height').removeClass('buildr-hidden');
-//                } else {
-//                    $('li#customize-control-style_a_always_show_logo').addClass('buildr-hidden');
-//                    $('li#customize-control-style_a_logo_space').addClass('buildr-hidden');
-//                    $('li#customize-control-style_a_mobile_logo_height').addClass('buildr-hidden');                    
-//                    $('li#customize-control-navbar_banner_logo_height').addClass('buildr-hidden');
-//                }
+                console.log(value + " fired");
+                
+                if ( parseInt(value) == 100 ) {
+                    console.log("true match");
+                    $('li#customize-control-buildr_custom_header_height_percent_mbl').addClass('buildr-hidden');
+                } else {
+                    console.log("false");
+                    $('li#customize-control-buildr_custom_header_height_percent_mbl').removeClass('buildr-hidden');
+                }
                 
             }
             
@@ -139,6 +137,37 @@
                     $('li#customize-control-navbar_social_drawer_background').addClass('buildr-hidden');
                     $('li#customize-control-navbar_social_link_foreground').addClass('buildr-hidden');
                     $('li#customize-control-navbar_social_link_foreground_hover').addClass('buildr-hidden');
+                }
+                
+            }
+            
+        });
+
+        // Blog Layout
+        customize( 'blog_layout_style', function ( value ) {
+            
+            // Initial Load
+            toggle( value.get() ); 
+            
+            // Value Change
+            value.bind( function ( to ) {    
+                toggle( to );
+            });
+            
+            function toggle( value ) {
+                
+                console.log('BLOG LAYOUT ' + value);
+                
+                if ( value && value == 'blog_standard' ) {
+                    $('li#customize-control-standard_blog_appearance_style').removeClass('buildr-hidden');
+                } else {
+                    $('li#customize-control-standard_blog_appearance_style').addClass('buildr-hidden');
+                }
+                
+                if ( value && value == 'blog_mosaic' ) {
+                    $('li#customize-control-mosaic_blog_gap_spacing').removeClass('buildr-hidden');
+                } else {
+                    $('li#customize-control-mosaic_blog_gap_spacing').addClass('buildr-hidden');
                 }
                 
             }

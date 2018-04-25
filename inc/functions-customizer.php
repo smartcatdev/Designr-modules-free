@@ -284,6 +284,7 @@ $data = array (
                         BUILDR_OPTIONS::CUSTOM_HEADER_HEIGHT_PCT => array (
                             'type'          => 'number',
                             'label'         => __( 'Height (%)', 'buildr' ),
+                            'description'   => __( 'Setting this to 100 will match the Header height to the browser window on both Desktop and Mobile devices.', 'buildr' ),
                             'default'       => BUILDR_DEFAULTS::CUSTOM_HEADER_HEIGHT_PCT,
                             'min'           => 25,
                             'max'           => 100,

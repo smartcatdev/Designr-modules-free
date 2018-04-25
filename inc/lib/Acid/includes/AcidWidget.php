@@ -212,18 +212,21 @@ if ( !class_exists( 'AcidWidget' ) ) {
                     
                     case 'checkbox':
                         $output .= '<p>';
-                        $output .= '<input class="checkbox" type="checkbox" ' . checked( $widget_value, true, false ) . ' id="' . esc_attr( $this->get_field_id( $widget_field[ 'id' ] ) ) . '" name="' . esc_attr( $this->get_field_id( $widget_field[ 'id' ] ) ) . '" value="1">';
+                        $output .= '<input class="checkbox" type="checkbox" ' . checked( $widget_value, 'on', false ) . ' id="' . esc_attr( $this->get_field_id( $widget_field[ 'id' ] ) ) . '" name="' . esc_attr( $this->get_field_name( $widget_field[ 'id' ] ) ) . '" />';
                         $output .= '<label class="acid-control-title" for="' . esc_attr( $this->get_field_id( $widget_field[ 'id' ] ) ) . '">' . esc_attr( $widget_field[ 'label' ], 'acid' ) . '</label>';
                         $output .= '</p>';
                         break;
                     
                     case 'toggle':
+                        $output .= '<label class="buildr-control-title">';
+                        $output .= '<span>' . esc_attr( $widget_field[ 'label' ], 'acid' ) . '</span>';
+                        $output .= '</label>';
                         $output .= '<div class="toggle-flex">';
                         $output .= '<div class="flex-inner-small">';
                         $output .= '<label class="switch">';
-                        $output .= '<input class="checkbox" type="checkbox" ' . checked( $widget_value, true, false ) . ' id="' . esc_attr( $this->get_field_id( $widget_field[ 'id' ] ) ) . '" name="' . esc_attr( $this->get_field_id( $widget_field[ 'id' ] ) ) . '" value="1">';
+                        $output .= '<input class="checkbox" type="checkbox" ' . checked( $widget_value, 'on', false ) . ' id="' . esc_attr( $this->get_field_id( $widget_field[ 'id' ] ) ) . '" name="' . esc_attr( $this->get_field_name( $widget_field[ 'id' ] ) ) . '" />';
                         $output .= '<span class="slider round"></span>';
-                        $output .= '<label class="tgl-btn" for="' . esc_attr( $this->get_field_id( $widget_field[ 'id' ] ) ) . '">' . esc_attr( $widget_field[ 'label' ], 'acid' ) . '</label>';
+                        $output .= '<label class="tgl-btn" for="' . esc_attr( $this->get_field_id( $widget_field[ 'id' ] ) ) . '"></label>';
                         $output .= '</label>';
                         $output .= '</div>';
                         $output .= '</div>';
@@ -291,7 +294,10 @@ if ( !class_exists( 'AcidWidget' ) ) {
             foreach ( $this->widget_fields as $widget_field ) {
                 switch ( $widget_field[ 'type' ] ) {
                     case 'checkbox':
-                        $instance[ $widget_field[ 'id' ] ] = isset( $_POST[ $this->get_field_id( $widget_field[ 'id' ] ) ] ) ? $_POST[ $this->get_field_id( $widget_field[ 'id' ] ) ] : '';
+                        $instance[ $widget_field[ 'id' ] ] = (!empty( $new_instance[ $widget_field[ 'id' ] ] ) && $new_instance[ $widget_field[ 'id' ] ] == 'on' ) ? 'on' : 'off';
+                        break;
+                    case 'toggle':
+                        $instance[ $widget_field[ 'id' ] ] = (!empty( $new_instance[ $widget_field[ 'id' ] ] ) && $new_instance[ $widget_field[ 'id' ] ] == 'on' ) ? 'on' : 'off';
                         break;
                     case 'textarea':
                         $instance[ $widget_field[ 'id' ] ] = (!empty( $new_instance[ $widget_field[ 'id' ] ] ) ) ? htmlentities( $new_instance[ $widget_field[ 'id' ] ] ) : '';

@@ -3,13 +3,13 @@ namespace buildr;
 ?>
 
 <div class="col-sm-12">
-
+    
     <div class="flxbx center mid <?php attr( $video_location ); ?>-align-video <?php attr( $text_align ); ?>-align-text">
 
         <div>
             
             <div class="video-cta-wrapper">
-                <iframe src="https://www.youtube.com/embed/<?php attr( $video ) ?>?autoplay=<?php attr( $autoplay ) ?>&showinfo=0&controls=0&loop=<?php attr( $loop ) ?>"
+                <iframe src="https://www.youtube.com/embed/<?php attr( $video ) ?>?autoplay=<?php echo $autoplay == 'on' ? 1 : 0; ?>&showinfo=0&controls=<?php echo $controls == 'on' ? 1 : 0; ?>&loop=<?php echo $loop == 'on' ? 1 : 0; ?>"
                         width="100%"
                         height="<?php attr( $height ) ?>" allow="autoplay; encrypted-media">
                 </iframe>

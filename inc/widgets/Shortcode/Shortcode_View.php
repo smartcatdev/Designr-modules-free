@@ -19,7 +19,7 @@ $this->css['#' . $args['widget_id'] ] = array(
 
 <div class="buildr-module shortcode" id="<?php echo esc_attr( $args['widget_id' ] ); ?>">
     
-    <?php if ( !empty( $values['container_wrap'] ) && $values['container_wrap'] ) : ?>
+    <?php if ( !empty( $values['container_wrap'] ) && $values['container_wrap'] == 'on' ) : ?>
     
         <div class="container">
 
@@ -31,7 +31,7 @@ $this->css['#' . $args['widget_id'] ] = array(
                 
     <?php echo do_shortcode( $values['shortcode'] ); ?>    
                 
-    <?php if ( !empty( $values['container_wrap'] ) && $values['container_wrap'] ) : ?>
+    <?php if ( !empty( $values['container_wrap'] ) && $values['container_wrap'] == 'on' ) : ?>
                     
                 </div>
 

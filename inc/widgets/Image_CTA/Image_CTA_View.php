@@ -26,7 +26,7 @@ if( $values['text_align'] ) {
     $this->css['#'. $args['widget_id']]['text-align'] = 'center';
 }
 
-if( $values['image_rounded'] ) {
+if( $values['image_rounded'] == 'on' ) {
     $this->css['#'. $args['widget_id'] . ' img.image-cta-img']['border-radius'] = '100%';
 }
 

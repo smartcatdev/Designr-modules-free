@@ -74,13 +74,9 @@ class Image_CTA extends \AcidWidget{
            'image_location' => array(
                'label'      => 'Image Location',
                'id'         => 'image_location',
-               'default'    => '',
+               'default'    => 'left',
                'type'       => 'select',
-               'options'    => array(
-                   'left'       => 'Left',
-                   'right'      => 'Right',
-                   'stacked'    => 'Stacked',
-               )
+               'options'    => alignment_options()
            ),
 
            'text_align' => array(
@@ -98,8 +94,8 @@ class Image_CTA extends \AcidWidget{
            'image_rounded' => array(
                'label'      => 'Rounded image? (must be square 1:1 image)',
                'id'         => 'image_rounded',
-               'default'    => '',
-               'type'       => 'checkbox'
+               'default'    => 'off',
+               'type'       => 'toggle'
            ),
            'btn_style' => array(
                'label'      => 'Button style',

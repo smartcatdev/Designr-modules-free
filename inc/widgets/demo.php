@@ -59,7 +59,7 @@ class SimpleCta extends \AcidWidget{
            array (
                'label' => 'Toggle',
                'id' => 'toggle_75243',
-               'default' => '1',
+               'default' => 'on',
                'type' => 'toggle',
            ),
            array (
