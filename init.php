@@ -75,6 +75,7 @@ function after_setup_theme() {
    /**
     * Load Necessary Includes
     */
+    require get_plugin_path() . 'inc/functions-fontawesome.php';
     require get_plugin_path() . 'inc/functions-general.php';
     require get_plugin_path() . 'inc/functions-metabox.php';
     require get_plugin_path() . 'inc/functions-customizer.php';

@@ -1106,7 +1106,7 @@ $data = array (
                 'fonts' => array (
 
                     'title'         => __( 'Fonts', 'buildr' ),
-                    'description'   => __( 'Customize the fonts in use on your site', 'buildr' ),
+                    'description'   => __( 'Customize the fonts in use on your site. Visit <a target="_BLANK" href="https://fonts.google.com/"> Google Fonts to see font options.</a> Please be advised some fonts on this link may not be present in the theme, as Google Fonts are constantly updated. We periodically update the font list here from Google Fonts.', 'buildr' ),
                     'options' => array (
                         
                         // Primary Font
