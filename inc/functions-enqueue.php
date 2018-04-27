@@ -16,6 +16,10 @@ function enqueue_plugin_styles_scripts() {
     
     // Scripts
     wp_enqueue_script( 'slick', get_plugin_url() . 'assets/lib/slick/slick.min.js', array( 'jquery' ), BUILDR_MODULES_VERSION );
+
+    if( current_user_can( 'edit_theme_options' ) ) {
+        wp_enqueue_style( 'buildr-admin-css', get_plugin_url() . 'assets/admin/admin.css', null, BUILDR_MODULES_VERSION );
+    }
     
 }
 add_action( 'wp_enqueue_scripts', 'buildr\enqueue_plugin_styles_scripts' );

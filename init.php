@@ -75,7 +75,9 @@ function after_setup_theme() {
    /**
     * Load Necessary Includes
     */
+    require get_plugin_path() . 'inc/functions-fontawesome.php';
     require get_plugin_path() . 'inc/functions-general.php';
+    require get_plugin_path() . 'inc/functions-metabox.php';
     require get_plugin_path() . 'inc/functions-customizer.php';
     require get_plugin_path() . 'inc/functions-widgets.php';
     require get_plugin_path() . 'inc/functions-enqueue.php';
@@ -91,4 +93,8 @@ function plugins_loaded() {
     require get_plugin_path() . 'inc/functions-import.php';    
     do_action( 'buildr_plugins_loaded' );
     
+}
+
+function init() {
+    return;
 }
