@@ -104,33 +104,3 @@ ul.slick-dots li:hover button {
     margin-top: 20px;
     display: inline-block;
 }
-
-.buildr-module .slider > .slick-arrow {
-    top: 50%;
-    position: absolute;
-    transform: translate(0%,-50%) rotate(-90deg);
-    background: none;
-    border: none;
-    left: 15px;
-    z-index: 9999;
-    width: 20px;
-    cursor: pointer;
-    transition: all 0.3s ease-in-out;
-    -moz-transition: all 0.3s ease-in-out;
-    -webkit-transition: all 0.3s ease-in-out;
-}
-
-.buildr-module .slider > .slick-arrow svg {
-    fill: #fff;
-}
-
-.buildr-module .slider > .slick-arrow.slick-next {
-    right: 15px;
-    left: unset;
-    transform: translate(0%,-50%) rotate(90deg);
-}
-
-.buildr-module .slider > .slick-arrow:hover {
-    opacity: .75;
-}
-
