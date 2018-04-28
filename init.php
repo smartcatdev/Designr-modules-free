@@ -25,7 +25,7 @@ if( !defined( 'ABSPATH' ) ) {
 /**
  * Constant Declarations
  */
-const BUILDR_MODULES_VERSION = '1.0.0';
+const BUILDR_MODULES_VERSION = '1.0.1';
 
 /**
  * @since 1.0.0
@@ -75,6 +75,7 @@ function after_setup_theme() {
    /**
     * Load Necessary Includes
     */
+    require get_plugin_path() . 'inc/functions-fontawesome.php';
     require get_plugin_path() . 'inc/functions-general.php';
     require get_plugin_path() . 'inc/functions-metabox.php';
     require get_plugin_path() . 'inc/functions-customizer.php';
