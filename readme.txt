@@ -14,15 +14,11 @@ This plugin adds advanced, pre-designed widgets to your site that you can use in
 
 Available Widgets:
 - Image Slider
-
-Coming soon Widgets:
-- Call to Action ( Various designs )
-- Carousel
-- Vertical split 
-- Features Icons
-- Pricing Tables
-- Contact Info
-- Team Members
+- Heading & Subheading
+- Image CTA
+- YouTube Video CTA
+- Shortcode
+- Simple CTA
 
 
 == Installation ==
@@ -32,7 +28,7 @@ Coming soon Widgets:
 == Changelog == 
 
 = 1.0.1
-
+added 5 additional widgets, many updates
 
 = 1.0.0 = initial release
 
