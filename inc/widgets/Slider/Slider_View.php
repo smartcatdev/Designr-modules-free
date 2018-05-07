@@ -17,17 +17,17 @@
 
                 </style>
 
-                <div class="slider instance-<?php echo esc_attr( $widget_id ); ?>" style="height: <?php echo !empty( $instance['slider_height'] ) ? esc_attr( $instance['slider_height'] ) : 600; ?>px;">
+                <div class="slider arrowed-slider instance-<?php echo esc_attr( $widget_id ); ?>" style="height: <?php echo !empty( $instance['slider_height'] ) ? esc_attr( $instance['slider_height'] ) : 600; ?>px;">
 
             <?php else : ?>
 
-                <div class="slider instance-<?php echo esc_attr( $widget_id ); ?>" style="height: <?php echo intval( $instance['slider_height_style'] ); ?>vw;">
+                <div class="slider arrowed-slider instance-<?php echo esc_attr( $widget_id ); ?>" style="height: <?php echo intval( $instance['slider_height_style'] ); ?>vw;">
 
             <?php endif; ?>
 
         <?php else : ?>
 
-            <div class="slider instance-<?php echo esc_attr( $widget_id ); ?>" style="height: 42vw;">
+            <div class="slider arrowed-slider instance-<?php echo esc_attr( $widget_id ); ?>" style="height: 42vw;">
 
         <?php endif; ?>
 

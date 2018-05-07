@@ -12,6 +12,7 @@ function enqueue_plugin_styles_scripts() {
     
     // Styles
     wp_enqueue_style( 'slick', get_plugin_url() . 'assets/lib/slick/slick.css', null, BUILDR_MODULES_VERSION );
+    wp_enqueue_style( 'buildr-features-common', get_plugin_url() . 'assets/css/common.css', null, BUILDR_MODULES_VERSION );
     
     // Scripts
     wp_enqueue_script( 'slick', get_plugin_url() . 'assets/lib/slick/slick.min.js', array( 'jquery' ), BUILDR_MODULES_VERSION );

@@ -199,25 +199,32 @@ if ( !class_exists( 'AcidWidget' ) ) {
                         break;
                     
                     case 'section' :
+                        $output .= '<div class="acid-widget-control-header">';
                         $output .= '<h4 class="section-header">' . $widget_field[ 'label' ] . '</h4>';
+                        $output .= '</div>';
                         break;
                     
                     case 'media':
+                        $output .= '<div class="acid-widget-control-media">';
                         $output .= '<p>';
                         $output .= '<label class="acid-control-title" for="' . esc_attr( $this->get_field_id( $widget_field[ 'id' ] ) ) . '">' . esc_attr( $widget_field[ 'label' ], 'acid' ) . ':</label> ';
                         $output .= '<input class="widefat" id="' . esc_attr( $this->get_field_id( $widget_field[ 'id' ] ) ) . '" name="' . esc_attr( $this->get_field_name( $widget_field[ 'id' ] ) ) . '" type="' . $widget_field[ 'type' ] . '" value="' . esc_url( $widget_value ) . '">';
                         $output .= '<button id="' . $this->get_field_id( $widget_field[ 'id' ] ) . '" class="button select-media custommedia">Add Media</button>';
                         $output .= '</p>';
+                        $output .= '</div>';
                         break;
                     
                     case 'checkbox':
+                        $output .= '<div class="acid-widget-control-checkbox">';
                         $output .= '<p>';
                         $output .= '<input class="checkbox" type="checkbox" ' . checked( $widget_value, 'on', false ) . ' id="' . esc_attr( $this->get_field_id( $widget_field[ 'id' ] ) ) . '" name="' . esc_attr( $this->get_field_name( $widget_field[ 'id' ] ) ) . '" />';
                         $output .= '<label class="acid-control-title" for="' . esc_attr( $this->get_field_id( $widget_field[ 'id' ] ) ) . '">' . esc_attr( $widget_field[ 'label' ], 'acid' ) . '</label>';
                         $output .= '</p>';
+                        $output .= '</div>';
                         break;
                     
                     case 'toggle':
+                        $output .= '<div class="acid-widget-control-toggle">';
                         $output .= '<label class="buildr-control-title">';
                         $output .= '<span>' . esc_attr( $widget_field[ 'label' ], 'acid' ) . '</span>';
                         $output .= '</label>';
@@ -230,17 +237,20 @@ if ( !class_exists( 'AcidWidget' ) ) {
                         $output .= '</label>';
                         $output .= '</div>';
                         $output .= '</div>';
+                        $output .= '</div>';
                         break;
                     
                     case 'textarea':
+                        $output .= '<div class="acid-widget-control-textarea">';
                         $output .= '<p>';
                         $output .= '<label class="acid-control-title" for="' . esc_attr( $this->get_field_id( $widget_field[ 'id' ] ) ) . '">' . esc_attr( $widget_field[ 'label' ], 'acid' ) . ':</label> ';
                         $output .= '<textarea class="widefat" id="' . esc_attr( $this->get_field_id( $widget_field[ 'id' ] ) ) . '" name="' . esc_attr( $this->get_field_name( $widget_field[ 'id' ] ) ) . '" rows="6" cols="6" value="' . esc_attr( $widget_value ) . '">' . $widget_value . '</textarea>';
                         $output .= '</p>';
+                        $output .= '</div>';
                         break;
                     
                     case 'select':
-                        
+                        $output .= '<div class="acid-widget-control-select">';
                         $output .= '<p>';
                         $output .= '<label class="acid-control-title" for="' . esc_attr( $this->get_field_id( $widget_field[ 'id' ] ) ) . '">' . esc_attr( $widget_field[ 'label' ], 'acid' ) . ':</label> ';
                         $output .= '<select name="' . esc_attr( $this->get_field_name( $widget_field[ 'id' ] ) ) . '" id="' . esc_attr( $this->get_field_id( $widget_field[ 'id' ] ) ) . '" class="widefat">';
@@ -250,9 +260,11 @@ if ( !class_exists( 'AcidWidget' ) ) {
                         endforeach;
                         $output .= '</select>';
                         $output .= '</p>';
+                        $output .= '</div>';
                         break;
                     
                     case 'colorpicker':
+                        $output .= '<div class="acid-widget-control-colorpicker">';
                         $output .= '<p>';
                         $output .= '<label class="acid-control-title" for="' . esc_attr( $this->get_field_id( $widget_field[ 'id' ] ) ) . '">' . esc_attr( $widget_field[ 'label' ], 'acid' ) . ':</label> ';
                         $output .= '<input class="widefat color-picker" '
@@ -260,13 +272,16 @@ if ( !class_exists( 'AcidWidget' ) ) {
                                 . 'name="' . esc_attr( $this->get_field_name( $widget_field[ 'id' ] ) ) . '" '
                                 . 'type="' . $widget_field[ 'type' ] . '" value="' . esc_attr( $widget_value ) . '">';
                         $output .= '</p>';
+                        $output .= '</div>';
                         break;
                     
                     default:
+                        $output .= '<div class="acid-widget-control-' . esc_attr( $widget_field[ 'type' ] ) . '">';
                         $output .= '<p>';
                         $output .= '<label class="acid-control-title" for="' . esc_attr( $this->get_field_id( $widget_field[ 'id' ] ) ) . '">' . esc_attr( $widget_field[ 'label' ], 'acid' ) . ':</label> ';
                         $output .= '<input class="widefat" id="' . esc_attr( $this->get_field_id( $widget_field[ 'id' ] ) ) . '" name="' . esc_attr( $this->get_field_name( $widget_field[ 'id' ] ) ) . '" type="' . $widget_field[ 'type' ] . '" value="' . esc_attr( $widget_value ) . '">';
                         $output .= '</p>';
+                        $output .= '</div>';
                         break;
                 }
             }
