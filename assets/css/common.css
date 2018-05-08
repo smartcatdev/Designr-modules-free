@@ -1,3 +1,7 @@
+.showcase-image {
+    box-shadow: 0 5px 15px #d4d4d4;
+}
+
 .arrowed-slider .slick-arrow {
     top: 50%;
     position: absolute;
