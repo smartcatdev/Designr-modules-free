@@ -3,7 +3,7 @@ Contributors: smartcat
 Tags: page,builder,buildr,widgets
 Requires at least: 4.9.0
 Tested up to: 4.9.5
-Stable tag: 1.0.0
+Stable tag: 1.0.1
 Requires PHP: 5.4
 License: GPLv2 or later
 
@@ -26,6 +26,9 @@ Available Widgets:
 2. OR - Upload the unpacked folder folder via FTP into /wp-content/plugins
 
 == Changelog == 
+
+= 1.0.2
+Updated presets
 
 = 1.0.1
 added 5 additional widgets, many updates
