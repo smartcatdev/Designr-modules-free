@@ -228,10 +228,20 @@ label.buildr-control-title {
     content: "\f215";
     color: #2195f3;
 }
+#available-widgets [class*=buildr_shortcode] .widget-title:before{
+    content: "\f475";
+    color: #2195f3;
+}
+#available-widgets [class*=buildr_video_cta] .widget-title:before{
+    color: #2195f3;
+}
+
 
 #available-widgets [class*=buildr_simple_cta],
 #available-widgets [class*=buildr_image_cta],
 #available-widgets [class*=buildr_heading],
+#available-widgets [class*=buildr_video_cta],
+#available-widgets [class*=buildr_shortcode],
 #available-widgets [class*=buildr_slider]{
     background: #f3f3f5;
     border-left: 4px solid #f3f3f5;
