@@ -1450,16 +1450,6 @@ $data = array (
                                 'fa-shopping-basket'    =>  __( 'Basket', 'buildr' ),
                             )
                         ),
-                        BUILDR_OPTIONS::WOO_SLIDE_CART_TAB_POSITION => array (
-                            'type'          => 'radio-toggle',
-                            'label'         => __( 'Tab: Location' , 'buildr' ),
-                            'description'   => __( 'For readability, the tab will always appear at the bottom when viewing the site on mobile devices.' , 'buildr' ),
-                            'default'       => BUILDR_DEFAULTS::WOO_SLIDE_CART_TAB_POSITION,
-                            'choices'       => array (
-                                'top'           =>  __( 'Top', 'buildr' ),
-                                'bottom'        =>  __( 'Bottom', 'buildr' ),
-                            )
-                        ),
                         
                     )
                     

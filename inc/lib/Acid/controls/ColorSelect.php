@@ -165,7 +165,7 @@ function acid_register_color_select() {
                     line-height: 20px;
                     height: 20px;
                     width: 20px;
-                    background-color: white;
+                    background-color: lawngreen;
                     border-radius: 50%;
                     -webkit-transition: all 0.3s ease-in-out;
                     -moz-transition: all 0.3s ease-in-out;
