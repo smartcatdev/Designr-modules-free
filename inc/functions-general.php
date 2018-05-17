@@ -124,3 +124,21 @@ function modify_user_contact_methods( $user_contact ) {
     
 }
 add_filter( 'user_contactmethods', 'buildr\modify_user_contact_methods' );
+
+//if ( !class_exists( 'OCDI_Plugin' ) ) :
+    
+    /**
+     * Register admin menu pages.
+     *
+     * @since 1.0.3
+     */
+    function add_upgrade_page() {
+
+        add_theme_page( __( 'Upgrade to Pro', 'buildr' ), __( 'Upgrade to Pro', 'buildr' ), 'edit_theme_options', 'buildr-theme-upgrade', function() {
+            include_once get_plugin_path() . '/admin/buildr-upgrade.php';
+        });
+    
+    }
+    add_action( 'admin_menu', 'buildr\add_upgrade_page' );
+    
+//endif;

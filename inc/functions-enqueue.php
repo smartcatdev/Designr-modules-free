@@ -45,3 +45,15 @@ add_action( 'customize_controls_enqueue_scripts', 'buildr\enqueue_admin_styles' 
 add_action( 'admin_print_styles-post-new.php', 'buildr\enqueue_admin_styles' );
 add_action( 'admin_print_styles-post.php', 'buildr\enqueue_admin_styles' );
 add_action( 'admin_print_styles-widgets.php', 'buildr\enqueue_admin_styles' );
+
+add_action( 'admin_enqueue_scripts', 'buildr\buildr_load_upgrade_css' );
+function buildr_load_upgrade_css( $hook ) {
+    
+    // Enqueue fonts and css only on this page
+    if( 'appearance_page_buildr-theme-upgrade' == $hook ) {
+        wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/lib/font-awesome/fontawesome-all.min.css' );
+        wp_enqueue_style( 'buildr-admin-fonts', '//fonts.googleapis.com/css?family=Lato:300,400,700,900' );
+        wp_enqueue_style( 'buildr-admin-css', get_plugin_url() . 'assets/admin/upgrade.css' );
+    }
+    
+}
