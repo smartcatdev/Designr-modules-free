@@ -36,7 +36,7 @@ function import_files() {
             'preview_url' => 'http://buildr.pro1.smartcatthemes.com/',
         ),
         array (
-            'import_file_name' => 'Preset 1',
+            'import_file_name' => 'Buildr Standard',
             'categories' => array ( 'Free' ),
             'import_file_url' => get_plugin_url( 'presets/preset1/content.xml' ),
             'import_widget_file_url' => get_plugin_url( 'presets/preset1/widgets.wie' ),
@@ -46,7 +46,7 @@ function import_files() {
             'preview_url' => 'http://buildr.preset1.smartcatthemes.com/',
         ),
         array (
-            'import_file_name' => 'Preset 2',
+            'import_file_name' => 'Buildr Startup',
             'categories' => array ( 'Free' ),
             'import_file_url' => get_plugin_url( 'presets/preset2/content.xml' ),
             'import_widget_file_url' => get_plugin_url( 'presets/preset2/widgets.wie' ),
@@ -56,7 +56,7 @@ function import_files() {
             'preview_url' => 'http://buildr.preset2.smartcatthemes.com/',
         ),
         array (
-            'import_file_name' => 'Preset 3',
+            'import_file_name' => 'Buildr Marketing',
             'categories' => array ( 'Free' ),
             'import_file_url' => get_plugin_url( 'presets/preset3/content.xml' ),
             'import_widget_file_url' => get_plugin_url( 'presets/preset3/widgets.wie' ),

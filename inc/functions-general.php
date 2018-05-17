@@ -125,7 +125,7 @@ function modify_user_contact_methods( $user_contact ) {
 }
 add_filter( 'user_contactmethods', 'buildr\modify_user_contact_methods' );
 
-//if ( !class_exists( 'OCDI_Plugin' ) ) :
+if ( !class_exists( 'OCDI_Plugin' ) ) :
     
     /**
      * Register admin menu pages.
@@ -141,4 +141,4 @@ add_filter( 'user_contactmethods', 'buildr\modify_user_contact_methods' );
     }
     add_action( 'admin_menu', 'buildr\add_upgrade_page' );
     
-//endif;
+endif;

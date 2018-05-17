@@ -40,6 +40,11 @@ div#buildr-docs-content p {
     float: left;
     margin-right: 3%;
     box-shadow: 0 0 10px 1px rgba(0,0,0,0.1);
+    margin-bottom: 30px;
+}
+
+#upgrade-presets-loop .preset:nth-child(3n+1) {
+    clear: both;
 }
 
 #upgrade-presets-loop .preset:nth-child(3n) {
@@ -129,10 +134,43 @@ div#pro-features {
     margin-top: 50px;
 }
 
+@media (max-width:991px) {
+    #upgrade-presets-loop .preset {
+        width: 48%;
+        margin-right: 4%;
+    }
+    #upgrade-presets-loop .preset:nth-child(3n) {
+        margin-right: 4% !important;
+    }
+    #upgrade-presets-loop .preset:nth-child(2n) {
+        margin-right: 0 !important;
+    }
+    #upgrade-presets-loop .preset:nth-child(3n+1) {
+        clear: none;
+    }
+    #upgrade-presets-loop .preset:nth-child(2n+1) {
+        clear: both;
+    }
+}
+
 @media (max-width:767px) {
     div#pro-features .feature-wrap {
         width: 100%;
         text-align: center;
         margin-bottom: 30px;
     }
+}
+
+@media (max-width:599px) {
+    #upgrade-presets-loop .preset {
+        width: 100%;
+        margin-right: 0% !important;
+    }
+    #upgrade-presets-loop .preset:nth-child(1n) {
+        margin-right: 0 !important;
+    }
+}
+
+img.buildr-pro-logo {
+    height: 41px;
 }

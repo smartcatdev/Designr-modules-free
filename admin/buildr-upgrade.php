@@ -9,9 +9,10 @@
     <div id="buildr-docs-content">
         
         <h2 class="section-heading">
-            <?php esc_html_e( 'Buildr Pro Now Available!', 'buildr' ); ?>
-            <a class="get-button button button-primary" href="#">
-                <?php esc_html_e( 'Get Buildr Pro', 'buildr' ); ?>    
+            <img class="buildr-pro-logo" src="<?php url(get_plugin_url() . 'assets/images/buildr_pro.png' ); ?>" alt="<?php esc_html_e( 'Buildr Pro', 'buildr' ); ?>">
+            <?php esc_html_e( 'Now Available!', 'buildr' ); ?>
+            <a class="get-button button button-primary" href="https://smartcatdesign.net/downloads/buildr-pro/">
+                <?php esc_html_e( 'Get Buildr Pro', 'buildr' ); ?>
             </a>
         </h2>
 
@@ -36,7 +37,7 @@
                         <h4 class="title"><?php html( $preset['import_file_name'] ); ?></h4>
                         
                         <div class="button-wrap">
-                            <a class="button button-primary" href="">
+                            <a class="button button-primary" href="<?php url( $preset['preview_url'] ); ?>">
                                 <?php esc_html_e( 'View Demo', 'buildr' ); ?>
                             </a>
                         </div>
