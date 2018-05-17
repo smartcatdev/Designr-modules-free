@@ -107,3 +107,20 @@ function toolbar_link( $wp_admin_bar ) {
     
     $wp_admin_bar->add_node( $args );
 }
+
+function modify_user_contact_methods( $user_contact ) {
+
+    // Add additional user meta contact fields
+    $user_contact['job_title']      = __( 'Job Title', 'buildr' );
+    $user_contact['location']       = __( 'Location', 'buildr' );
+    $user_contact['facebook']       = __( 'Facebook', 'buildr' );
+    $user_contact['twitter']        = __( 'Twitter', 'buildr' );
+    $user_contact['linkedin']       = __( 'LinkedIn', 'buildr' );
+    $user_contact['pinterest']      = __( 'Pinterest', 'buildr' );
+    $user_contact['instagram']      = __( 'Instagram', 'buildr' );
+    $user_contact['author_banner']  = __( 'Author Banner Image URL', 'buildr' );
+
+    return $user_contact;
+    
+}
+add_filter( 'user_contactmethods', 'buildr\modify_user_contact_methods' );
