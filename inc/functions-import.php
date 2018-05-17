@@ -16,7 +16,7 @@ function import_files() {
     
     return apply_filters( 'buildr_presets', array (
         array (
-            'import_file_name' => 'Buildr Dark',
+            'import_file_name' => 'Preset 1',
             'categories' => array ( 'Free' ),
             'import_file_url' => get_plugin_url( 'presets/preset1/content.xml' ),
             'import_widget_file_url' => get_plugin_url( 'presets/preset1/widgets.wie' ),
@@ -26,7 +26,7 @@ function import_files() {
             'preview_url' => 'http://buildr.preset1.smartcatthemes.com/',
         ),
         array (
-            'import_file_name' => 'Buildr Light',
+            'import_file_name' => 'Preset 2',
             'categories' => array ( 'Free' ),
             'import_file_url' => get_plugin_url( 'presets/preset2/content.xml' ),
             'import_widget_file_url' => get_plugin_url( 'presets/preset2/widgets.wie' ),
@@ -34,6 +34,16 @@ function import_files() {
             'import_preview_image_url' => get_plugin_url( 'presets/preset2/screenshot.jpg' ),
             'import_notice' => __( 'After you import this demo, you will have to setup the slider separately.', 'buildr' ),
             'preview_url' => 'http://buildr.preset2.smartcatthemes.com/',
+        ),
+        array (
+            'import_file_name' => 'Preset 3',
+            'categories' => array ( 'Free' ),
+            'import_file_url' => get_plugin_url( 'presets/preset3/content.xml' ),
+            'import_widget_file_url' => get_plugin_url( 'presets/preset3/widgets.wie' ),
+            'import_customizer_file_url' => get_plugin_url( 'presets/preset3/customizer.dat' ),
+            'import_preview_image_url' => get_plugin_url( 'presets/preset3/screenshot.jpg' ),
+            'import_notice' => __( 'After you import this demo, you will have to setup the slider separately.', 'buildr' ),
+            'preview_url' => 'http://buildr.preset3.smartcatthemes.com/',
         ),
 
     ));
