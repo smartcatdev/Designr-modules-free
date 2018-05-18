@@ -82,7 +82,14 @@ function after_setup_theme() {
     require get_plugin_path() . 'inc/functions-widgets.php';
     require get_plugin_path() . 'inc/functions-enqueue.php';
     require get_plugin_path() . 'inc/functions-css.php';
+    
     require get_plugin_path() . 'inc/functions-tgmpa.php';
+    
+    if ( !function_exists( '\buildr_pro\init' ) ) {
+        require get_plugin_path() . 'inc/functions-updates.php';
+        require get_plugin_path() . 'inc/customizer/class-customize.php';
+    }
+    
     
     do_action( 'buildr_after_setup_theme' );
     

@@ -102,13 +102,13 @@
             
             function toggle( value ) {
                 
-                console.log(value + " fired");
+//                console.log(value + " fired");
                 
                 if ( parseInt(value) == 100 ) {
-                    console.log("true match");
+//                    console.log("true match");
                     $('li#customize-control-buildr_custom_header_height_percent_mbl').addClass('buildr-hidden');
                 } else {
-                    console.log("false");
+//                    console.log("false");
                     $('li#customize-control-buildr_custom_header_height_percent_mbl').removeClass('buildr-hidden');
                 }
                 
@@ -156,7 +156,7 @@
             
             function toggle( value ) {
                 
-                console.log('BLOG LAYOUT ' + value);
+//                console.log('BLOG LAYOUT ' + value);
                 
                 if ( value && value == 'blog_standard' ) {
                     $('li#customize-control-standard_blog_appearance_style').removeClass('buildr-hidden');

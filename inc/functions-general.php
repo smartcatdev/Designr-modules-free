@@ -126,7 +126,7 @@ function modify_user_contact_methods( $user_contact ) {
 add_filter( 'user_contactmethods', 'buildr\modify_user_contact_methods' );
 
 
-if ( !class_exists( 'OCDI_Plugin' ) && !function_exists( '\buildr_pro\get_plugin_path' ) ) :
+if ( !function_exists( '\buildr_pro\init' ) ) :
     
     /**
      * Register admin menu pages.
