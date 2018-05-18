@@ -107,3 +107,39 @@ function toolbar_link( $wp_admin_bar ) {
     
     $wp_admin_bar->add_node( $args );
 }
+
+function modify_user_contact_methods( $user_contact ) {
+
+    // Add additional user meta contact fields
+    $user_contact['job_title']      = __( 'Job Title', 'buildr' );
+    $user_contact['location']       = __( 'Location', 'buildr' );
+    $user_contact['facebook']       = __( 'Facebook', 'buildr' );
+    $user_contact['twitter']        = __( 'Twitter', 'buildr' );
+    $user_contact['linkedin']       = __( 'LinkedIn', 'buildr' );
+    $user_contact['pinterest']      = __( 'Pinterest', 'buildr' );
+    $user_contact['instagram']      = __( 'Instagram', 'buildr' );
+    $user_contact['author_banner']  = __( 'Author Banner Image URL', 'buildr' );
+
+    return $user_contact;
+    
+}
+add_filter( 'user_contactmethods', 'buildr\modify_user_contact_methods' );
+
+
+if ( !class_exists( 'OCDI_Plugin' ) && !function_exists( '\buildr_pro\get_plugin_path' ) ) :
+    
+    /**
+     * Register admin menu pages.
+     *
+     * @since 1.0.3
+     */
+    function add_upgrade_page() {
+
+        add_theme_page( __( 'Buildr Pro', 'buildr' ), __( 'Buildr Pro', 'buildr' ), 'edit_theme_options', 'buildr-theme-upgrade', function() {
+            include_once get_plugin_path() . '/admin/buildr-upgrade.php';
+        });
+    
+    }
+    add_action( 'admin_menu', 'buildr\add_upgrade_page' );
+    
+endif;
