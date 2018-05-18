@@ -16,11 +16,15 @@
             </a>
         </h2>
 
+        <span class="discount-code"><?php _e( 'Use coupon code <b>freetopro30</b> to get a <span class="accent-color">30% discount</span>', 'buildr' ) ?></span>
+        
         <div class="clear"></div>
         
     </div>
     
     <div id="">
+        
+        <h2 class="section-subheading"><?php _e( 'Buildr Pro Demos & Presets', 'buildr' ) ?></h2>
         
         <div id="upgrade-presets-loop">
             
