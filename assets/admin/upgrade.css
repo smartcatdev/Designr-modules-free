@@ -174,3 +174,15 @@ div#pro-features {
 img.buildr-pro-logo {
     height: 41px;
 }
+
+.ocdi__gl-item-image-container {
+    overflow: visible;
+}
+
+.ocdi__gl-item-image-container:after {
+    display: none;
+}
+
+.about-wrap img {
+    position: relative;
+}
