@@ -125,7 +125,8 @@ function modify_user_contact_methods( $user_contact ) {
 }
 add_filter( 'user_contactmethods', 'buildr\modify_user_contact_methods' );
 
-if ( !class_exists( 'OCDI_Plugin' ) ) :
+
+if ( !class_exists( 'OCDI_Plugin' ) && !function_exists( '\buildr_pro\get_plugin_path' ) ) :
     
     /**
      * Register admin menu pages.
@@ -134,7 +135,7 @@ if ( !class_exists( 'OCDI_Plugin' ) ) :
      */
     function add_upgrade_page() {
 
-        add_theme_page( __( 'Upgrade to Pro', 'buildr' ), __( 'Upgrade to Pro', 'buildr' ), 'edit_theme_options', 'buildr-theme-upgrade', function() {
+        add_theme_page( __( 'Buildr Pro', 'buildr' ), __( 'Buildr Pro', 'buildr' ), 'edit_theme_options', 'buildr-theme-upgrade', function() {
             include_once get_plugin_path() . '/admin/buildr-upgrade.php';
         });
     
