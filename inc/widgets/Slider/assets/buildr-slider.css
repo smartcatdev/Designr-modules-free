@@ -94,10 +94,10 @@ ul.slick-dots li:hover button {
     margin: 15px 0 0 0;
 }
 
+.buildr-module .slider .slide-content .pre-title,
 .buildr-module .slider .slide-content .slide-title,
 .buildr-module .slider .slide-content p {
     color: #fff;
-    
 }
 
 .buildr-module .slider .slide-content a.button {
