@@ -11,12 +11,12 @@
         <h2 class="section-heading">
             <img class="buildr-pro-logo" src="<?php url(get_plugin_url() . 'assets/images/buildr_pro.png' ); ?>" alt="<?php esc_html_e( 'Buildr Pro', 'buildr' ); ?>">
             <?php esc_html_e( 'Now Available!', 'buildr' ); ?>
-            <a class="get-button button button-primary" href="https://smartcatdesign.net/downloads/buildr-pro/?utm_source=pro-page&utm_medium=button">
+            <a class="get-button button button-primary" href="https://smartcatdesign.net/downloads/buildr-pro/?utm_source=wp-admin-pro-page&utm_medium=button">
                 <?php esc_html_e( 'Get Buildr Pro', 'buildr' ); ?>
             </a>
         </h2>
 
-        <span class="discount-code"><?php _e( 'Use coupon code <b>freetopro30</b> to get a <span class="accent-color">30% discount</span>', 'buildr' ) ?></span>
+        <span class="discount-code"><?php _e( 'Get Buildr Pro today and receive a limited time <span class="accent-color">50% discount</span>', 'buildr' ) ?></span>
         
         <div class="clear"></div>
         
