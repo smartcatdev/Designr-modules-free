@@ -13,28 +13,8 @@ add_filter( 'pt-ocdi/regenerate_thumbnails_in_content_import', '__return_false' 
 add_filter( 'pt-ocdi/disable_pt_branding', '__return_true' );
 
 function import_files() {
-    
-    return apply_filters( 'buildr_presets', array (
-        array (
-            'import_file_name' => 'Buildr Product',
-            'categories' => array ( 'Pro' ),
-            'import_file_url' => get_plugin_url( 'presets/preset4/content.xml' ),
-            'import_widget_file_url' => get_plugin_url( 'presets/preset4/widgets.wie' ),
-            'import_customizer_file_url' => get_plugin_url( 'presets/preset4/customizer.dat' ),
-            'import_preview_image_url' => get_plugin_url( 'presets/preset4/screenshot.jpg' ),
-            'import_notice' => __( 'After you import this demo, you will have to setup the slider separately.', 'buildr' ),
-            'preview_url' => 'http://buildr.pro.smartcatthemes.com/',
-        ),
-        array (
-            'import_file_name' => 'Buildr Agency',
-            'categories' => array ( 'Pro' ),
-            'import_file_url' => get_plugin_url( 'presets/preset5/content.xml' ),
-            'import_widget_file_url' => get_plugin_url( 'presets/preset5/widgets.wie' ),
-            'import_customizer_file_url' => get_plugin_url( 'presets/preset5/customizer.dat' ),
-            'import_preview_image_url' => get_plugin_url( 'presets/preset5/screenshot.jpg' ),
-            'import_notice' => __( 'After you import this demo, you will have to setup the slider separately.', 'buildr' ),
-            'preview_url' => 'http://buildr.pro1.smartcatthemes.com/',
-        ),
+
+    $free_presets = array(
         array (
             'import_file_name' => 'Buildr Standard',
             'categories' => array ( 'Free' ),
@@ -65,10 +45,39 @@ function import_files() {
             'import_notice' => __( 'After you import this demo, you will have to setup the slider separately.', 'buildr' ),
             'preview_url' => 'http://buildr.preset3.smartcatthemes.com/',
         ),
-
-    ));
+    );
+    
+    return apply_filters( 'buildr_presets', $free_presets );
     
 }
+
+function pro_import_files(){
+    
+    return array(
+        array (
+            'import_file_name' => 'Buildr Product',
+            'categories' => array ( 'Pro' ),
+            'import_file_url' => get_plugin_url( 'presets/preset4/content.xml' ),
+            'import_widget_file_url' => get_plugin_url( 'presets/preset4/widgets.wie' ),
+            'import_customizer_file_url' => get_plugin_url( 'presets/preset4/customizer.dat' ),
+            'import_preview_image_url' => get_plugin_url( 'presets/preset4/screenshot.jpg' ),
+            'import_notice' => __( 'After you import this demo, you will have to setup the slider separately.', 'buildr' ),
+            'preview_url' => 'http://buildr.pro.smartcatthemes.com/',
+        ),
+        array (
+            'import_file_name' => 'Buildr Agency',
+            'categories' => array ( 'Pro' ),
+            'import_file_url' => get_plugin_url( 'presets/preset5/content.xml' ),
+            'import_widget_file_url' => get_plugin_url( 'presets/preset5/widgets.wie' ),
+            'import_customizer_file_url' => get_plugin_url( 'presets/preset5/customizer.dat' ),
+            'import_preview_image_url' => get_plugin_url( 'presets/preset5/screenshot.jpg' ),
+            'import_notice' => __( 'After you import this demo, you will have to setup the slider separately.', 'buildr' ),
+            'preview_url' => 'http://buildr.pro1.smartcatthemes.com/',
+        ),
+    );
+    
+}
+
 function get_page_url( $title ) {
 
     $page = get_page_by_title( $title );
