@@ -11,7 +11,7 @@
         <h2 class="section-heading">
             <img class="buildr-pro-logo" src="<?php url(get_plugin_url() . 'assets/images/buildr_pro.png' ); ?>" alt="<?php esc_html_e( 'Buildr Pro', 'buildr' ); ?>">
             <?php esc_html_e( 'Now Available!', 'buildr' ); ?>
-            <a class="get-button button button-primary" href="https://smartcatdesign.net/downloads/buildr-pro/">
+            <a class="get-button button button-primary" href="https://smartcatdesign.net/downloads/buildr-pro/?utm_source=pro-page&utm_medium=button">
                 <?php esc_html_e( 'Get Buildr Pro', 'buildr' ); ?>
             </a>
         </h2>
@@ -24,7 +24,7 @@
         
         <div id="upgrade-presets-loop">
             
-            <?php $presets = import_files(); ?>
+            <?php $presets = pro_import_files(); ?>
             
             <?php foreach ( $presets as $preset ) : ?>
             
