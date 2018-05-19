@@ -4,8 +4,9 @@ namespace buildr;
 
 add_filter( 'user_contactmethods', 'buildr\modify_user_contact_methods' );
 add_action( 'wp_ajax_reset_content', '\buildr\reset_content' );
-add_action( 'admin_menu', 'buildr\add_tools_page' );
+//add_action( 'admin_menu', 'buildr\add_tools_page' );
 add_action( 'admin_menu', 'buildr\add_upgrade_page' );
+add_action('admin_bar_menu', 'buildr\toolbar_link', 999);
 
 function reset_content() {
     

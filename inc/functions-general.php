@@ -2,9 +2,6 @@
 
 namespace buildr;
 
-
-add_action('admin_bar_menu', 'buildr\toolbar_link', 999);
-
 function attr( $attr ) {
     echo esc_attr( $attr );
 }
