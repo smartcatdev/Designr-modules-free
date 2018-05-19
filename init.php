@@ -97,6 +97,10 @@ function after_setup_theme() {
 
 function plugins_loaded() {
     
+    if( is_admin() ) {
+        require get_plugin_path() . 'inc/functions-admin.php';
+    }
+    
     require get_plugin_path() . 'inc/functions-import.php';    
     do_action( 'buildr_plugins_loaded' );
     

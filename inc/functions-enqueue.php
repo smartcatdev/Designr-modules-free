@@ -58,6 +58,14 @@ function buildr_load_upgrade_css( $hook ) {
         wp_enqueue_style( 'font-awesome', get_template_directory_uri() . '/assets/lib/font-awesome/fontawesome-all.min.css' );
         wp_enqueue_style( 'buildr-admin-fonts', '//fonts.googleapis.com/css?family=Lato:300,400,700,900' );
         wp_enqueue_style( 'buildr-admin-css', get_plugin_url() . 'assets/admin/upgrade.css' );
+        
+        wp_enqueue_script( 'buildr-reset-content', get_plugin_url() . 'assets/admin/reset-content.js', array( 'jquery' ), BUILDR_MODULES_VERSION );
+        
+        wp_localize_script( 'buildr-reset-content', 'buildr', array(
+            'ajaxUrl'   => admin_url( 'admin-ajax.php' ),
+            'nonce'     => wp_create_nonce('buildr_reset_content'),
+        ) );
+        
     }
     
 }
