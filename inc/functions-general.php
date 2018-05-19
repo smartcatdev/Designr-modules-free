@@ -143,3 +143,12 @@ if ( !function_exists( '\buildr_pro\init' ) ) :
     add_action( 'admin_menu', 'buildr\add_upgrade_page' );
     
 endif;
+
+function add_tools_page() {
+
+    add_theme_page( __( 'Theme Tools', 'buildr' ), __( 'Theme Tools', 'buildr' ), 'edit_theme_options', 'buildr-theme-tools', function() {
+        include_once get_plugin_path() . '/admin/buildr-tools.php';
+    });
+    
+}
+add_action( 'admin_menu', 'buildr\add_tools_page' );
