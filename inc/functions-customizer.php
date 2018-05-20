@@ -974,6 +974,16 @@ $data = array (
                             'description'   => __( 'When toggled on, the last (right-most) link in the Navbar will appear as a unique button callout', 'buildr' ),
                             'default'       => BUILDR_DEFAULTS::NAVBAR_FINAL_LINK_ACCENT
                         ),
+                        BUILDR_OPTIONS::NAVBAR_FINAL_LINK_ROUNDED => array (
+                            'type'          => 'toggle',
+                            'label'         => __( 'Rounded button?', 'buildr' ),
+                            'default'       => BUILDR_DEFAULTS::NAVBAR_FINAL_LINK_ROUNDED
+                        ),
+                        BUILDR_OPTIONS::NAVBAR_FINAL_LINK_FILL => array (
+                            'type'          => 'toggle',
+                            'label'         => __( 'Color fill?', 'buildr' ),
+                            'default'       => BUILDR_DEFAULTS::NAVBAR_FINAL_LINK_FILL
+                        ),
 
                     )
 

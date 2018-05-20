@@ -24,7 +24,7 @@
     
     <div id="">
         
-        <h2 class="section-subheading"><?php _e( 'Buildr Pro Demos & Presets', 'buildr' ) ?></h2>
+        <h2 style="margin-bottom: 30px" class="section-subheading"><?php _e( 'Buildr Pro Demos & Presets', 'buildr' ) ?></h2>
         
         <div id="upgrade-presets-loop">
             

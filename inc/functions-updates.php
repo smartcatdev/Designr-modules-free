@@ -8,8 +8,6 @@ add_action( 'admin_init', 'buildr\pro_announce' );
 
 function pro_announce() {
     
-    
-    
     if( ! get_option( 'buildr_pro_announce') ) {
         
         update_option( 'buildr_pro_announce', true );
