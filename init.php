@@ -60,8 +60,8 @@ if ( function_exists( 'wp_get_theme' ) ) {
 }
 
 if( $active_theme_name == 'buildr' || $parent_theme_name == 'buildr' ) {
-   
-    add_action( 'after_setup_theme', 'buildr\after_setup_theme' );
+
+    add_action( 'after_setup_theme', 'buildr\after_setup_theme', 99 );
     add_action( 'plugins_loaded', 'buildr\plugins_loaded' );
     
 }
@@ -72,6 +72,15 @@ if( $active_theme_name == 'buildr' || $parent_theme_name == 'buildr' ) {
  */
 function after_setup_theme() {
     
+    if( BUILDR_VERSION < '1.1.0' ) {
+
+        $message = 'Please update your Buildr theme. This is a required update. <a href="' . esc_url( admin_url( 'themes.php' ) ) . '">Click here</a> then click Update on the Buildr Theme Icon';
+
+        make_admin_notice( __( $message, 'error', false ) );
+
+        return;
+    }
+
    /**
     * Load Necessary Includes
     */
@@ -104,6 +113,14 @@ function plugins_loaded() {
     require get_plugin_path() . 'inc/functions-import.php';    
     do_action( 'buildr_plugins_loaded' );
     
+}
+
+function make_admin_notice( $message, $type = 'error', $dismissible = true ) {
+    add_action( 'admin_notices', function () use ( $message, $type, $dismissible ) {
+        echo '<div class="notice notice-' . esc_attr( $type ) . ' ' . ( $dismissible ? 'is-dismissible' : '' ) . '">';
+        echo '<p>' . $message . '</p>';
+        echo '</div>';
+    } );
 }
 
 function init() {
