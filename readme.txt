@@ -28,6 +28,9 @@ Available Widgets:
 
 == Changelog == 
 
+= 1.1.1
+Added safeguard for theme update
+
 = 1.1.0
 Added new free & pro presets
 Pro version now available!
