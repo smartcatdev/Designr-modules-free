@@ -19,6 +19,7 @@ Available Widgets:
 - YouTube Video CTA
 - Shortcode
 - Simple CTA
+- Icon CTA
 
 
 == Installation ==
@@ -26,6 +27,15 @@ Available Widgets:
 2. OR - Upload the unpacked folder folder via FTP into /wp-content/plugins
 
 == Changelog == 
+
+= 1.1.1
+Added safeguard for theme update
+
+= 1.1.0
+Added new free & pro presets
+Pro version now available!
+Added new page builder widget: Icon CTA
+Code cleanup and bug fixes
 
 = 1.0.2
 Updated presets
