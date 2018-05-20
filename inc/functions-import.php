@@ -21,7 +21,7 @@ function import_files() {
             'import_file_url' => get_plugin_url( 'presets/preset1/content.xml' ),
             'import_widget_file_url' => get_plugin_url( 'presets/preset1/widgets.wie' ),
             'import_customizer_file_url' => get_plugin_url( 'presets/preset1/customizer.dat' ),
-            'import_preview_image_url' => get_plugin_url( 'presets/preset1/screenshot.jpg' ),
+            'import_preview_image_url' => 'https://i.imgur.com/ekT5pGp.jpg',
             'import_notice' => __( 'After you import this demo, you will have to setup the slider separately.', 'buildr' ),
             'preview_url' => 'http://buildr.preset1.smartcatthemes.com/?utm_source=wp-admin&utm_medium=button',
         ),
@@ -31,7 +31,7 @@ function import_files() {
             'import_file_url' => get_plugin_url( 'presets/preset2/content.xml' ),
             'import_widget_file_url' => get_plugin_url( 'presets/preset2/widgets.wie' ),
             'import_customizer_file_url' => get_plugin_url( 'presets/preset2/customizer.dat' ),
-            'import_preview_image_url' => get_plugin_url( 'presets/preset2/screenshot.jpg' ),
+            'import_preview_image_url' => 'https://i.imgur.com/Q21l2Tg.jpg',
             'import_notice' => __( 'After you import this demo, you will have to setup the slider separately.', 'buildr' ),
             'preview_url' => 'http://buildr.preset2.smartcatthemes.com/?utm_source=wp-admin&utm_medium=button',
         ),
@@ -41,7 +41,7 @@ function import_files() {
             'import_file_url' => get_plugin_url( 'presets/preset3/content.xml' ),
             'import_widget_file_url' => get_plugin_url( 'presets/preset3/widgets.wie' ),
             'import_customizer_file_url' => get_plugin_url( 'presets/preset3/customizer.dat' ),
-            'import_preview_image_url' => get_plugin_url( 'presets/preset3/screenshot.jpg' ),
+            'import_preview_image_url' => 'https://i.imgur.com/qITjPXT.jpg',
             'import_notice' => __( 'After you import this demo, you will have to setup the slider separately.', 'buildr' ),
             'preview_url' => 'http://buildr.preset3.smartcatthemes.com/?utm_source=wp-admin&utm_medium=button',
         ),
@@ -60,7 +60,7 @@ function pro_import_files(){
             'import_file_url' => get_plugin_url( 'presets/preset5/content.xml' ),
             'import_widget_file_url' => get_plugin_url( 'presets/preset5/widgets.wie' ),
             'import_customizer_file_url' => get_plugin_url( 'presets/preset5/customizer.dat' ),
-            'import_preview_image_url' => get_plugin_url( 'presets/preset5/screenshot.jpg' ),
+            'import_preview_image_url' => 'https://i.imgur.com/nJHSD5W.jpg',
             'import_notice' => __( 'After you import this demo, you will have to setup the slider separately.', 'buildr' ),
             'preview_url' => 'http://buildr.pro1.smartcatthemes.com/?utm_source=wp-admin&utm_medium=button',
         ),
@@ -70,19 +70,19 @@ function pro_import_files(){
             'import_file_url' => get_plugin_url( 'presets/preset4/content.xml' ),
             'import_widget_file_url' => get_plugin_url( 'presets/preset4/widgets.wie' ),
             'import_customizer_file_url' => get_plugin_url( 'presets/preset4/customizer.dat' ),
-            'import_preview_image_url' => get_plugin_url( 'presets/preset4/screenshot.jpg' ),
+            'import_preview_image_url' => 'https://i.imgur.com/289U0DN.jpg',
             'import_notice' => __( 'After you import this demo, you will have to setup the slider separately.', 'buildr' ),
             'preview_url' => 'http://buildr.pro.smartcatthemes.com/?utm_source=wp-admin&utm_medium=button',
         ),
         array (
             'import_file_name' => 'Buildr Business',
             'categories' => array ( 'Pro' ),
-            'import_file_url' => get_plugin_url( 'presets/preset5/content.xml' ),
-            'import_widget_file_url' => get_plugin_url( 'presets/preset5/widgets.wie' ),
-            'import_customizer_file_url' => get_plugin_url( 'presets/preset5/customizer.dat' ),
-            'import_preview_image_url' => get_plugin_url( 'presets/preset5/screenshot.jpg' ),
+            'import_file_url' => get_plugin_url( 'presets/preset6/content.xml' ),
+            'import_widget_file_url' => get_plugin_url( 'presets/preset6/widgets.wie' ),
+            'import_customizer_file_url' => get_plugin_url( 'presets/preset6/customizer.dat' ),
+            'import_preview_image_url' => 'https://i.imgur.com/yuPJhxg.jpg',
             'import_notice' => __( 'After you import this demo, you will have to setup the slider separately.', 'buildr' ),
-            'preview_url' => 'http://buildr.pro.smartcatthemes.com/?utm_source=wp-admin&utm_medium=button',
+            'preview_url' => 'http://buildr.pro2.smartcatthemes.com/?utm_source=wp-admin&utm_medium=button',
         ),
 
     );
@@ -207,12 +207,21 @@ function after_import_setup( $selected_import ) {
 //    ));
 
 //	// Assign front page and posts page (blog page).
-//	$front_page_id = get_page_by_title( 'Home' );
-//	$blog_page_id  = get_page_by_title( 'Blog' );
+	$front_page_id = get_page_by_title( 'Home' );
+	$blog_page_id  = get_page_by_title( 'Blog' );
 
-//	update_option( 'show_on_front', 'page' );
-//	update_option( 'page_on_front', $front_page_id->ID );
-//	update_option( 'page_for_posts', $blog_page_id->ID );
+	update_option( 'show_on_front', 'page' );
+        
+        if( $front_page_id ) {
+            update_option( 'page_on_front', $front_page_id->ID );
+        }
+        
+        if( $blog_page_id ) {
+            update_option( 'page_for_posts', $blog_page_id->ID );
+        }
+        
+	
+	
 
         
         
