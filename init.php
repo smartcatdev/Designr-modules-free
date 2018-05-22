@@ -46,25 +46,34 @@ function get_plugin_url( $url = '' ) {
     return plugin_dir_url( __FILE__ ) . $url;
 }
 
-if ( function_exists( 'wp_get_theme' ) ) {
-    
-    $active_theme = wp_get_theme();
-    
-    $active_theme_name = strtolower( $active_theme->get( 'Name' ) );
-    $parent_theme_name = strtolower( $active_theme->get( 'Template' ) );
-    
-} else {
-    
-    $active_theme_name = strtolower( get_option( 'current_theme') );
-    $parent_theme_name = strtolower( get_option( 'current_theme') );
-    
-}
 
-if( $active_theme_name == 'buildr' || $parent_theme_name == 'buildr' ) {
+// initialize the plugin
+add_action( 'plugins_loaded', 'buildr\plugins_loaded', 99 );
 
-    add_action( 'after_setup_theme', 'buildr\after_setup_theme', 99 );
-    add_action( 'plugins_loaded', 'buildr\plugins_loaded' );
+/**
+ * Checks if Buildr is active as a parent or child theme
+ */
+function buildr_flag() {
     
+    if ( function_exists( 'wp_get_theme' ) ) {
+
+        $active_theme = wp_get_theme();
+
+        $active_theme_name = strtolower( $active_theme->get( 'Name' ) );
+        $parent_theme_name = strtolower( $active_theme->get( 'Template' ) );
+
+    } else {
+
+        $active_theme_name = strtolower( get_option( 'current_theme') );
+        $parent_theme_name = strtolower( get_option( 'current_theme') );
+
+    }
+
+    if( $active_theme_name == 'buildr' || $parent_theme_name == 'buildr' ) {
+        return true;
+    }
+    
+    return false;
 }
 
 /**
@@ -72,7 +81,7 @@ if( $active_theme_name == 'buildr' || $parent_theme_name == 'buildr' ) {
  * @return null
  */
 function after_setup_theme() {
-    
+
     if( BUILDR_VERSION < BUILD_MIN_VERSION ) {
 
         $message = 'Please update your Buildr theme. This is a required update. <a href="' . esc_url( admin_url( 'themes.php' ) ) . '">Click here</a> then click Update on the Buildr Theme Icon';
@@ -81,7 +90,7 @@ function after_setup_theme() {
 
         return;
     }
-
+    
    /**
     * Load Necessary Includes
     */
@@ -107,12 +116,19 @@ function after_setup_theme() {
 
 function plugins_loaded() {
     
+    if( ! buildr_flag() ) {
+        false;
+    }
+    
     if( is_admin() ) {
         require get_plugin_path() . 'inc/functions-admin.php';
     }
     
-    require get_plugin_path() . 'inc/functions-import.php';    
+    require get_plugin_path() . 'inc/functions-import.php';
+    
     do_action( 'buildr_plugins_loaded' );
+    
+    add_action( 'after_setup_theme', 'buildr\after_setup_theme', 99 );  
     
 }
 
