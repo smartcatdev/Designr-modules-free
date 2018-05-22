@@ -6,7 +6,7 @@ add_filter( 'user_contactmethods', 'buildr\modify_user_contact_methods' );
 add_action( 'wp_ajax_reset_content', '\buildr\reset_content' );
 //add_action( 'admin_menu', 'buildr\add_tools_page' );
 add_action( 'admin_menu', 'buildr\add_upgrade_page' );
-add_action('admin_bar_menu', 'buildr\toolbar_link', 999);
+
 
 function reset_content() {
     
@@ -48,35 +48,6 @@ function add_tools_page() {
     
 }
 
-
-function toolbar_link( $wp_admin_bar ) {
-    
-    if( is_admin() ) {
-        return;
-    }
-    
-    $post = get_queried_object();
-    
-    if( ! isset( $post->ID ) ) {
-        return;
-    }
-    
-    $query['autofocus[panel]'] = 'widgets';
-    $query['url'] = get_the_permalink( $post->ID );
-    $panel_link = add_query_arg( $query, admin_url( 'customize.php' ) );
-    
-    $args = array(
-        'id'        =>  'buildr-widgets',
-        'title'     =>  __( 'Edit Buildr Widgets', 'buildr' ), 
-        'href'      => $panel_link, 
-        'meta'      => array(
-            'class' => 'buildr-toolbar-link', 
-            'title' => __( 'Buildr Page Widgets', 'buildr' ),
-        )
-    );
-    
-    $wp_admin_bar->add_node( $args );
-}
 
 function modify_user_contact_methods( $user_contact ) {
 

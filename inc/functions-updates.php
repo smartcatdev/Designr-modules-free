@@ -3,7 +3,7 @@
 namespace buildr;
 
 
-add_action( 'admin_init', 'buildr\pro_announce' );
+//add_action( 'admin_init', 'buildr\pro_announce' );
 
 
 function pro_announce() {
