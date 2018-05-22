@@ -269,6 +269,7 @@ label.buildr-control-title {
 #available-widgets [class*=buildr_featured_posts],
 #available-widgets [class*=buildr_features_grid],
 #available-widgets [class*=buildr_features_hero],
+#available-widgets [class*=buildr_hero_image_cta],
 #available-widgets [class*=buildr_hero_video_cta],
 #available-widgets [class*=buildr_icon_cta],
 #available-widgets [class*=buildr_image_grid],
@@ -276,7 +277,7 @@ label.buildr-control-title {
 #available-widgets [class*=buildr_posts],
 #available-widgets [class*=buildr_pricing_table],
 #available-widgets [class*=buildr_services],
-#available-widgets [class*=buildr_testimonails],
+#available-widgets [class*=buildr_testimonials],
 #available-widgets [class*=buildr_slider]{
     background: #f3f3f5;
     border-left: 4px solid #f3f3f5;
