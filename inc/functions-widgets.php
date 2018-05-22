@@ -24,3 +24,4 @@ require_once get_plugin_path() . 'inc/widgets/Heading/Heading.php';
 // Shortcode
 require_once get_plugin_path() . 'inc/widgets/Shortcode/Shortcode.php';
 
+

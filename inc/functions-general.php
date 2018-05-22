@@ -76,4 +76,33 @@ function render_template( $file, $args, $once = false ) {
     
 }
 
+add_action('admin_bar_menu', 'buildr\toolbar_link', 999 );
 
+function toolbar_link( $wp_admin_bar ) {
+    
+    if( is_admin() ) {
+        return;
+    }
+    
+    $post = get_queried_object();
+    
+    if( ! isset( $post->ID ) ) {
+        return;
+    }
+    
+    $query['autofocus[panel]'] = 'widgets';
+    $query['url'] = get_the_permalink( $post->ID );
+    $panel_link = add_query_arg( $query, admin_url( 'customize.php' ) );
+    
+    $args = array(
+        'id'        =>  'buildr-widgets',
+        'title'     =>  __( 'Edit Buildr Widgets', 'buildr' ), 
+        'href'      => $panel_link, 
+        'meta'      => array(
+            'class' => 'buildr-toolbar-link', 
+            'title' => __( 'Buildr Page Widgets', 'buildr' ),
+        )
+    );
+    
+    $wp_admin_bar->add_node( $args );
+}
