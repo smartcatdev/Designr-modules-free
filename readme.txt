@@ -28,6 +28,9 @@ Available Widgets:
 
 == Changelog == 
 
+= 1.1.2
+Cleanup
+
 = 1.1.1
 Added safeguard for theme update
 
