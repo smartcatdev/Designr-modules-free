@@ -109,7 +109,6 @@ function after_setup_theme() {
         require get_plugin_path() . 'inc/customizer/class-buildr-pro-customize.php';
     }
     
-    
     do_action( 'buildr_after_setup_theme' );
     
 }
