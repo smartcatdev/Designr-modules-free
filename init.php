@@ -26,6 +26,7 @@ if( !defined( 'ABSPATH' ) ) {
  * Constant Declarations
  */
 const BUILDR_MODULES_VERSION = '1.1.1';
+const BUILD_MIN_VERSION = '1.1.0';
 
 /**
  * @since 1.0.0
@@ -72,7 +73,7 @@ if( $active_theme_name == 'buildr' || $parent_theme_name == 'buildr' ) {
  */
 function after_setup_theme() {
     
-    if( BUILDR_VERSION < '1.1.0' ) {
+    if( BUILDR_VERSION < BUILD_MIN_VERSION ) {
 
         $message = 'Please update your Buildr theme. This is a required update. <a href="' . esc_url( admin_url( 'themes.php' ) ) . '">Click here</a> then click Update on the Buildr Theme Icon';
 
@@ -96,7 +97,7 @@ function after_setup_theme() {
     
     if ( !function_exists( '\buildr_pro\init' ) ) {
         require get_plugin_path() . 'inc/functions-updates.php';
-        require get_plugin_path() . 'inc/customizer/class-customize.php';
+        require get_plugin_path() . 'inc/customizer/class-buildr-pro-customize.php';
     }
     
     

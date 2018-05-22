@@ -22,6 +22,7 @@ function buildr_customize_register( $wp_customize ) {
     $wp_customize->get_section( 'header_image' )->panel = 'panel_custom_header';
     $wp_customize->get_section( 'title_tagline' )->title = __( 'General Settings', 'buildr' );
     $wp_customize->get_section( 'title_tagline' )->panel = 'panel_title_tagline';
+//    $wp_customize->get_panel('widgets')->title = __( 'Page Builder & Widgets' );
     // End Housekeeping --------------------------------------------------------
     
     
