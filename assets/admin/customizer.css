@@ -236,6 +236,7 @@ label.buildr-control-title {
 #available-widgets [class*=buildr_heading] .widget-title:before,
 #available-widgets [class*=buildr_shortcode] .widget-title:before,
 #available-widgets [class*=buildr_image_cta] .widget-title:before,
+#available-widgets [class*=buildr_image_list] .widget-title:before,
 #available-widgets [class*=buildr_video_cta] .widget-title:before,
 #available-widgets [class*=buildr_contact] .widget-title:before,
 #available-widgets [class*=buildr_events] .widget-title:before,
@@ -259,6 +260,7 @@ label.buildr-control-title {
 
 #available-widgets [class*=buildr_simple_cta],
 #available-widgets [class*=buildr_image_cta],
+#available-widgets [class*=buildr_image_list],
 #available-widgets [class*=buildr_heading],
 #available-widgets [class*=buildr_video_cta],
 #available-widgets [class*=buildr_shortcode],
