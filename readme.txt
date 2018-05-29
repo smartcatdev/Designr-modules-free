@@ -20,6 +20,7 @@ Available Widgets:
 - Shortcode
 - Simple CTA
 - Icon CTA
+- Image List
 
 
 == Installation ==
@@ -30,7 +31,6 @@ Available Widgets:
 
 = 1.2.0
 New Feature: Added icon shortcodes
-New Feature: Added Image List Widget
 New Feature: Added Image List Widget
 
 = 1.1.2
