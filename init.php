@@ -98,6 +98,7 @@ function after_setup_theme() {
     require get_plugin_path() . 'inc/functions-general.php';
     require get_plugin_path() . 'inc/functions-metabox.php';
     require get_plugin_path() . 'inc/functions-customizer.php';
+    if ( buildr_is_child( 'Pepsi' ) ) { require get_plugin_path() . 'inc/children/functions-customizer-vertical.php'; }
     require get_plugin_path() . 'inc/functions-widgets.php';
     require get_plugin_path() . 'inc/functions-enqueue.php';
     require get_plugin_path() . 'inc/functions-css.php';

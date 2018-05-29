@@ -22,12 +22,13 @@ function buildr_customize_register( $wp_customize ) {
     $wp_customize->get_section( 'header_image' )->panel = 'panel_custom_header';
     $wp_customize->get_section( 'title_tagline' )->title = __( 'General Settings', 'buildr' );
     $wp_customize->get_section( 'title_tagline' )->panel = 'panel_title_tagline';
-//    $wp_customize->get_panel('widgets')->title = __( 'Page Builder & Widgets' );
     // End Housekeeping --------------------------------------------------------
     
     
     // Priority ----------------------------------------------------------------
     $wp_customize->get_section( 'title_tagline' )->priority = 1;
+    $wp_customize->get_section( 'section_nav_general' )->priority = 1;
+    $wp_customize->get_control( BUILDR_OPTIONS::NAVBAR_STYLE )->priority = 1;
     $wp_customize->get_panel( 'panel_title_tagline' )->priority = 1;
     $wp_customize->get_panel( 'panel_navbar' )->priority = 2;
     $wp_customize->get_panel( 'panel_custom_header' )->priority = 3;
