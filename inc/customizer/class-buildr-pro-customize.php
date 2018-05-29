@@ -74,7 +74,7 @@ final class Buildr_Pro_Customize {
                 $manager, 'buildr_pro', array (
                     'title'         => esc_html__( 'Buildr Pro', 'buildr' ),
                     'pro_text'      => esc_html__( 'View Demo', 'buildr' ),
-                    'pro_url'       => 'https://smartcatthemes.com/downloads/buildr/?utm_source=theme_customizer&amp;utm_medium=' . home_url()
+                    'pro_url'       => 'https://smartcatthemes.com/downloads/buildr/'
                 )
             )
         );

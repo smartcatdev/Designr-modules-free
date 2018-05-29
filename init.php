@@ -25,7 +25,7 @@ if( !defined( 'ABSPATH' ) ) {
 /**
  * Constant Declarations
  */
-const BUILDR_MODULES_VERSION = '1.1.2';
+const BUILDR_MODULES_VERSION = '1.2.0';
 const BUILD_MIN_VERSION = '1.1.0';
 
 /**

@@ -2,7 +2,7 @@
 Contributors: smartcat
 Tags: page,builder,buildr,widgets
 Requires at least: 4.9.0
-Tested up to: 4.9.5
+Tested up to: 4.9.6
 Stable tag: 1.1.2
 Requires PHP: 5.4
 License: GPLv2 or later
@@ -27,6 +27,11 @@ Available Widgets:
 2. OR - Upload the unpacked folder folder via FTP into /wp-content/plugins
 
 == Changelog == 
+
+= 1.2.0
+New Feature: Added icon shortcodes
+New Feature: Added Image List Widget
+New Feature: Added Image List Widget
 
 = 1.1.2
 Cleanup
