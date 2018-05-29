@@ -3,7 +3,7 @@
  * Plugin Name: Buildr Features
  * Author: Smartcat
  * Description: Advanced Widgets for Buildr theme.
- * Version: 1.1.2
+ * Version: 1.2.0
  * Author: Smartcat
  * Author URI: https://smartcatdesign.net/
  * License: GPL V2
@@ -25,7 +25,7 @@ if( !defined( 'ABSPATH' ) ) {
 /**
  * Constant Declarations
  */
-const BUILDR_MODULES_VERSION = '1.1.2';
+const BUILDR_MODULES_VERSION = '1.2.0';
 const BUILD_MIN_VERSION = '1.1.0';
 
 /**
@@ -68,7 +68,7 @@ function buildr_flag() {
         $parent_theme_name = strtolower( get_option( 'current_theme') );
 
     }
-
+    
     if( $active_theme_name == 'buildr' || $parent_theme_name == 'buildr' ) {
         return true;
     }
@@ -116,8 +116,9 @@ function after_setup_theme() {
 
 function plugins_loaded() {
     
+    
     if( ! buildr_flag() ) {
-        false;
+        return false;
     }
     
     if( is_admin() ) {
