@@ -39,6 +39,26 @@
                     $('li#customize-control-style_a_collapse_height').addClass('buildr-hidden');
                     $('li#customize-control-style_a_expand_height').addClass('buildr-hidden');
                     
+                } else if ( 'vertical' === value ) {
+                    
+                    // Show
+                    $('li#customize-control-navbar_banner_menu_alignment').removeClass('buildr-hidden');
+                    $('li#customize-control-navbar_banner_logo_height').removeClass('buildr-hidden');
+                    $('li#customize-control-navbar_banner_logo_top_spacing').removeClass('buildr-hidden');
+                    $('li#customize-control-navbar_banner_logo_bottom_spacing').removeClass('buildr-hidden');
+                    
+                    // Hide
+                    $('li#customize-control-navbar_banner_logo_alignment').addClass('buildr-hidden');
+                    $('li#customize-control-style_a_boxed_navbar').addClass('buildr-hidden');
+                    $('li#customize-control-navbar_banner_transparent_menu_toggle').addClass('buildr-hidden');
+                    $('li#customize-control-style_a_right_align_menu').addClass('buildr-hidden');
+                    $('li#customize-control-style_a_always_show_logo').addClass('buildr-hidden');
+                    $('li#customize-control-style_a_logo_space').addClass('buildr-hidden');
+                    $('li#customize-control-style_a_collapse_height').addClass('buildr-hidden');
+                    $('li#customize-control-style_a_expand_height').addClass('buildr-hidden');
+                    $('li#customize-control-navbar_banner_logo_top_spacing_mbl').addClass('buildr-hidden');
+                    $('li#customize-control-navbar_banner_logo_bottom_spacing_mbl').addClass('buildr-hidden');
+                    
                 } else if ( 'slim_left' === value ) {
                     
                     // Slim Left Style
