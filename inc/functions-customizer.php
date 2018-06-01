@@ -755,7 +755,7 @@ $data = array (
 
         ), // End of Blog Panel
 
-        // Panel: Navbar -------------------------------------------------------
+        // Panel: Social -------------------------------------------------------
         null => array (
 
             'sections'       => array (

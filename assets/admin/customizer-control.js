@@ -31,6 +31,15 @@
                     $('li#customize-control-navbar_banner_logo_bottom_spacing').removeClass('buildr-hidden');
                     $('li#customize-control-navbar_banner_logo_top_spacing_mbl').removeClass('buildr-hidden');
                     $('li#customize-control-navbar_banner_logo_bottom_spacing_mbl').removeClass('buildr-hidden');
+                    $('li#customize-control-navbar_links_gap_spacing').removeClass('buildr-hidden');
+                    $('li#customize-control-navbar_final_link_accent').removeClass('buildr-hidden');
+                    $('li#customize-control-navbar_final_link_rounded').removeClass('buildr-hidden');
+                    $('li#customize-control-navbar_final_link_fill').removeClass('buildr-hidden');
+                    $('li#customize-control-navbar_background_style').removeClass('buildr-hidden');
+                    $('li#customize-control-navbar_banner_menu_background').removeClass('buildr-hidden');
+                    $('li#customize-control-navbar_banner_menu_foreground').removeClass('buildr-hidden');
+                    $('li#customize-control-navbar_bg_image').removeClass('buildr-hidden');
+                    $('li#customize-control-navbar_social_drawer_background').removeClass('buildr-hidden');
                     
                     // Hide
                     $('li#customize-control-style_a_right_align_menu').addClass('buildr-hidden');
@@ -46,8 +55,19 @@
                     $('li#customize-control-navbar_banner_logo_height').removeClass('buildr-hidden');
                     $('li#customize-control-navbar_banner_logo_top_spacing').removeClass('buildr-hidden');
                     $('li#customize-control-navbar_banner_logo_bottom_spacing').removeClass('buildr-hidden');
+                    $('li#customize-control-navbar_banner_logo_top_spacing_mbl').removeClass('buildr-hidden');
+                    $('li#customize-control-navbar_banner_logo_bottom_spacing_mbl').removeClass('buildr-hidden');
                     
                     // Hide
+                    $('li#customize-control-navbar_background_style').addClass('buildr-hidden');
+                    $('li#customize-control-navbar_banner_menu_background').addClass('buildr-hidden');
+                    $('li#customize-control-navbar_banner_menu_foreground').addClass('buildr-hidden');
+                    $('li#customize-control-navbar_bg_image').addClass('buildr-hidden');
+                    $('li#customize-control-navbar_social_drawer_background').addClass('buildr-hidden');
+                    $('li#customize-control-navbar_final_link_accent').addClass('buildr-hidden');
+                    $('li#customize-control-navbar_final_link_rounded').addClass('buildr-hidden');
+                    $('li#customize-control-navbar_final_link_fill').addClass('buildr-hidden');
+                    $('li#customize-control-navbar_links_gap_spacing').addClass('buildr-hidden');
                     $('li#customize-control-navbar_banner_logo_alignment').addClass('buildr-hidden');
                     $('li#customize-control-style_a_boxed_navbar').addClass('buildr-hidden');
                     $('li#customize-control-navbar_banner_transparent_menu_toggle').addClass('buildr-hidden');
@@ -56,8 +76,6 @@
                     $('li#customize-control-style_a_logo_space').addClass('buildr-hidden');
                     $('li#customize-control-style_a_collapse_height').addClass('buildr-hidden');
                     $('li#customize-control-style_a_expand_height').addClass('buildr-hidden');
-                    $('li#customize-control-navbar_banner_logo_top_spacing_mbl').addClass('buildr-hidden');
-                    $('li#customize-control-navbar_banner_logo_bottom_spacing_mbl').addClass('buildr-hidden');
                     
                 } else if ( 'slim_left' === value ) {
                     
@@ -70,6 +88,15 @@
                     $('li#customize-control-style_a_expand_height').removeClass('buildr-hidden');
                     $('li#customize-control-style_a_right_align_menu').removeClass('buildr-hidden');
                     $('li#customize-control-style_a_boxed_navbar').removeClass('buildr-hidden');
+                    $('li#customize-control-navbar_links_gap_spacing').removeClass('buildr-hidden');
+                    $('li#customize-control-navbar_final_link_accent').removeClass('buildr-hidden');
+                    $('li#customize-control-navbar_final_link_rounded').removeClass('buildr-hidden');
+                    $('li#customize-control-navbar_final_link_fill').removeClass('buildr-hidden');
+                    $('li#customize-control-navbar_background_style').removeClass('buildr-hidden');
+                    $('li#customize-control-navbar_banner_menu_background').removeClass('buildr-hidden');
+                    $('li#customize-control-navbar_banner_menu_foreground').removeClass('buildr-hidden');
+                    $('li#customize-control-navbar_bg_image').removeClass('buildr-hidden');
+                    $('li#customize-control-navbar_social_drawer_background').removeClass('buildr-hidden');
                     
                     // Hide
                     $('li#customize-control-navbar_banner_logo_alignment').addClass('buildr-hidden');
@@ -90,6 +117,15 @@
                     $('li#customize-control-style_a_logo_space').removeClass('buildr-hidden');
                     $('li#customize-control-style_a_collapse_height').removeClass('buildr-hidden');
                     $('li#customize-control-style_a_expand_height').removeClass('buildr-hidden');
+                    $('li#customize-control-navbar_links_gap_spacing').removeClass('buildr-hidden');
+                    $('li#customize-control-navbar_final_link_accent').removeClass('buildr-hidden');
+                    $('li#customize-control-navbar_final_link_rounded').removeClass('buildr-hidden');
+                    $('li#customize-control-navbar_final_link_fill').removeClass('buildr-hidden');
+                    $('li#customize-control-navbar_background_style').removeClass('buildr-hidden');
+                    $('li#customize-control-navbar_banner_menu_background').removeClass('buildr-hidden');
+                    $('li#customize-control-navbar_banner_menu_foreground').removeClass('buildr-hidden');
+                    $('li#customize-control-navbar_bg_image').removeClass('buildr-hidden');
+                    $('li#customize-control-navbar_social_drawer_background').removeClass('buildr-hidden');
                     
                     // Hide
                     $('li#customize-control-navbar_banner_logo_alignment').addClass('buildr-hidden');
