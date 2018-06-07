@@ -29,6 +29,9 @@ Available Widgets:
 
 == Changelog == 
 
+= 1.3.0
+New Feature: Theme is now integrated with Easy Digital Downloads
+
 = 1.2.0
 New Feature: Added icon shortcodes
 New Feature: Added Image List Widget
