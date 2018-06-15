@@ -21,7 +21,7 @@ function import_files() {
             'import_file_url' => get_plugin_url( 'presets/preset1/content.xml' ),
             'import_widget_file_url' => get_plugin_url( 'presets/preset1/widgets.wie' ),
             'import_customizer_file_url' => get_plugin_url( 'presets/preset1/customizer.dat' ),
-            'import_preview_image_url' => 'https://i.imgur.com/ekT5pGp.jpg',
+            'import_preview_image_url' => 'https://i.imgur.com/J6Cr0tL.jpg',
             'import_notice' => __( 'After you import this demo, you will have to setup the slider separately.', 'buildr' ),
             'preview_url' => 'http://buildr.preset1.smartcatthemes.com/',
         ),
@@ -83,6 +83,16 @@ function pro_import_files(){
             'import_preview_image_url' => 'https://i.imgur.com/yuPJhxg.jpg',
             'import_notice' => __( 'After you import this demo, you will have to setup the slider separately.', 'buildr' ),
             'preview_url' => 'http://buildr.pro2.smartcatthemes.com/',
+        ),
+        array (
+            'import_file_name' => 'Buildr Restaurant',
+            'categories' => array ( 'Pro' ),
+            'import_file_url' => get_plugin_url( 'presets/preset7/content.xml' ),
+            'import_widget_file_url' => get_plugin_url( 'presets/preset7/widgets.wie' ),
+            'import_customizer_file_url' => get_plugin_url( 'presets/preset7/customizer.dat' ),
+            'import_preview_image_url' => 'https://i.imgur.com/zW4zdpF.jpg',
+            'import_notice' => __( 'After you import this demo, you will have to setup the slider separately.', 'buildr' ),
+            'preview_url' => 'http://buildr-food.smartcatdev.wpengine.com/',
         ),
 
     );
