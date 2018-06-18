@@ -16,7 +16,7 @@
             </a>
         </h2>
 
-        <span class="discount-code"><?php _e( 'Get Buildr Pro today and receive a limited time <span class="accent-color">50% discount</span>', 'buildr' ) ?></span>
+        <span class="discount-code"><?php _e( 'Get Buildr Pro today and receive a <span class="accent-color">limited time discount</span>', 'buildr' ) ?></span>
         
         <div class="clear"></div>
         
